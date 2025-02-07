@@ -2,11 +2,7 @@
 
 This a little project that helps set up the
 [nccl-tests](https://github.com/NVIDIA/nccl-tests) on Alps using custom
-**uenv**s and running a bunch of benchmarks with different configurations.
-
-## Results
-
-
+**uenv**s and running a bunch of **allgather** benchmarks with different configurations.
 
 ## Build Instructions
 
@@ -86,4 +82,35 @@ The default environment variables are set in the `run.sh` script:
     FI_CXI_RX_MATCH_MODE=software
     FI_HMEM_CUDA_USE_GDRCOPY=1
     NCCL_TESTS_DEVICE=0
+
+## Results
+
+Results are plotted for different message sizes. The legends indicate the difference with respect to the default environment variables.
+The `nccl` version is fixed at `2.23.4-1` while there are two versions of the `aws-ofi-plugin`: `1.9.2` and `1.13.0`. The hatched bars
+indicate that the sanity check has failed and wrong results were received.
+
+![busbw for message size =  512        ](plots/busbw_vs_nodes_512.svg)
+![busbw for message size =  1024       ](plots/busbw_vs_nodes_1024.svg)
+![busbw for message size =  2048       ](plots/busbw_vs_nodes_2048.svg)
+![busbw for message size =  4096       ](plots/busbw_vs_nodes_4096.svg)
+![busbw for message size =  8192       ](plots/busbw_vs_nodes_8192.svg)
+![busbw for message size =  16384      ](plots/busbw_vs_nodes_16384.svg)
+![busbw for message size =  32768      ](plots/busbw_vs_nodes_32768.svg)
+![busbw for message size =  65536      ](plots/busbw_vs_nodes_65536.svg)
+![busbw for message size =  131072     ](plots/busbw_vs_nodes_131072.svg)
+![busbw for message size =  262144     ](plots/busbw_vs_nodes_262144.svg)
+![busbw for message size =  524288     ](plots/busbw_vs_nodes_524288.svg)
+![busbw for message size =  1048576    ](plots/busbw_vs_nodes_1048576.svg)
+![busbw for message size =  2097152    ](plots/busbw_vs_nodes_2097152.svg)
+![busbw for message size =  4194304    ](plots/busbw_vs_nodes_4194304.svg)
+![busbw for message size =  8388608    ](plots/busbw_vs_nodes_8388608.svg)
+![busbw for message size =  16777216   ](plots/busbw_vs_nodes_16777216.svg)
+![busbw for message size =  33554432   ](plots/busbw_vs_nodes_33554432.svg)
+![busbw for message size =  67108864   ](plots/busbw_vs_nodes_67108864.svg)
+![busbw for message size =  134217728  ](plots/busbw_vs_nodes_134217728.svg)
+![busbw for message size =  268435456  ](plots/busbw_vs_nodes_268435456.svg)
+![busbw for message size =  536870912  ](plots/busbw_vs_nodes_536870912.svg)
+![busbw for message size =  1073741824 ](plots/busbw_vs_nodes_1073741824.svg)
+![busbw for message size =  2147483648 ](plots/busbw_vs_nodes_2147483648.svg)
+![busbw for message size =  4294967296 ](plots/busbw_vs_nodes_4294967296.svg)
 
