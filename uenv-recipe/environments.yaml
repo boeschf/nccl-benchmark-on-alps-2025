@@ -1,0 +1,26 @@
+test_mpi-env:
+  compiler:
+      - toolchain: gcc
+        spec: gcc
+  mpi:
+      spec: cray-mpich@8.1.30
+      gpu: cuda
+  unify: true
+  specs:
+  - gcc
+  - cray-mpich
+  - cuda
+  - nccl-tests
+  - nccl@2.23.4-1
+  - aws-ofi-nccl@1.13.0
+  - cmake
+  variants:
+  - +mpi
+  - +cuda
+  - cuda_arch=90
+  views:
+    default:
+      link: all
+      uenv:
+        prefix_paths:
+          LD_LIBRARY_PATH: [lib, lib64]
