@@ -1,0 +1,11 @@
+#!/bin/bash
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00004-N-0001-146886.out" "./job-n-00004-N-0001"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00008-N-0002-146887.out" "./job-n-00008-N-0002"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00016-N-0004-146888.out" "./job-n-00016-N-0004"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00032-N-0008-146889.out" "./job-n-00032-N-0008"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00064-N-0016-146890.out" "./job-n-00064-N-0016"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00128-N-0032-146891.out" "./job-n-00128-N-0032"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00256-N-0064-146892.out" "./job-n-00256-N-0064"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-00512-N-0128-146893.out" "./job-n-00512-N-0128"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-01024-N-0256-146894.out" "./job-n-01024-N-0256"
+/iopsstor/scratch/cscs/boeschf/nccl-testing-new/parse_output.sh "./job-n-02048-N-0512-146895.out" "./job-n-02048-N-0512"
