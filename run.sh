@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Define fixed parameters
-#NODE_COUNTS=(1 2 4 8 16 32)
-NODE_COUNTS=(64 128 256 512)
+NODE_COUNTS=(1 2 4 8 16 32 64 128 256 512)
 NTASKS_PER_NODE=4
 TIME_LIMIT="00:10:00"
 
