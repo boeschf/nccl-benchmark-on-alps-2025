@@ -10,6 +10,10 @@ DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.9.2:v0"
 #DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0"
 UENV="$DEFAULT_UENV"
 
+# Default launcher script
+DEFAULT_LAUNCHER="./select_gpu"
+LAUNCHER="$DEFAULT_LAUNCHER"
+
 # Default environment variables
 declare -A DEFAULT_ENV_VARS=(
     [CUDA_CACHE_DISABLE]=1
@@ -39,6 +43,9 @@ done
 # Parse command-line arguments for environment variable overrides
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --launcher=*)  # Handle launcher script parameter first
+            LAUNCHER="${1#*=}"
+            ;;
         *=*)  # Handle key=value pairs as environment variables
             VAR_NAME="${1%%=*}"
             VAR_VALUE="${1#*=}"
@@ -65,8 +72,16 @@ for VAR in "${!ENV_DIFFS[@]}"; do
     ENV_ID+="${VAR}=${ENV_DIFFS[$VAR]}_"
 done
 
+# Extract just the base name of the launcher script
+LAUNCHER_BASENAME=$(basename "$LAUNCHER")
+
 # Combine identifiers
-IDENTIFIER_0="${ENV_ID}${UENV}"
+if [[ "$LAUNCHER" != "$DEFAULT_LAUNCHER" ]]; then
+    IDENTIFIER_0="${ENV_ID}launcher=${LAUNCHER_BASENAME}_${UENV}"
+else
+    IDENTIFIER_0="${ENV_ID}${UENV}"
+fi
+#IDENTIFIER_0="${ENV_ID}${UENV}"
 IDENTIFIER="${IDENTIFIER_0//\//_}"  # Replace '/' with '_' for safe naming
 IDENTIFIER="${IDENTIFIER//\:/-}"    # Replace ':' with '-' for safe naming
 IDENTIFIER="${IDENTIFIER//\=/_}"    # Replace '=' with '_' for safe naming
