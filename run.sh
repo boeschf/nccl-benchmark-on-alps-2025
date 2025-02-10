@@ -11,7 +11,7 @@ DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.9.2:v0"
 UENV="$DEFAULT_UENV"
 
 # Default launcher script
-DEFAULT_LAUNCHER="./select_gpu"
+DEFAULT_LAUNCHER="./launch"
 LAUNCHER="$DEFAULT_LAUNCHER"
 
 # Default environment variables
