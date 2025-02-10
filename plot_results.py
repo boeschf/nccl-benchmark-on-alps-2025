@@ -9,8 +9,8 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results_fixed_hsn"
-PLOTS_DIR = "plots_fixed_hsn"
+RESULTS_DIR = "results"
+PLOTS_DIR = "plots"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Regex pattern to match job result CSV files
@@ -46,33 +46,34 @@ for config_folder in os.listdir(RESULTS_DIR):
     # Initialize storage for this configuration
     data_store[identifier] = {}
 
-    # Iterate over CSV files in the configuration directory
-    for filename in os.listdir(config_path):
-        match = JOB_FILE_PATTERN.match(filename)
-        if not match:
-            continue  # Skip files that do not match the pattern
+    # Iterate over run_xxxx directories within the configuration
+    for run_folder in sorted(os.listdir(config_path)):
+        run_path = os.path.join(config_path, run_folder)
+        if not os.path.isdir(run_path) or not run_folder.startswith("run_"):
+            continue  # Skip if not a run directory
 
-        # Extract the number of nodes from filename
-        num_nodes = int(match.group(1))
+        # Iterate over CSV files in the configuration directory
+        for filename in os.listdir(run_path):
+            match = JOB_FILE_PATTERN.match(filename)
+            if not match:
+                continue  # Skip files that do not match the pattern
 
-        # Filter out runs with fewer than 4 nodes
-        if num_nodes < 4:
-            continue
+            # Extract the number of nodes from filename
+            num_nodes = int(match.group(1))
 
-        # Read the CSV file into a DataFrame
-        csv_path = os.path.join(config_path, filename)
-        print(f"Reading: {csv_path}")
-        df = pd.read_csv(csv_path)
+            # Filter out runs with fewer than 4 nodes
+            if num_nodes < 4:
+                continue
 
-        # Store the data indexed by identifier and number of nodes
-        data_store[identifier][num_nodes] = df
+            # Read the CSV file into a DataFrame
+            csv_path = os.path.join(run_path, filename)
+            print(f"Reading: {csv_path}")
+            df = pd.read_csv(csv_path)
 
-# Verify data structure
-print("Parsed Data Structure:")
-for identifier, node_data in data_store.items():
-    print(f"Config: {identifier}")
-    for num_nodes, df in node_data.items():
-        print(f"  Nodes: {num_nodes}, Rows: {len(df)}, Columns: {list(df.columns)}")
+            # Store the data indexed by identifier and number of nodes
+            if num_nodes not in data_store[identifier]:
+                data_store[identifier][num_nodes] = []
+            data_store[identifier][num_nodes].append(df)
 
 # Function to create bar plots for each message size
 def plot_busbw_vs_nodes(data_store):
@@ -80,8 +81,9 @@ def plot_busbw_vs_nodes(data_store):
 
     # Collect all unique message sizes from all data
     for identifier, node_data in data_store.items():
-        for num_nodes, df in node_data.items():
-            all_message_sizes.update(df.iloc[:, 0])  # First column is message size
+        for num_nodes, dfs in node_data.items():
+            if dfs:
+                all_message_sizes.update(dfs[0].iloc[:, 0])  # First column is message size
 
     all_message_sizes = sorted(all_message_sizes)  # Ensure sorted order
 
@@ -95,27 +97,56 @@ def plot_busbw_vs_nodes(data_store):
         configs = list(data_store.keys())
         node_counts = sorted(set(num_nodes for identifier in data_store for num_nodes in data_store[identifier]))
 
-        # Create a DataFrame to store the extracted data
+        # Create a DataFrame to store aggregated data
         plot_data = []
         for identifier in configs:
             for num_nodes in node_counts:
                 if num_nodes in data_store[identifier]:
-                    df = data_store[identifier][num_nodes]
-                    row = df[df.iloc[:, 0] == message_size]  # Find row matching message size
+                    dfs = data_store[identifier][num_nodes]
+                    num_runs = len(dfs)  # Count number of runs
+                    combined_df = pd.concat(dfs)  # Merge multiple runs
+                    row = combined_df[combined_df.iloc[:, 0] == message_size]  # Find rows matching message size
                     if not row.empty:
-                        busbw_value = row["busbw"].values[0]  # Extract busbw
-                        has_errors = (row["#wrong"].values[0] > 0)  # Check if any errors exist
-                        plot_data.append({"Nodes": num_nodes, "Config": identifier, "Bus Bandwidth": busbw_value, "Has Errors": has_errors})
+                        busbw_median = row["busbw"].median()
+                        busbw_min = row["busbw"].min()
+                        busbw_max = row["busbw"].max()
+                        has_errors = (row["#wrong"] > 0).any()  # Check if any errors exist
+
+                        plot_data.append({
+                            "Nodes": num_nodes,
+                            "Config": identifier,
+                            "Bus Bandwidth (GB/s)": busbw_median,
+                            "Min": busbw_min,
+                            "Max": busbw_max,
+                            "Has Errors": has_errors,
+                            "Num Runs": num_runs  # Store number of runs
+                        })
+
 
         # Convert to Pandas DataFrame
         plot_df = pd.DataFrame(plot_data)
-        plot_df.sort_values(by="Config", inplace=True)
-
         if plot_df.empty:
             print(f"Skipping plot for message size {message_size}, no data found.")
             continue
 
-        bars = sns.barplot(data=plot_df, x="Nodes", y="Bus Bandwidth", hue="Config", dodge=True, palette="tab10", ax=ax)
+        # Sort plot_df by Nodes to match Seaborn's rendering order
+        plot_df.sort_values(by=["Config", "Nodes"], inplace=True)
+
+        # Create bar plot with min-max error bars
+        #bars = sns.barplot(data=plot_df, x="Nodes", y="Bus Bandwidth", hue="Config", dodge=True, palette="tab10", ax=ax)
+        bars = sns.barplot(
+            data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", hue="Config", dodge=True,
+            palette="tab10", ax=ax, errorbar=None
+        )
+
+        # Add min-max error bars manually
+        for bar, (_, row) in zip(bars.patches, plot_df.iterrows()):
+            ax.errorbar(
+                x=bar.get_x() + bar.get_width() / 2,
+                y=row["Bus Bandwidth (GB/s)"],
+                yerr=[[row["Bus Bandwidth (GB/s)"] - row["Min"]], [row["Max"] - row["Bus Bandwidth (GB/s)"]]],
+                fmt="none", capsize=5, capthick=2, color="black", alpha=0.7
+            )
 
         # Apply hatching for bars where #wrong > 0
         for bar, (_, row) in zip(bars.patches, plot_df.iterrows()):
@@ -123,11 +154,24 @@ def plot_busbw_vs_nodes(data_store):
                 bar.set_hatch("//")  # Apply hatch pattern for errors
                 bar.set_edgecolor("black")  # Ensure hatch is visible
 
-        # Adjust legend size
+        # Approximate text height in data coordinates
+        fontsize_points = 10  # Font size in points
+        fig_to_data = ax.transData.inverted().transform  # Convert figure to data coords
+        _, text_height = fig_to_data((0, fontsize_points))  # Convert font size to data space
+
+        # Add text above bars to indicate number of runs
+        for bar, (_, row) in zip(bars.patches, plot_df.iterrows()):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,  # Center text above bar
+                row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
+                f"{row['Num Runs']}",  # Display number of runs
+                ha="center", va="bottom", fontsize=10, fontweight="bold", color="black"
+            )
+
+        # Adjust legend position
         #plt.legend(title="Configurations", fontsize=8, title_fontsize=10, loc="upper left", bbox_to_anchor=(1, 1))
         plt.legend(title="Configurations", fontsize=9, title_fontsize=10, loc="upper center",
-                   bbox_to_anchor=(0.5, -0.2), ncol=1, frameon=True)
-
+                   bbox_to_anchor=(0.5, -0.2), ncol=1, frameon=False)
 
         # Improve readability
         plt.xlabel("Number of Nodes", fontsize=12)

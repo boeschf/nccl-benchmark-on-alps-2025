@@ -89,9 +89,6 @@ IDENTIFIER="${IDENTIFIER//\=/_}"    # Replace '=' with '_' for safe naming
 # Get launcher script path
 LAUNCHER=$(realpath ${LAUNCHER})
 
-# Get post processing parser
-PARSER=$(realpath ./parse_output.sh)
-
 # Define CPU mask
 CPUS_PER_TASK=$(( 288 / NTASKS_PER_NODE ))
 CPUBIND="verbose,mask_cpu:"
@@ -109,12 +106,21 @@ done
 RESULT_DIR="./results/${IDENTIFIER}"
 mkdir -p "$RESULT_DIR"
 
+# Find the next available run_xxxx directory
+mkdir -p "$RESULT_DIR"
+RUN_COUNT=0
+while [[ -d "$RESULT_DIR/run_$(printf "%04d" $RUN_COUNT)" ]]; do
+    ((RUN_COUNT++))
+done
+RUN_DIR="$RESULT_DIR/run_$(printf "%04d" $RUN_COUNT)"
+mkdir -p "$RUN_DIR"
+
 # Store the identifier in a file for easy parsing later
 echo "$IDENTIFIER_0" > "${RESULT_DIR}/identifier.txt"
 
 # create a postprocessing script
-echo "#!/bin/bash" > "${RESULT_DIR}/postprocess.sh"
-chmod +x "${RESULT_DIR}/postprocess.sh"
+echo "#!/bin/bash" > "${RUN_DIR}/postprocess.sh"
+chmod +x "${RUN_DIR}/postprocess.sh"
 
 # Function to decide whether to quote a value
 quote_if_needed() {
@@ -135,7 +141,7 @@ for NODES in "${NODE_COUNTS[@]}"; do
     NODES_STR=$(printf "%04d" "$NODES")
     NTASKS_STR=$(printf "%05d" "$NTASKS")
     POSTFIX="n-${NTASKS_STR}-N-${NODES_STR}"
-    PREFIX="${RESULT_DIR}/job-${POSTFIX}"
+    PREFIX="${RUN_DIR}/job-${POSTFIX}"
 
     JOB_SCRIPT="${PREFIX}.sh"
     cat <<EOT > "${JOB_SCRIPT}"
@@ -182,6 +188,6 @@ EOT
     echo "Job submitted with ID $JOB_ID"
 
     # Add to postprocessing script
-    printf '%s "%s" "%s"\n' "${PARSER}" "./job-${POSTFIX}-${JOB_ID}.out" "./job-${POSTFIX}" >> "${RESULT_DIR}/postprocess.sh"
+    printf '../../../parse_output.sh "%s" "%s"\n' "./job-${POSTFIX}-${JOB_ID}.out" "./job-${POSTFIX}" >> "${RUN_DIR}/postprocess.sh"
 
 done
