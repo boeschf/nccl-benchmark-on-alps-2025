@@ -51,18 +51,55 @@ The `run.sh` script launches a range of jobs. It takes as arguments changes to
 the environment variables, as well as the particular uenv to use. The script is
 intended to be run on the login node. An example invocation would be:
 
-    ./run.sh NCCL_IGNORE_CPU_AFFINITY=1 nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0
+    ./run.sh NCCL_IGNORE_CPU_AFFINITY=1 nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0 --launcher=launch_with_fixed_hsn
 
 This will run the benchmarks with the `NCCL_IGNORE_CPU_AFFINITY` environment
-variable set to `1` and the `nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0` uenv.
+variable set to `1` and the `nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0` uenv, and
+will use the `launch_with_fixed_hsn` launch script.
 
 The script will create a directory `results` in the current working directory
 and write the output of the jobs there. Under the results directory, it will
 create a subdirectory for the particular configuration according to the
-environment variables and uenv, where the output of the jobs will be stored.
+environment variables, uenv and launch script, where the output of the jobs
+will be stored. In order to gather statistics from multiple runs, a new
+`run_xxxx` directory will be created for each run. For example, the directory
+structure could look like this
+
+    results
+    ├── launch_with_fixed_hsn_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    │   ├── identifier.txt
+    │   ├── run_0000
+    │   ├── run_0001
+    │   └── run_0002
+    ├── NCCL_CROSS_NIC_1_launch_with_fixed_hsn_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    │   ├── identifier.txt
+    │   ├── run_0000
+    │   ├── run_0001
+    │   └── run_0002
+    :
+
+where each run directory will contain the submission scripts and a post-processing
+script:
+
+    ├── NCCL_CROSS_NIC_2_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    │   ├── identifier.txt
+    │   └── run_0000
+    │       ├── job-n-00004-N-0001.sh
+    │       ├── job-n-00008-N-0002.sh
+    │       ├── job-n-00016-N-0004.sh
+    │       ├── job-n-00032-N-0008.sh
+    │       ├── job-n-00064-N-0016.sh
+    │       ├── job-n-00128-N-0032.sh
+    │       ├── job-n-00256-N-0064.sh
+    │       ├── job-n-00512-N-0128.sh
+    │       ├── job-n-01024-N-0256.sh
+    │       ├── job-n-02048-N-0512.sh
+    │       └── postprocess.sh
+
+
 After the jobs have finished, you can run the `postprocess.sh` script in the
-subdirectory to generate a summary of the results which can the later be used
-to generate plots with the `plot_results.py` script.
+run subdirectory to generate a summary of the results which can the later be
+used to generate plots with the `plot_results.py` script.
 
 The default environment variables are set in the `run.sh` script:
 
@@ -82,6 +119,10 @@ The default environment variables are set in the `run.sh` script:
     FI_CXI_RX_MATCH_MODE=software
     FI_HMEM_CUDA_USE_GDRCOPY=1
     NCCL_TESTS_DEVICE=0
+
+The default launch script is [launch](launch) which sets the visible GPU according to
+the local `slurm rank` and restricts `nccl` to use the slingshot high-speed
+network.
 
 ## Results
 
