@@ -1,0 +1,155 @@
++ export MPICH_NO_BUFFER_ALIAS_CHECK=1
++ MPICH_NO_BUFFER_ALIAS_CHECK=1
++ export MPICH_GPU_SUPPORT_ENABLED=0
++ MPICH_GPU_SUPPORT_ENABLED=0
++ export 'NCCL_NET=AWS Libfabric'
++ NCCL_NET='AWS Libfabric'
++ export MPICH_OFI_STARTUP_CONNECT=1
++ MPICH_OFI_STARTUP_CONNECT=1
++ export NCCL_TESTS_DEVICE=0
++ NCCL_TESTS_DEVICE=0
++ export FI_CXI_DISABLE_HOST_REGISTER=1
++ FI_CXI_DISABLE_HOST_REGISTER=1
++ export FI_HMEM_CUDA_USE_GDRCOPY=1
++ FI_HMEM_CUDA_USE_GDRCOPY=1
++ export FI_CXI_RX_MATCH_MODE=software
++ FI_CXI_RX_MATCH_MODE=software
++ export NCCL_NET_GDR_LEVEL=PHB
++ NCCL_NET_GDR_LEVEL=PHB
++ export CUDA_CACHE_DISABLE=1
++ CUDA_CACHE_DISABLE=1
++ export MPICH_OFI_CXI_COUNTER_REPORT=2
++ MPICH_OFI_CXI_COUNTER_REPORT=2
++ export MPICH_COLL_OPT_OFF=mpi_allgather
++ MPICH_COLL_OPT_OFF=mpi_allgather
++ export FI_MR_CACHE_MONITOR=userfaultfd
++ FI_MR_CACHE_MONITOR=userfaultfd
++ export MPICH_SMP_SINGLE_COPY_MODE=NONE
++ MPICH_SMP_SINGLE_COPY_MODE=NONE
++ export NCCL_CROSS_NIC=2
++ NCCL_CROSS_NIC=2
++ http_proxy=http://proxy.cscs.ch:8080
++ https_proxy=https://proxy.cscs.ch:8080
++ srun -l --cpu-bind=verbose,mask_cpu:0xffffffffffffffffff,0xffffffffffffffffff000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 /iopsstor/scratch/cscs/boeschf/nccl-testing-new/launch all_reduce_perf -b 8 -e 4294967296 -f 2 -w 8 -n 24
+ 0: cpu-bind=MASK - nid005566, task  0  0 [275264]: mask 0xffffffffffffffffff set
+ 0: cpu-bind=MASK - nid005566, task  1  1 [275265]: mask 0xffffffffffffffffff000000000000000000 set
+ 0: cpu-bind=MASK - nid005566, task  2  2 [275266]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 8: cpu-bind=MASK - nid005580, task  8  0 [291298]: mask 0xffffffffffffffffff set
+28: cpu-bind=MASK - nid007502, task 28  0 [273779]: mask 0xffffffffffffffffff set
+16: cpu-bind=MASK - nid007497, task 16  0 [127808]: mask 0xffffffffffffffffff set
+ 4: cpu-bind=MASK - nid005572, task  4  0 [225349]: mask 0xffffffffffffffffff set
+24: cpu-bind=MASK - nid007500, task 24  0 [258273]: mask 0xffffffffffffffffff set
+ 8: cpu-bind=MASK - nid005580, task  9  1 [291299]: mask 0xffffffffffffffffff000000000000000000 set
+28: cpu-bind=MASK - nid007502, task 29  1 [273780]: mask 0xffffffffffffffffff000000000000000000 set
+16: cpu-bind=MASK - nid007497, task 17  1 [127809]: mask 0xffffffffffffffffff000000000000000000 set
+ 4: cpu-bind=MASK - nid005572, task  5  1 [225350]: mask 0xffffffffffffffffff000000000000000000 set
+ 8: cpu-bind=MASK - nid005580, task 10  2 [291300]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+28: cpu-bind=MASK - nid007502, task 30  2 [273781]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+16: cpu-bind=MASK - nid007497, task 18  2 [127810]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 4: cpu-bind=MASK - nid005572, task  6  2 [225351]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+24: cpu-bind=MASK - nid007500, task 25  1 [258274]: mask 0xffffffffffffffffff000000000000000000 set
+24: cpu-bind=MASK - nid007500, task 26  2 [258275]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+20: cpu-bind=MASK - nid007499, task 20  0 [227482]: mask 0xffffffffffffffffff set
+20: cpu-bind=MASK - nid007499, task 21  1 [227483]: mask 0xffffffffffffffffff000000000000000000 set
+20: cpu-bind=MASK - nid007499, task 22  2 [227484]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 8: cpu-bind=MASK - nid005580, task 11  3 [291301]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+24: cpu-bind=MASK - nid007500, task 27  3 [258276]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+16: cpu-bind=MASK - nid007497, task 19  3 [127811]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 4: cpu-bind=MASK - nid005572, task  7  3 [225352]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 0: cpu-bind=MASK - nid005566, task  3  3 [275267]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+28: cpu-bind=MASK - nid007502, task 31  3 [273782]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+12: cpu-bind=MASK - nid005582, task 12  0 [260322]: mask 0xffffffffffffffffff set
+12: cpu-bind=MASK - nid005582, task 13  1 [260323]: mask 0xffffffffffffffffff000000000000000000 set
+12: cpu-bind=MASK - nid005582, task 14  2 [260324]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+12: cpu-bind=MASK - nid005582, task 15  3 [260325]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+20: cpu-bind=MASK - nid007499, task 23  3 [227485]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+ 0: #
+ 0: # Using devices
+ 0: #  Rank  0 Group  0 Pid 275264 on  nid005566 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  1 Group  0 Pid 275265 on  nid005566 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  2 Group  0 Pid 275266 on  nid005566 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  3 Group  0 Pid 275267 on  nid005566 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  4 Group  0 Pid 225349 on  nid005572 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  5 Group  0 Pid 225350 on  nid005572 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  6 Group  0 Pid 225351 on  nid005572 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  7 Group  0 Pid 225352 on  nid005572 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  8 Group  0 Pid 291298 on  nid005580 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank  9 Group  0 Pid 291299 on  nid005580 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 10 Group  0 Pid 291300 on  nid005580 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 11 Group  0 Pid 291301 on  nid005580 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 12 Group  0 Pid 260322 on  nid005582 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 13 Group  0 Pid 260323 on  nid005582 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 14 Group  0 Pid 260324 on  nid005582 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 15 Group  0 Pid 260325 on  nid005582 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 16 Group  0 Pid 127808 on  nid007497 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 17 Group  0 Pid 127809 on  nid007497 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 18 Group  0 Pid 127810 on  nid007497 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 19 Group  0 Pid 127811 on  nid007497 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 20 Group  0 Pid 227482 on  nid007499 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 21 Group  0 Pid 227483 on  nid007499 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 22 Group  0 Pid 227484 on  nid007499 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 23 Group  0 Pid 227485 on  nid007499 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 24 Group  0 Pid 258273 on  nid007500 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 25 Group  0 Pid 258274 on  nid007500 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 26 Group  0 Pid 258275 on  nid007500 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 27 Group  0 Pid 258276 on  nid007500 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 28 Group  0 Pid 273779 on  nid007502 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 29 Group  0 Pid 273780 on  nid007502 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 30 Group  0 Pid 273781 on  nid007502 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #  Rank 31 Group  0 Pid 273782 on  nid007502 device  0 [0x01] NVIDIA GH200 120GB
+ 0: #
+ 0: #                                                              out-of-place                       in-place          
+ 0: #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+ 0: #        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+ 0:            8             2     float     sum      -1    46.86    0.00    0.00      0    47.16    0.00    0.00      0
+ 0:           16             4     float     sum      -1    46.13    0.00    0.00      0    45.09    0.00    0.00      0
+ 0:           32             8     float     sum      -1    44.51    0.00    0.00      0    44.85    0.00    0.00      0
+ 0:           64            16     float     sum      -1    45.55    0.00    0.00      0    45.77    0.00    0.00      0
+ 0:          128            32     float     sum      -1    51.30    0.00    0.00      0    50.76    0.00    0.00      0
+ 0:          256            64     float     sum      -1    59.38    0.00    0.01      0    52.90    0.00    0.01      0
+ 0:          512           128     float     sum      -1    53.98    0.01    0.02      0    54.21    0.01    0.02      0
+ 0:         1024           256     float     sum      -1    58.35    0.02    0.03      0    58.28    0.02    0.03      0
+ 0:         2048           512     float     sum      -1    63.81    0.03    0.06      0    63.32    0.03    0.06      0
+ 0:         4096          1024     float     sum      -1    112.7    0.04    0.07      0    110.5    0.04    0.07      0
+ 0:         8192          2048     float     sum      -1    126.4    0.06    0.13      0    126.4    0.06    0.13      0
+ 0:        16384          4096     float     sum      -1    151.9    0.11    0.21      0    128.4    0.13    0.25      0
+ 0:        32768          8192     float     sum      -1    153.6    0.21    0.41      0    130.8    0.25    0.49      0
+ 0:        65536         16384     float     sum      -1    162.8    0.40    0.78      0    135.1    0.49    0.94      0
+ 0:       131072         32768     float     sum      -1    144.8    0.91    1.75      0    141.1    0.93    1.80      0
+ 0:       262144         65536     float     sum      -1    223.5    1.17    2.27      0    195.0    1.34    2.60      0
+ 0:       524288        131072     float     sum      -1    897.9    0.58    1.13      0    904.0    0.58    1.12      0
+ 0:      1048576        262144     float     sum      -1    289.9    3.62    7.01      0    286.9    3.65    7.08      0
+ 0:      2097152        524288     float     sum      -1    435.1    4.82    9.34      0    428.8    4.89    9.48      0
+ 0:      4194304       1048576     float     sum      -1    707.8    5.93   11.48      0    708.5    5.92   11.47      0
+ 0:      8388608       2097152     float     sum      -1    769.2   10.91   21.13      0    763.9   10.98   21.28      0
+ 0:     16777216       4194304     float     sum      -1    962.9   17.42   33.76      0    961.9   17.44   33.79      0
+ 0:     33554432       8388608     float     sum      -1   1145.4   29.29   56.76      0   1143.4   29.35   56.86      0
+ 0:     67108864      16777216     float     sum      -1   1512.2   44.38   85.98      0   1510.2   44.44   86.10      0
+ 0:    134217728      33554432     float     sum      -1   2925.9   45.87   88.88      0   2924.2   45.90   88.93      0
+ 0:    268435456      67108864     float     sum      -1   5778.7   46.45   90.00      0   5775.9   46.48   90.05      0
+ 0:    536870912     134217728     float     sum      -1    11524   46.59   90.26      0    11515   46.62   90.34      0
+ 0:   1073741824     268435456     float     sum      -1    22896   46.90   90.86      0    22877   46.93   90.94      0
+ 0:   2147483648     536870912     float     sum      -1    45660   47.03   91.13      0    45643   47.05   91.16      0
+ 0:   4294967296    1073741824     float     sum      -1    91272   47.06   91.17      0    91365   47.01   91.08      0
+ 0: # Out of bounds values : 0 OK
+ 0: # Avg bus bandwidth    : 25.8453 
+ 0: #
+ 0: 
+ 0: MPICH Slingshot Network Summary: 0 network timeouts
+ 0: 
+ 0: MPICH Slingshot CXI Counter Summary:
+ 0: Counter                                Samples          Min         (/s)         Mean         (/s)          Max         (/s)
+ 0: atu_cache_hit_base_page_size_0              32    568056524   29897711.8    568858856   29939939.8    569146802   29955094.8
+ 0: atu_cache_hit_derivative1_page_size_0       32       265466      13971.9       266937      14049.3       269500      14184.2
+ 0: lpe_net_match_priority_0                    32       262040      13791.6       271254      14276.5       298870      15730.0
+ 0: lpe_net_match_request_0                     32       265660      13982.1       267644      14086.5       271393      14283.8
+ 0: lpe_rndzv_puts_0                            32       262040      13791.6       262898      13836.7       263184      13851.8
+ 0: hni_rx_paused_0                             32           10          0.5         2701        142.2         7717        406.2
+ 0: hni_rx_paused_1                             22           23          1.2         2785        146.6         6758        355.7
+ 0: hni_tx_paused_1                             32       102116       5374.5       316203      16642.3       598868      31519.4
+ 0: parbs_tarb_pi_posted_pkts                   32    910258869   47908361.5    911738786   47986251.9    912582309   48030647.8
+ 0: parbs_tarb_pi_posted_blocked_cnt            32    670408240   35284644.2    726560256   38240013.5    782055160   41160797.9
+ 0: parbs_tarb_pi_non_posted_pkts               32    454860571   23940030.1    455507202   23974063.2    455744102   23986531.7
+ 0: parbs_tarb_pi_non_posted_blocked_cnt        32       419112      22058.5      1263127      66480.3      1824589      96031.0
+ 0: 
