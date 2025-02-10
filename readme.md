@@ -126,9 +126,13 @@ network.
 
 ## Results
 
-Results are plotted for different message sizes. The legends indicate the difference with respect to the default environment variables.
-The `nccl` version is fixed at `2.23.4-1` while there are two versions of the `aws-ofi-plugin`: `1.9.2` and `1.13.0`. The hatched bars
-indicate that the sanity check has failed and wrong results were received.
+Results are plotted for different message sizes. The legends indicate the
+difference with respect to the default environment variables. The `nccl`
+version is fixed at `2.23.4-1` while there are two versions of the
+`aws-ofi-plugin`: `1.9.2` and `1.13.0`. The number of runs is indicated above
+the bars. The hatched bars indicate that the sanity check has failed for at
+least one run and wrong results were obtained. The number of failed runs is
+indicated at the bottom of the bars.
 
 ![busbw for message size =  512        ](plots/busbw_vs_nodes_512.svg)
 ![busbw for message size =  1024       ](plots/busbw_vs_nodes_1024.svg)
