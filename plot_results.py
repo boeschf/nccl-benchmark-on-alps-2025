@@ -9,8 +9,8 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results"
-PLOTS_DIR = "plots"
+RESULTS_DIR = "results_fixed_hsn"
+PLOTS_DIR = "plots_fixed_hsn"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Regex pattern to match job result CSV files
@@ -61,6 +61,7 @@ for config_folder in os.listdir(RESULTS_DIR):
 
         # Read the CSV file into a DataFrame
         csv_path = os.path.join(config_path, filename)
+        print(f"Reading: {csv_path}")
         df = pd.read_csv(csv_path)
 
         # Store the data indexed by identifier and number of nodes
