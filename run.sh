@@ -77,7 +77,7 @@ LAUNCHER_BASENAME=$(basename "$LAUNCHER")
 
 # Combine identifiers
 if [[ "$LAUNCHER" != "$DEFAULT_LAUNCHER" ]]; then
-    IDENTIFIER_0="${ENV_ID}launcher=${LAUNCHER_BASENAME}_${UENV}"
+    IDENTIFIER_0="${ENV_ID}${LAUNCHER_BASENAME}_${UENV}"
 else
     IDENTIFIER_0="${ENV_ID}${UENV}"
 fi
@@ -87,7 +87,7 @@ IDENTIFIER="${IDENTIFIER//\:/-}"    # Replace ':' with '-' for safe naming
 IDENTIFIER="${IDENTIFIER//\=/_}"    # Replace '=' with '_' for safe naming
 
 # Get launcher script path
-LAUNCHER=$(realpath ./select_gpu)
+LAUNCHER=$(realpath ${LAUNCHER})
 
 # Get post processing parser
 PARSER=$(realpath ./parse_output.sh)
