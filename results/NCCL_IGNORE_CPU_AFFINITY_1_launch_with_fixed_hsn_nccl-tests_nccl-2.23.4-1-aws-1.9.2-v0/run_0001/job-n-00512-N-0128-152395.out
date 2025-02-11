@@ -1,0 +1,701 @@
++ export MPICH_NO_BUFFER_ALIAS_CHECK=1
++ MPICH_NO_BUFFER_ALIAS_CHECK=1
++ export MPICH_GPU_SUPPORT_ENABLED=0
++ MPICH_GPU_SUPPORT_ENABLED=0
++ export 'NCCL_NET=AWS Libfabric'
++ NCCL_NET='AWS Libfabric'
++ export MPICH_OFI_STARTUP_CONNECT=1
++ MPICH_OFI_STARTUP_CONNECT=1
++ export NCCL_TESTS_DEVICE=0
++ NCCL_TESTS_DEVICE=0
++ export FI_CXI_DISABLE_HOST_REGISTER=1
++ FI_CXI_DISABLE_HOST_REGISTER=1
++ export FI_HMEM_CUDA_USE_GDRCOPY=1
++ FI_HMEM_CUDA_USE_GDRCOPY=1
++ export FI_CXI_RX_MATCH_MODE=software
++ FI_CXI_RX_MATCH_MODE=software
++ export NCCL_NET_GDR_LEVEL=PHB
++ NCCL_NET_GDR_LEVEL=PHB
++ export CUDA_CACHE_DISABLE=1
++ CUDA_CACHE_DISABLE=1
++ export MPICH_OFI_CXI_COUNTER_REPORT=2
++ MPICH_OFI_CXI_COUNTER_REPORT=2
++ export MPICH_COLL_OPT_OFF=mpi_allgather
++ MPICH_COLL_OPT_OFF=mpi_allgather
++ export NCCL_IGNORE_CPU_AFFINITY=1
++ NCCL_IGNORE_CPU_AFFINITY=1
++ export FI_MR_CACHE_MONITOR=userfaultfd
++ FI_MR_CACHE_MONITOR=userfaultfd
++ export MPICH_SMP_SINGLE_COPY_MODE=NONE
++ MPICH_SMP_SINGLE_COPY_MODE=NONE
++ export NCCL_CROSS_NIC=0
++ NCCL_CROSS_NIC=0
++ http_proxy=http://proxy.cscs.ch:8080
++ https_proxy=https://proxy.cscs.ch:8080
++ srun -l --cpu-bind=verbose,mask_cpu:0xffffffffffffffffff,0xffffffffffffffffff000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 /iopsstor/scratch/cscs/boeschf/nccl-testing-new/launch_with_fixed_hsn all_reduce_perf -b 8 -e 4294967296 -f 2 -w 8 -n 24
+  0: cpu-bind=MASK - nid005184, task  0  0 [138684]: mask 0xffffffffffffffffff set
+  0: cpu-bind=MASK - nid005184, task  1  1 [138685]: mask 0xffffffffffffffffff000000000000000000 set
+  0: cpu-bind=MASK - nid005184, task  2  2 [138686]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+156: cpu-bind=MASK - nid005985, task 156  0 [232537]: mask 0xffffffffffffffffff set
+ 12: cpu-bind=MASK - nid005187, task 12  0 [146023]: mask 0xffffffffffffffffff set
+264: cpu-bind=MASK - nid006380, task 264  0 [11605]: mask 0xffffffffffffffffff set
+300: cpu-bind=MASK - nid006398, task 300  0 [14784]: mask 0xffffffffffffffffff set
+252: cpu-bind=MASK - nid006377, task 252  0 [52171]: mask 0xffffffffffffffffff set
+156: cpu-bind=MASK - nid005985, task 157  1 [232538]: mask 0xffffffffffffffffff000000000000000000 set
+ 12: cpu-bind=MASK - nid005187, task 13  1 [146024]: mask 0xffffffffffffffffff000000000000000000 set
+264: cpu-bind=MASK - nid006380, task 265  1 [11606]: mask 0xffffffffffffffffff000000000000000000 set
+420: cpu-bind=MASK - nid006493, task 420  0 [234577]: mask 0xffffffffffffffffff set
+180: cpu-bind=MASK - nid005992, task 180  0 [117764]: mask 0xffffffffffffffffff set
+204: cpu-bind=MASK - nid006088, task 204  0 [150590]: mask 0xffffffffffffffffff set
+196: cpu-bind=MASK - nid006082, task 196  0 [14660]: mask 0xffffffffffffffffff set
+220: cpu-bind=MASK - nid006344, task 220  0 [83671]: mask 0xffffffffffffffffff set
+376: cpu-bind=MASK - nid006461, task 376  0 [29628]: mask 0xffffffffffffffffff set
+136: cpu-bind=MASK - nid005979, task 136  0 [98625]: mask 0xffffffffffffffffff set
+184: cpu-bind=MASK - nid005993, task 184  0 [65494]: mask 0xffffffffffffffffff set
+460: cpu-bind=MASK - nid006510, task 460  0 [230935]: mask 0xffffffffffffffffff set
+200: cpu-bind=MASK - nid006087, task 200  0 [238651]: mask 0xffffffffffffffffff set
+ 44: cpu-bind=MASK - nid005196, task 44  0 [233189]: mask 0xffffffffffffffffff set
+440: cpu-bind=MASK - nid006501, task 440  0 [58532]: mask 0xffffffffffffffffff set
+320: cpu-bind=MASK - nid006408, task 320  0 [140055]: mask 0xffffffffffffffffff set
+248: cpu-bind=MASK - nid006374, task 248  0 [192943]: mask 0xffffffffffffffffff set
+344: cpu-bind=MASK - nid006451, task 344  0 [62158]: mask 0xffffffffffffffffff set
+  8: cpu-bind=MASK - nid005186, task  8  0 [57569]: mask 0xffffffffffffffffff set
+156: cpu-bind=MASK - nid005985, task 158  2 [232539]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 12: cpu-bind=MASK - nid005187, task 14  2 [146025]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+264: cpu-bind=MASK - nid006380, task 266  2 [11607]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+300: cpu-bind=MASK - nid006398, task 301  1 [14785]: mask 0xffffffffffffffffff000000000000000000 set
+252: cpu-bind=MASK - nid006377, task 253  1 [52172]: mask 0xffffffffffffffffff000000000000000000 set
+420: cpu-bind=MASK - nid006493, task 421  1 [234578]: mask 0xffffffffffffffffff000000000000000000 set
+180: cpu-bind=MASK - nid005992, task 181  1 [117765]: mask 0xffffffffffffffffff000000000000000000 set
+204: cpu-bind=MASK - nid006088, task 205  1 [150591]: mask 0xffffffffffffffffff000000000000000000 set
+ 48: cpu-bind=MASK - nid005197, task 48  0 [187564]: mask 0xffffffffffffffffff set
+192: cpu-bind=MASK - nid005999, task 192  0 [169244]: mask 0xffffffffffffffffff set
+324: cpu-bind=MASK - nid006410, task 324  0 [144871]: mask 0xffffffffffffffffff set
+348: cpu-bind=MASK - nid006453, task 348  0 [149931]: mask 0xffffffffffffffffff set
+ 96: cpu-bind=MASK - nid005211, task 96  0 [185246]: mask 0xffffffffffffffffff set
+108: cpu-bind=MASK - nid005215, task 108  0 [287370]: mask 0xffffffffffffffffff set
+432: cpu-bind=MASK - nid006497, task 432  0 [75340]: mask 0xffffffffffffffffff set
+196: cpu-bind=MASK - nid006082, task 197  1 [14661]: mask 0xffffffffffffffffff000000000000000000 set
+220: cpu-bind=MASK - nid006344, task 221  1 [83672]: mask 0xffffffffffffffffff000000000000000000 set
+376: cpu-bind=MASK - nid006461, task 377  1 [29629]: mask 0xffffffffffffffffff000000000000000000 set
+136: cpu-bind=MASK - nid005979, task 137  1 [98626]: mask 0xffffffffffffffffff000000000000000000 set
+184: cpu-bind=MASK - nid005993, task 185  1 [65495]: mask 0xffffffffffffffffff000000000000000000 set
+352: cpu-bind=MASK - nid006454, task 352  0 [59093]: mask 0xffffffffffffffffff set
+460: cpu-bind=MASK - nid006510, task 461  1 [230936]: mask 0xffffffffffffffffff000000000000000000 set
+ 40: cpu-bind=MASK - nid005195, task 40  0 [7893]: mask 0xffffffffffffffffff set
+232: cpu-bind=MASK - nid006358, task 232  0 [147679]: mask 0xffffffffffffffffff set
+ 76: cpu-bind=MASK - nid005204, task 76  0 [70715]: mask 0xffffffffffffffffff set
+ 88: cpu-bind=MASK - nid005209, task 88  0 [138356]: mask 0xffffffffffffffffff set
+ 52: cpu-bind=MASK - nid005198, task 52  0 [26215]: mask 0xffffffffffffffffff set
+ 28: cpu-bind=MASK - nid005192, task 28  0 [116578]: mask 0xffffffffffffffffff set
+328: cpu-bind=MASK - nid006412, task 328  0 [68574]: mask 0xffffffffffffffffff set
+364: cpu-bind=MASK - nid006458, task 364  0 [128216]: mask 0xffffffffffffffffff set
+200: cpu-bind=MASK - nid006087, task 201  1 [238652]: mask 0xffffffffffffffffff000000000000000000 set
+ 44: cpu-bind=MASK - nid005196, task 45  1 [233190]: mask 0xffffffffffffffffff000000000000000000 set
+440: cpu-bind=MASK - nid006501, task 441  1 [58533]: mask 0xffffffffffffffffff000000000000000000 set
+320: cpu-bind=MASK - nid006408, task 321  1 [140056]: mask 0xffffffffffffffffff000000000000000000 set
+248: cpu-bind=MASK - nid006374, task 249  1 [192944]: mask 0xffffffffffffffffff000000000000000000 set
+344: cpu-bind=MASK - nid006451, task 345  1 [62159]: mask 0xffffffffffffffffff000000000000000000 set
+  8: cpu-bind=MASK - nid005186, task  9  1 [57570]: mask 0xffffffffffffffffff000000000000000000 set
+284: cpu-bind=MASK - nid006394, task 284  0 [183599]: mask 0xffffffffffffffffff set
+272: cpu-bind=MASK - nid006385, task 272  0 [261448]: mask 0xffffffffffffffffff set
+164: cpu-bind=MASK - nid005987, task 164  0 [67932]: mask 0xffffffffffffffffff set
+ 92: cpu-bind=MASK - nid005210, task 92  0 [121132]: mask 0xffffffffffffffffff set
+ 20: cpu-bind=MASK - nid005190, task 20  0 [24820]: mask 0xffffffffffffffffff set
+416: cpu-bind=MASK - nid006492, task 416  0 [54558]: mask 0xffffffffffffffffff set
+452: cpu-bind=MASK - nid006507, task 452  0 [14995]: mask 0xffffffffffffffffff set
+368: cpu-bind=MASK - nid006459, task 368  0 [116413]: mask 0xffffffffffffffffff set
+256: cpu-bind=MASK - nid006378, task 256  0 [286392]: mask 0xffffffffffffffffff set
+244: cpu-bind=MASK - nid006371, task 244  0 [205303]: mask 0xffffffffffffffffff set
+308: cpu-bind=MASK - nid006400, task 308  0 [257152]: mask 0xffffffffffffffffff set
+116: cpu-bind=MASK - nid005218, task 116  0 [181122]: mask 0xffffffffffffffffff set
+152: cpu-bind=MASK - nid005984, task 152  0 [30508]: mask 0xffffffffffffffffff set
+264: cpu-bind=MASK - nid006380, task 267  3 [11608]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+300: cpu-bind=MASK - nid006398, task 302  2 [14786]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+252: cpu-bind=MASK - nid006377, task 254  2 [52173]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+420: cpu-bind=MASK - nid006493, task 422  2 [234579]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+180: cpu-bind=MASK - nid005992, task 182  2 [117766]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+204: cpu-bind=MASK - nid006088, task 206  2 [150592]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 48: cpu-bind=MASK - nid005197, task 49  1 [187565]: mask 0xffffffffffffffffff000000000000000000 set
+192: cpu-bind=MASK - nid005999, task 193  1 [169245]: mask 0xffffffffffffffffff000000000000000000 set
+324: cpu-bind=MASK - nid006410, task 325  1 [144872]: mask 0xffffffffffffffffff000000000000000000 set
+348: cpu-bind=MASK - nid006453, task 349  1 [149932]: mask 0xffffffffffffffffff000000000000000000 set
+ 96: cpu-bind=MASK - nid005211, task 97  1 [185247]: mask 0xffffffffffffffffff000000000000000000 set
+108: cpu-bind=MASK - nid005215, task 109  1 [287371]: mask 0xffffffffffffffffff000000000000000000 set
+432: cpu-bind=MASK - nid006497, task 433  1 [75341]: mask 0xffffffffffffffffff000000000000000000 set
+196: cpu-bind=MASK - nid006082, task 198  2 [14662]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+220: cpu-bind=MASK - nid006344, task 222  2 [83673]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+376: cpu-bind=MASK - nid006461, task 378  2 [29630]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+136: cpu-bind=MASK - nid005979, task 138  2 [98627]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+184: cpu-bind=MASK - nid005993, task 186  2 [65496]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+352: cpu-bind=MASK - nid006454, task 353  1 [59094]: mask 0xffffffffffffffffff000000000000000000 set
+460: cpu-bind=MASK - nid006510, task 462  2 [230937]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 40: cpu-bind=MASK - nid005195, task 41  1 [7894]: mask 0xffffffffffffffffff000000000000000000 set
+232: cpu-bind=MASK - nid006358, task 233  1 [147680]: mask 0xffffffffffffffffff000000000000000000 set
+ 76: cpu-bind=MASK - nid005204, task 77  1 [70716]: mask 0xffffffffffffffffff000000000000000000 set
+ 88: cpu-bind=MASK - nid005209, task 89  1 [138357]: mask 0xffffffffffffffffff000000000000000000 set
+ 52: cpu-bind=MASK - nid005198, task 53  1 [26216]: mask 0xffffffffffffffffff000000000000000000 set
+ 28: cpu-bind=MASK - nid005192, task 29  1 [116579]: mask 0xffffffffffffffffff000000000000000000 set
+328: cpu-bind=MASK - nid006412, task 329  1 [68575]: mask 0xffffffffffffffffff000000000000000000 set
+364: cpu-bind=MASK - nid006458, task 365  1 [128217]: mask 0xffffffffffffffffff000000000000000000 set
+200: cpu-bind=MASK - nid006087, task 202  2 [238653]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 44: cpu-bind=MASK - nid005196, task 46  2 [233191]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+440: cpu-bind=MASK - nid006501, task 442  2 [58534]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+320: cpu-bind=MASK - nid006408, task 322  2 [140057]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+248: cpu-bind=MASK - nid006374, task 250  2 [192945]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+344: cpu-bind=MASK - nid006451, task 346  2 [62160]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+  8: cpu-bind=MASK - nid005186, task 10  2 [57571]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+284: cpu-bind=MASK - nid006394, task 285  1 [183600]: mask 0xffffffffffffffffff000000000000000000 set
+272: cpu-bind=MASK - nid006385, task 273  1 [261449]: mask 0xffffffffffffffffff000000000000000000 set
+164: cpu-bind=MASK - nid005987, task 165  1 [67933]: mask 0xffffffffffffffffff000000000000000000 set
+ 92: cpu-bind=MASK - nid005210, task 93  1 [121133]: mask 0xffffffffffffffffff000000000000000000 set
+ 20: cpu-bind=MASK - nid005190, task 21  1 [24821]: mask 0xffffffffffffffffff000000000000000000 set
+416: cpu-bind=MASK - nid006492, task 417  1 [54559]: mask 0xffffffffffffffffff000000000000000000 set
+452: cpu-bind=MASK - nid006507, task 453  1 [14996]: mask 0xffffffffffffffffff000000000000000000 set
+368: cpu-bind=MASK - nid006459, task 369  1 [116414]: mask 0xffffffffffffffffff000000000000000000 set
+256: cpu-bind=MASK - nid006378, task 257  1 [286393]: mask 0xffffffffffffffffff000000000000000000 set
+244: cpu-bind=MASK - nid006371, task 245  1 [205304]: mask 0xffffffffffffffffff000000000000000000 set
+308: cpu-bind=MASK - nid006400, task 309  1 [257153]: mask 0xffffffffffffffffff000000000000000000 set
+116: cpu-bind=MASK - nid005218, task 117  1 [181123]: mask 0xffffffffffffffffff000000000000000000 set
+152: cpu-bind=MASK - nid005984, task 153  1 [30509]: mask 0xffffffffffffffffff000000000000000000 set
+ 60: cpu-bind=MASK - nid005200, task 60  0 [205695]: mask 0xffffffffffffffffff set
+240: cpu-bind=MASK - nid006368, task 240  0 [187418]: mask 0xffffffffffffffffff set
+228: cpu-bind=MASK - nid006356, task 228  0 [30404]: mask 0xffffffffffffffffff set
+384: cpu-bind=MASK - nid006464, task 384  0 [235268]: mask 0xffffffffffffffffff set
+ 72: cpu-bind=MASK - nid005203, task 72  0 [233468]: mask 0xffffffffffffffffff set
+ 36: cpu-bind=MASK - nid005194, task 36  0 [192675]: mask 0xffffffffffffffffff set
+300: cpu-bind=MASK - nid006398, task 303  3 [14787]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+420: cpu-bind=MASK - nid006493, task 423  3 [234580]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+180: cpu-bind=MASK - nid005992, task 183  3 [117767]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 48: cpu-bind=MASK - nid005197, task 50  2 [187566]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+192: cpu-bind=MASK - nid005999, task 194  2 [169246]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+324: cpu-bind=MASK - nid006410, task 326  2 [144873]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+348: cpu-bind=MASK - nid006453, task 350  2 [149933]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 96: cpu-bind=MASK - nid005211, task 98  2 [185248]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+108: cpu-bind=MASK - nid005215, task 110  2 [287372]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+432: cpu-bind=MASK - nid006497, task 434  2 [75342]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+196: cpu-bind=MASK - nid006082, task 199  3 [14663]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+220: cpu-bind=MASK - nid006344, task 223  3 [83674]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+376: cpu-bind=MASK - nid006461, task 379  3 [29631]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+136: cpu-bind=MASK - nid005979, task 139  3 [98628]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+184: cpu-bind=MASK - nid005993, task 187  3 [65497]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+352: cpu-bind=MASK - nid006454, task 354  2 [59095]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 40: cpu-bind=MASK - nid005195, task 42  2 [7895]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+232: cpu-bind=MASK - nid006358, task 234  2 [147681]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 76: cpu-bind=MASK - nid005204, task 78  2 [70717]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 88: cpu-bind=MASK - nid005209, task 90  2 [138358]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 52: cpu-bind=MASK - nid005198, task 54  2 [26217]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 28: cpu-bind=MASK - nid005192, task 30  2 [116580]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+328: cpu-bind=MASK - nid006412, task 330  2 [68576]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+364: cpu-bind=MASK - nid006458, task 366  2 [128218]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+200: cpu-bind=MASK - nid006087, task 203  3 [238654]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 44: cpu-bind=MASK - nid005196, task 47  3 [233192]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+440: cpu-bind=MASK - nid006501, task 443  3 [58535]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+320: cpu-bind=MASK - nid006408, task 323  3 [140058]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+248: cpu-bind=MASK - nid006374, task 251  3 [192946]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+344: cpu-bind=MASK - nid006451, task 347  3 [62161]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+  8: cpu-bind=MASK - nid005186, task 11  3 [57573]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+284: cpu-bind=MASK - nid006394, task 286  2 [183601]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+272: cpu-bind=MASK - nid006385, task 274  2 [261450]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+164: cpu-bind=MASK - nid005987, task 166  2 [67934]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 92: cpu-bind=MASK - nid005210, task 94  2 [121134]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 20: cpu-bind=MASK - nid005190, task 22  2 [24822]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+416: cpu-bind=MASK - nid006492, task 418  2 [54560]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+452: cpu-bind=MASK - nid006507, task 454  2 [14997]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+368: cpu-bind=MASK - nid006459, task 370  2 [116415]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+256: cpu-bind=MASK - nid006378, task 258  2 [286394]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+244: cpu-bind=MASK - nid006371, task 246  2 [205305]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+308: cpu-bind=MASK - nid006400, task 310  2 [257154]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+116: cpu-bind=MASK - nid005218, task 118  2 [181124]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+152: cpu-bind=MASK - nid005984, task 154  2 [30510]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 60: cpu-bind=MASK - nid005200, task 61  1 [205696]: mask 0xffffffffffffffffff000000000000000000 set
+240: cpu-bind=MASK - nid006368, task 241  1 [187419]: mask 0xffffffffffffffffff000000000000000000 set
+228: cpu-bind=MASK - nid006356, task 229  1 [30405]: mask 0xffffffffffffffffff000000000000000000 set
+384: cpu-bind=MASK - nid006464, task 385  1 [235269]: mask 0xffffffffffffffffff000000000000000000 set
+ 72: cpu-bind=MASK - nid005203, task 73  1 [233469]: mask 0xffffffffffffffffff000000000000000000 set
+ 36: cpu-bind=MASK - nid005194, task 37  1 [192676]: mask 0xffffffffffffffffff000000000000000000 set
+484: cpu-bind=MASK - nid006536, task 484  0 [59102]: mask 0xffffffffffffffffff set
+192: cpu-bind=MASK - nid005999, task 195  3 [169247]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+324: cpu-bind=MASK - nid006410, task 327  3 [144874]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+348: cpu-bind=MASK - nid006453, task 351  3 [149934]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+352: cpu-bind=MASK - nid006454, task 355  3 [59096]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+232: cpu-bind=MASK - nid006358, task 235  3 [147682]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 76: cpu-bind=MASK - nid005204, task 79  3 [70718]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 88: cpu-bind=MASK - nid005209, task 91  3 [138359]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+328: cpu-bind=MASK - nid006412, task 331  3 [68577]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+364: cpu-bind=MASK - nid006458, task 367  3 [128219]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+284: cpu-bind=MASK - nid006394, task 287  3 [183602]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+272: cpu-bind=MASK - nid006385, task 275  3 [261451]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+164: cpu-bind=MASK - nid005987, task 167  3 [67935]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 92: cpu-bind=MASK - nid005210, task 95  3 [121135]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 20: cpu-bind=MASK - nid005190, task 23  3 [24823]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+416: cpu-bind=MASK - nid006492, task 419  3 [54561]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+452: cpu-bind=MASK - nid006507, task 455  3 [14998]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+256: cpu-bind=MASK - nid006378, task 259  3 [286395]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+244: cpu-bind=MASK - nid006371, task 247  3 [205306]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+308: cpu-bind=MASK - nid006400, task 311  3 [257155]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+116: cpu-bind=MASK - nid005218, task 119  3 [181125]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 60: cpu-bind=MASK - nid005200, task 62  2 [205697]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+240: cpu-bind=MASK - nid006368, task 242  2 [187420]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+228: cpu-bind=MASK - nid006356, task 230  2 [30406]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+384: cpu-bind=MASK - nid006464, task 386  2 [235270]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 72: cpu-bind=MASK - nid005203, task 74  2 [233470]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 36: cpu-bind=MASK - nid005194, task 38  2 [192677]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+484: cpu-bind=MASK - nid006536, task 485  1 [59103]: mask 0xffffffffffffffffff000000000000000000 set
+ 60: cpu-bind=MASK - nid005200, task 63  3 [205698]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+240: cpu-bind=MASK - nid006368, task 243  3 [187421]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+204: cpu-bind=MASK - nid006088, task 207  3 [150593]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 48: cpu-bind=MASK - nid005197, task 51  3 [187567]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+432: cpu-bind=MASK - nid006497, task 435  3 [75343]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 52: cpu-bind=MASK - nid005198, task 55  3 [26218]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 28: cpu-bind=MASK - nid005192, task 31  3 [116581]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+484: cpu-bind=MASK - nid006536, task 486  2 [59104]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+388: cpu-bind=MASK - nid006466, task 388  0 [197830]: mask 0xffffffffffffffffff set
+388: cpu-bind=MASK - nid006466, task 389  1 [197831]: mask 0xffffffffffffffffff000000000000000000 set
+ 36: cpu-bind=MASK - nid005194, task 39  3 [192678]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+228: cpu-bind=MASK - nid006356, task 231  3 [30407]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+388: cpu-bind=MASK - nid006466, task 390  2 [197832]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+484: cpu-bind=MASK - nid006536, task 487  3 [59105]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+384: cpu-bind=MASK - nid006464, task 387  3 [235271]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+388: cpu-bind=MASK - nid006466, task 391  3 [197833]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+380: cpu-bind=MASK - nid006463, task 380  0 [64433]: mask 0xffffffffffffffffff set
+128: cpu-bind=MASK - nid005223, task 128  0 [237837]: mask 0xffffffffffffffffff set
+140: cpu-bind=MASK - nid005980, task 140  0 [143125]: mask 0xffffffffffffffffff set
+380: cpu-bind=MASK - nid006463, task 381  1 [64434]: mask 0xffffffffffffffffff000000000000000000 set
+128: cpu-bind=MASK - nid005223, task 129  1 [237838]: mask 0xffffffffffffffffff000000000000000000 set
+140: cpu-bind=MASK - nid005980, task 141  1 [143126]: mask 0xffffffffffffffffff000000000000000000 set
+396: cpu-bind=MASK - nid006470, task 396  0 [278408]: mask 0xffffffffffffffffff set
+380: cpu-bind=MASK - nid006463, task 382  2 [64435]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+128: cpu-bind=MASK - nid005223, task 130  2 [237839]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+140: cpu-bind=MASK - nid005980, task 142  2 [143127]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+396: cpu-bind=MASK - nid006470, task 397  1 [278409]: mask 0xffffffffffffffffff000000000000000000 set
+464: cpu-bind=MASK - nid006512, task 464  0 [98947]: mask 0xffffffffffffffffff set
+188: cpu-bind=MASK - nid005997, task 188  0 [100949]: mask 0xffffffffffffffffff set
+428: cpu-bind=MASK - nid006496, task 428  0 [77563]: mask 0xffffffffffffffffff set
+236: cpu-bind=MASK - nid006366, task 236  0 [73406]: mask 0xffffffffffffffffff set
+224: cpu-bind=MASK - nid006352, task 224  0 [143626]: mask 0xffffffffffffffffff set
+  0: cpu-bind=MASK - nid005184, task  3  3 [138687]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+380: cpu-bind=MASK - nid006463, task 383  3 [64436]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+140: cpu-bind=MASK - nid005980, task 143  3 [143128]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+396: cpu-bind=MASK - nid006470, task 398  2 [278410]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+464: cpu-bind=MASK - nid006512, task 465  1 [98948]: mask 0xffffffffffffffffff000000000000000000 set
+188: cpu-bind=MASK - nid005997, task 189  1 [100950]: mask 0xffffffffffffffffff000000000000000000 set
+428: cpu-bind=MASK - nid006496, task 429  1 [77564]: mask 0xffffffffffffffffff000000000000000000 set
+236: cpu-bind=MASK - nid006366, task 237  1 [73407]: mask 0xffffffffffffffffff000000000000000000 set
+224: cpu-bind=MASK - nid006352, task 225  1 [143627]: mask 0xffffffffffffffffff000000000000000000 set
+492: cpu-bind=MASK - nid006541, task 492  0 [70289]: mask 0xffffffffffffffffff set
+480: cpu-bind=MASK - nid006520, task 480  0 [237039]: mask 0xffffffffffffffffff set
+444: cpu-bind=MASK - nid006503, task 444  0 [63343]: mask 0xffffffffffffffffff set
+144: cpu-bind=MASK - nid005981, task 144  0 [28614]: mask 0xffffffffffffffffff set
+468: cpu-bind=MASK - nid006513, task 468  0 [132038]: mask 0xffffffffffffffffff set
+ 84: cpu-bind=MASK - nid005208, task 84  0 [132823]: mask 0xffffffffffffffffff set
+276: cpu-bind=MASK - nid006387, task 276  0 [207535]: mask 0xffffffffffffffffff set
+360: cpu-bind=MASK - nid006456, task 360  0 [167173]: mask 0xffffffffffffffffff set
+148: cpu-bind=MASK - nid005982, task 148  0 [64764]: mask 0xffffffffffffffffff set
+340: cpu-bind=MASK - nid006418, task 340  0 [129409]: mask 0xffffffffffffffffff set
+ 64: cpu-bind=MASK - nid005201, task 64  0 [42675]: mask 0xffffffffffffffffff set
+316: cpu-bind=MASK - nid006405, task 316  0 [168960]: mask 0xffffffffffffffffff set
+  4: cpu-bind=MASK - nid005185, task  4  0 [188248]: mask 0xffffffffffffffffff set
+436: cpu-bind=MASK - nid006498, task 436  0 [141903]: mask 0xffffffffffffffffff set
+160: cpu-bind=MASK - nid005986, task 160  0 [245826]: mask 0xffffffffffffffffff set
+292: cpu-bind=MASK - nid006396, task 292  0 [259128]: mask 0xffffffffffffffffff set
+448: cpu-bind=MASK - nid006504, task 448  0 [198952]: mask 0xffffffffffffffffff set
+156: cpu-bind=MASK - nid005985, task 159  3 [232540]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+252: cpu-bind=MASK - nid006377, task 255  3 [52174]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+460: cpu-bind=MASK - nid006510, task 463  3 [230938]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 40: cpu-bind=MASK - nid005195, task 43  3 [7896]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+152: cpu-bind=MASK - nid005984, task 155  3 [30511]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+396: cpu-bind=MASK - nid006470, task 399  3 [278411]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+464: cpu-bind=MASK - nid006512, task 466  2 [98949]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+188: cpu-bind=MASK - nid005997, task 190  2 [100951]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+428: cpu-bind=MASK - nid006496, task 430  2 [77565]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+236: cpu-bind=MASK - nid006366, task 238  2 [73408]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+224: cpu-bind=MASK - nid006352, task 226  2 [143628]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+492: cpu-bind=MASK - nid006541, task 493  1 [70290]: mask 0xffffffffffffffffff000000000000000000 set
+480: cpu-bind=MASK - nid006520, task 481  1 [237040]: mask 0xffffffffffffffffff000000000000000000 set
+444: cpu-bind=MASK - nid006503, task 445  1 [63344]: mask 0xffffffffffffffffff000000000000000000 set
+144: cpu-bind=MASK - nid005981, task 145  1 [28615]: mask 0xffffffffffffffffff000000000000000000 set
+468: cpu-bind=MASK - nid006513, task 469  1 [132039]: mask 0xffffffffffffffffff000000000000000000 set
+ 84: cpu-bind=MASK - nid005208, task 85  1 [132824]: mask 0xffffffffffffffffff000000000000000000 set
+276: cpu-bind=MASK - nid006387, task 277  1 [207536]: mask 0xffffffffffffffffff000000000000000000 set
+360: cpu-bind=MASK - nid006456, task 361  1 [167174]: mask 0xffffffffffffffffff000000000000000000 set
+148: cpu-bind=MASK - nid005982, task 149  1 [64765]: mask 0xffffffffffffffffff000000000000000000 set
+340: cpu-bind=MASK - nid006418, task 341  1 [129410]: mask 0xffffffffffffffffff000000000000000000 set
+ 64: cpu-bind=MASK - nid005201, task 65  1 [42676]: mask 0xffffffffffffffffff000000000000000000 set
+316: cpu-bind=MASK - nid006405, task 317  1 [168961]: mask 0xffffffffffffffffff000000000000000000 set
+  4: cpu-bind=MASK - nid005185, task  5  1 [188249]: mask 0xffffffffffffffffff000000000000000000 set
+436: cpu-bind=MASK - nid006498, task 437  1 [141904]: mask 0xffffffffffffffffff000000000000000000 set
+160: cpu-bind=MASK - nid005986, task 161  1 [245827]: mask 0xffffffffffffffffff000000000000000000 set
+292: cpu-bind=MASK - nid006396, task 293  1 [259129]: mask 0xffffffffffffffffff000000000000000000 set
+448: cpu-bind=MASK - nid006504, task 449  1 [198953]: mask 0xffffffffffffffffff000000000000000000 set
+312: cpu-bind=MASK - nid006401, task 312  0 [144493]: mask 0xffffffffffffffffff set
+336: cpu-bind=MASK - nid006415, task 336  0 [116719]: mask 0xffffffffffffffffff set
+216: cpu-bind=MASK - nid006093, task 216  0 [115921]: mask 0xffffffffffffffffff set
+408: cpu-bind=MASK - nid006479, task 408  0 [248322]: mask 0xffffffffffffffffff set
+120: cpu-bind=MASK - nid005221, task 120  0 [66334]: mask 0xffffffffffffffffff set
+260: cpu-bind=MASK - nid006379, task 260  0 [273987]: mask 0xffffffffffffffffff set
+488: cpu-bind=MASK - nid006540, task 488  0 [9646]: mask 0xffffffffffffffffff set
+476: cpu-bind=MASK - nid006516, task 476  0 [174549]: mask 0xffffffffffffffffff set
+392: cpu-bind=MASK - nid006468, task 392  0 [127742]: mask 0xffffffffffffffffff set
+104: cpu-bind=MASK - nid005214, task 104  0 [213503]: mask 0xffffffffffffffffff set
+356: cpu-bind=MASK - nid006455, task 356  0 [245146]: mask 0xffffffffffffffffff set
+212: cpu-bind=MASK - nid006092, task 212  0 [236185]: mask 0xffffffffffffffffff set
+ 32: cpu-bind=MASK - nid005193, task 32  0 [83363]: mask 0xffffffffffffffffff set
+500: cpu-bind=MASK - nid006546, task 500  0 [100903]: mask 0xffffffffffffffffff set
+ 68: cpu-bind=MASK - nid005202, task 68  0 [90786]: mask 0xffffffffffffffffff set
+ 80: cpu-bind=MASK - nid005207, task 80  0 [281663]: mask 0xffffffffffffffffff set
+128: cpu-bind=MASK - nid005223, task 131  3 [237840]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+464: cpu-bind=MASK - nid006512, task 467  3 [98950]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+188: cpu-bind=MASK - nid005997, task 191  3 [100952]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+428: cpu-bind=MASK - nid006496, task 431  3 [77566]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+236: cpu-bind=MASK - nid006366, task 239  3 [73409]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+224: cpu-bind=MASK - nid006352, task 227  3 [143629]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+492: cpu-bind=MASK - nid006541, task 494  2 [70291]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+480: cpu-bind=MASK - nid006520, task 482  2 [237041]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+444: cpu-bind=MASK - nid006503, task 446  2 [63345]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+144: cpu-bind=MASK - nid005981, task 146  2 [28616]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+468: cpu-bind=MASK - nid006513, task 470  2 [132040]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 84: cpu-bind=MASK - nid005208, task 86  2 [132825]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+276: cpu-bind=MASK - nid006387, task 278  2 [207537]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+360: cpu-bind=MASK - nid006456, task 362  2 [167175]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+148: cpu-bind=MASK - nid005982, task 150  2 [64766]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+340: cpu-bind=MASK - nid006418, task 342  2 [129411]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 64: cpu-bind=MASK - nid005201, task 66  2 [42677]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+316: cpu-bind=MASK - nid006405, task 318  2 [168962]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+  4: cpu-bind=MASK - nid005185, task  6  2 [188250]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+436: cpu-bind=MASK - nid006498, task 438  2 [141905]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+160: cpu-bind=MASK - nid005986, task 162  2 [245828]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+292: cpu-bind=MASK - nid006396, task 294  2 [259130]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+448: cpu-bind=MASK - nid006504, task 450  2 [198954]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+312: cpu-bind=MASK - nid006401, task 313  1 [144494]: mask 0xffffffffffffffffff000000000000000000 set
+336: cpu-bind=MASK - nid006415, task 337  1 [116720]: mask 0xffffffffffffffffff000000000000000000 set
+216: cpu-bind=MASK - nid006093, task 217  1 [115922]: mask 0xffffffffffffffffff000000000000000000 set
+408: cpu-bind=MASK - nid006479, task 409  1 [248323]: mask 0xffffffffffffffffff000000000000000000 set
+120: cpu-bind=MASK - nid005221, task 121  1 [66335]: mask 0xffffffffffffffffff000000000000000000 set
+260: cpu-bind=MASK - nid006379, task 261  1 [273988]: mask 0xffffffffffffffffff000000000000000000 set
+488: cpu-bind=MASK - nid006540, task 489  1 [9647]: mask 0xffffffffffffffffff000000000000000000 set
+476: cpu-bind=MASK - nid006516, task 477  1 [174550]: mask 0xffffffffffffffffff000000000000000000 set
+392: cpu-bind=MASK - nid006468, task 393  1 [127743]: mask 0xffffffffffffffffff000000000000000000 set
+104: cpu-bind=MASK - nid005214, task 105  1 [213504]: mask 0xffffffffffffffffff000000000000000000 set
+356: cpu-bind=MASK - nid006455, task 357  1 [245147]: mask 0xffffffffffffffffff000000000000000000 set
+212: cpu-bind=MASK - nid006092, task 213  1 [236186]: mask 0xffffffffffffffffff000000000000000000 set
+ 32: cpu-bind=MASK - nid005193, task 33  1 [83364]: mask 0xffffffffffffffffff000000000000000000 set
+500: cpu-bind=MASK - nid006546, task 501  1 [100904]: mask 0xffffffffffffffffff000000000000000000 set
+ 68: cpu-bind=MASK - nid005202, task 69  1 [90787]: mask 0xffffffffffffffffff000000000000000000 set
+ 80: cpu-bind=MASK - nid005207, task 81  1 [281664]: mask 0xffffffffffffffffff000000000000000000 set
+372: cpu-bind=MASK - nid006460, task 372  0 [41140]: mask 0xffffffffffffffffff set
+456: cpu-bind=MASK - nid006508, task 456  0 [272798]: mask 0xffffffffffffffffff set
+288: cpu-bind=MASK - nid006395, task 288  0 [160787]: mask 0xffffffffffffffffff set
+400: cpu-bind=MASK - nid006475, task 400  0 [6882]: mask 0xffffffffffffffffff set
+208: cpu-bind=MASK - nid006091, task 208  0 [210244]: mask 0xffffffffffffffffff set
+424: cpu-bind=MASK - nid006495, task 424  0 [293394]: mask 0xffffffffffffffffff set
+496: cpu-bind=MASK - nid006543, task 496  0 [10800]: mask 0xffffffffffffffffff set
+112: cpu-bind=MASK - nid005217, task 112  0 [79727]: mask 0xffffffffffffffffff set
+280: cpu-bind=MASK - nid006393, task 280  0 [124430]: mask 0xffffffffffffffffff set
+124: cpu-bind=MASK - nid005222, task 124  0 [266051]: mask 0xffffffffffffffffff set
+508: cpu-bind=MASK - nid006562, task 508  0 [163604]: mask 0xffffffffffffffffff set
+172: cpu-bind=MASK - nid005990, task 172  0 [47540]: mask 0xffffffffffffffffff set
+472: cpu-bind=MASK - nid006514, task 472  0 [7034]: mask 0xffffffffffffffffff set
+268: cpu-bind=MASK - nid006384, task 268  0 [144509]: mask 0xffffffffffffffffff set
+304: cpu-bind=MASK - nid006399, task 304  0 [92877]: mask 0xffffffffffffffffff set
+100: cpu-bind=MASK - nid005212, task 100  0 [208606]: mask 0xffffffffffffffffff set
+492: cpu-bind=MASK - nid006541, task 495  3 [70292]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+480: cpu-bind=MASK - nid006520, task 483  3 [237042]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+444: cpu-bind=MASK - nid006503, task 447  3 [63346]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+144: cpu-bind=MASK - nid005981, task 147  3 [28617]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+468: cpu-bind=MASK - nid006513, task 471  3 [132041]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 84: cpu-bind=MASK - nid005208, task 87  3 [132826]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+360: cpu-bind=MASK - nid006456, task 363  3 [167176]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+148: cpu-bind=MASK - nid005982, task 151  3 [64767]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+340: cpu-bind=MASK - nid006418, task 343  3 [129412]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+316: cpu-bind=MASK - nid006405, task 319  3 [168963]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+160: cpu-bind=MASK - nid005986, task 163  3 [245829]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+292: cpu-bind=MASK - nid006396, task 295  3 [259131]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+312: cpu-bind=MASK - nid006401, task 314  2 [144495]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+336: cpu-bind=MASK - nid006415, task 338  2 [116721]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+216: cpu-bind=MASK - nid006093, task 218  2 [115923]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+408: cpu-bind=MASK - nid006479, task 410  2 [248324]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+120: cpu-bind=MASK - nid005221, task 122  2 [66336]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+260: cpu-bind=MASK - nid006379, task 262  2 [273989]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+488: cpu-bind=MASK - nid006540, task 490  2 [9648]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+476: cpu-bind=MASK - nid006516, task 478  2 [174551]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+392: cpu-bind=MASK - nid006468, task 394  2 [127744]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+104: cpu-bind=MASK - nid005214, task 106  2 [213505]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+356: cpu-bind=MASK - nid006455, task 358  2 [245148]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+212: cpu-bind=MASK - nid006092, task 214  2 [236187]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 32: cpu-bind=MASK - nid005193, task 34  2 [83365]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+500: cpu-bind=MASK - nid006546, task 502  2 [100905]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 68: cpu-bind=MASK - nid005202, task 70  2 [90788]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 80: cpu-bind=MASK - nid005207, task 82  2 [281665]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+372: cpu-bind=MASK - nid006460, task 373  1 [41141]: mask 0xffffffffffffffffff000000000000000000 set
+456: cpu-bind=MASK - nid006508, task 457  1 [272799]: mask 0xffffffffffffffffff000000000000000000 set
+288: cpu-bind=MASK - nid006395, task 289  1 [160788]: mask 0xffffffffffffffffff000000000000000000 set
+400: cpu-bind=MASK - nid006475, task 401  1 [6883]: mask 0xffffffffffffffffff000000000000000000 set
+208: cpu-bind=MASK - nid006091, task 209  1 [210245]: mask 0xffffffffffffffffff000000000000000000 set
+424: cpu-bind=MASK - nid006495, task 425  1 [293395]: mask 0xffffffffffffffffff000000000000000000 set
+496: cpu-bind=MASK - nid006543, task 497  1 [10801]: mask 0xffffffffffffffffff000000000000000000 set
+112: cpu-bind=MASK - nid005217, task 113  1 [79728]: mask 0xffffffffffffffffff000000000000000000 set
+280: cpu-bind=MASK - nid006393, task 281  1 [124431]: mask 0xffffffffffffffffff000000000000000000 set
+124: cpu-bind=MASK - nid005222, task 125  1 [266052]: mask 0xffffffffffffffffff000000000000000000 set
+508: cpu-bind=MASK - nid006562, task 509  1 [163605]: mask 0xffffffffffffffffff000000000000000000 set
+172: cpu-bind=MASK - nid005990, task 173  1 [47541]: mask 0xffffffffffffffffff000000000000000000 set
+472: cpu-bind=MASK - nid006514, task 473  1 [7035]: mask 0xffffffffffffffffff000000000000000000 set
+268: cpu-bind=MASK - nid006384, task 269  1 [144510]: mask 0xffffffffffffffffff000000000000000000 set
+304: cpu-bind=MASK - nid006399, task 305  1 [92878]: mask 0xffffffffffffffffff000000000000000000 set
+100: cpu-bind=MASK - nid005212, task 101  1 [208607]: mask 0xffffffffffffffffff000000000000000000 set
+ 24: cpu-bind=MASK - nid005191, task 24  0 [265331]: mask 0xffffffffffffffffff set
+168: cpu-bind=MASK - nid005988, task 168  0 [14002]: mask 0xffffffffffffffffff set
+296: cpu-bind=MASK - nid006397, task 296  0 [121655]: mask 0xffffffffffffffffff set
+404: cpu-bind=MASK - nid006476, task 404  0 [176169]: mask 0xffffffffffffffffff set
+312: cpu-bind=MASK - nid006401, task 315  3 [144496]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+408: cpu-bind=MASK - nid006479, task 411  3 [248325]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+120: cpu-bind=MASK - nid005221, task 123  3 [66337]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+260: cpu-bind=MASK - nid006379, task 263  3 [273990]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+488: cpu-bind=MASK - nid006540, task 491  3 [9649]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+476: cpu-bind=MASK - nid006516, task 479  3 [174552]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+392: cpu-bind=MASK - nid006468, task 395  3 [127745]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+356: cpu-bind=MASK - nid006455, task 359  3 [245149]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+212: cpu-bind=MASK - nid006092, task 215  3 [236188]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 32: cpu-bind=MASK - nid005193, task 35  3 [83366]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+500: cpu-bind=MASK - nid006546, task 503  3 [100906]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 68: cpu-bind=MASK - nid005202, task 71  3 [90789]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 80: cpu-bind=MASK - nid005207, task 83  3 [281666]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+372: cpu-bind=MASK - nid006460, task 374  2 [41142]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+456: cpu-bind=MASK - nid006508, task 458  2 [272800]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+288: cpu-bind=MASK - nid006395, task 290  2 [160789]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+400: cpu-bind=MASK - nid006475, task 402  2 [6884]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+208: cpu-bind=MASK - nid006091, task 210  2 [210246]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+424: cpu-bind=MASK - nid006495, task 426  2 [293396]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+496: cpu-bind=MASK - nid006543, task 498  2 [10802]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+112: cpu-bind=MASK - nid005217, task 114  2 [79729]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+280: cpu-bind=MASK - nid006393, task 282  2 [124432]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+124: cpu-bind=MASK - nid005222, task 126  2 [266053]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+508: cpu-bind=MASK - nid006562, task 510  2 [163606]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+172: cpu-bind=MASK - nid005990, task 174  2 [47542]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+472: cpu-bind=MASK - nid006514, task 474  2 [7036]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+268: cpu-bind=MASK - nid006384, task 270  2 [144511]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+304: cpu-bind=MASK - nid006399, task 306  2 [92879]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+100: cpu-bind=MASK - nid005212, task 102  2 [208608]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 24: cpu-bind=MASK - nid005191, task 25  1 [265332]: mask 0xffffffffffffffffff000000000000000000 set
+168: cpu-bind=MASK - nid005988, task 169  1 [14003]: mask 0xffffffffffffffffff000000000000000000 set
+296: cpu-bind=MASK - nid006397, task 297  1 [121656]: mask 0xffffffffffffffffff000000000000000000 set
+404: cpu-bind=MASK - nid006476, task 405  1 [176170]: mask 0xffffffffffffffffff000000000000000000 set
+372: cpu-bind=MASK - nid006460, task 375  3 [41143]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+456: cpu-bind=MASK - nid006508, task 459  3 [272801]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+288: cpu-bind=MASK - nid006395, task 291  3 [160790]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+400: cpu-bind=MASK - nid006475, task 403  3 [6885]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+208: cpu-bind=MASK - nid006091, task 211  3 [210247]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+424: cpu-bind=MASK - nid006495, task 427  3 [293397]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+496: cpu-bind=MASK - nid006543, task 499  3 [10803]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+112: cpu-bind=MASK - nid005217, task 115  3 [79730]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+172: cpu-bind=MASK - nid005990, task 175  3 [47543]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+472: cpu-bind=MASK - nid006514, task 475  3 [7037]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+268: cpu-bind=MASK - nid006384, task 271  3 [144512]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 24: cpu-bind=MASK - nid005191, task 26  2 [265333]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+168: cpu-bind=MASK - nid005988, task 170  2 [14004]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+296: cpu-bind=MASK - nid006397, task 298  2 [121657]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+404: cpu-bind=MASK - nid006476, task 406  2 [176171]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+296: cpu-bind=MASK - nid006397, task 299  3 [121658]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+304: cpu-bind=MASK - nid006399, task 307  3 [92880]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 24: cpu-bind=MASK - nid005191, task 27  3 [265334]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+404: cpu-bind=MASK - nid006476, task 407  3 [176172]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+436: cpu-bind=MASK - nid006498, task 439  3 [141906]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+412: cpu-bind=MASK - nid006485, task 412  0 [289814]: mask 0xffffffffffffffffff set
+448: cpu-bind=MASK - nid006504, task 451  3 [198955]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+216: cpu-bind=MASK - nid006093, task 219  3 [115924]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+168: cpu-bind=MASK - nid005988, task 171  3 [14005]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+412: cpu-bind=MASK - nid006485, task 413  1 [289815]: mask 0xffffffffffffffffff000000000000000000 set
+504: cpu-bind=MASK - nid006550, task 504  0 [102488]: mask 0xffffffffffffffffff set
+412: cpu-bind=MASK - nid006485, task 414  2 [289816]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+504: cpu-bind=MASK - nid006550, task 505  1 [102489]: mask 0xffffffffffffffffff000000000000000000 set
+504: cpu-bind=MASK - nid006550, task 506  2 [102490]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 16: cpu-bind=MASK - nid005188, task 16  0 [254599]: mask 0xffffffffffffffffff set
+ 16: cpu-bind=MASK - nid005188, task 17  1 [254600]: mask 0xffffffffffffffffff000000000000000000 set
+108: cpu-bind=MASK - nid005215, task 111  3 [287373]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 16: cpu-bind=MASK - nid005188, task 18  2 [254601]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+336: cpu-bind=MASK - nid006415, task 339  3 [116722]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 96: cpu-bind=MASK - nid005211, task 99  3 [185249]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+412: cpu-bind=MASK - nid006485, task 415  3 [289817]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+124: cpu-bind=MASK - nid005222, task 127  3 [266054]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+104: cpu-bind=MASK - nid005214, task 107  3 [213506]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 16: cpu-bind=MASK - nid005188, task 19  3 [254602]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+280: cpu-bind=MASK - nid006393, task 283  3 [124433]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 72: cpu-bind=MASK - nid005203, task 75  3 [233471]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+508: cpu-bind=MASK - nid006562, task 511  3 [163607]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+132: cpu-bind=MASK - nid005978, task 132  0 [186828]: mask 0xffffffffffffffffff set
+132: cpu-bind=MASK - nid005978, task 133  1 [186830]: mask 0xffffffffffffffffff000000000000000000 set
+132: cpu-bind=MASK - nid005978, task 134  2 [186831]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+100: cpu-bind=MASK - nid005212, task 103  3 [208609]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+332: cpu-bind=MASK - nid006413, task 332  0 [290400]: mask 0xffffffffffffffffff set
+332: cpu-bind=MASK - nid006413, task 333  1 [290401]: mask 0xffffffffffffffffff000000000000000000 set
+332: cpu-bind=MASK - nid006413, task 334  2 [290402]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 12: cpu-bind=MASK - nid005187, task 15  3 [146026]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+132: cpu-bind=MASK - nid005978, task 135  3 [186832]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+276: cpu-bind=MASK - nid006387, task 279  3 [207538]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+368: cpu-bind=MASK - nid006459, task 371  3 [116416]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+504: cpu-bind=MASK - nid006550, task 507  3 [102491]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+  4: cpu-bind=MASK - nid005185, task  7  3 [188251]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 64: cpu-bind=MASK - nid005201, task 67  3 [42678]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+332: cpu-bind=MASK - nid006413, task 335  3 [290403]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+ 56: cpu-bind=MASK - nid005199, task 56  0 [36445]: mask 0xffffffffffffffffff set
+176: cpu-bind=MASK - nid005991, task 176  0 [108439]: mask 0xffffffffffffffffff set
+ 56: cpu-bind=MASK - nid005199, task 57  1 [36446]: mask 0xffffffffffffffffff000000000000000000 set
+ 56: cpu-bind=MASK - nid005199, task 58  2 [36447]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+176: cpu-bind=MASK - nid005991, task 177  1 [108440]: mask 0xffffffffffffffffff000000000000000000 set
+176: cpu-bind=MASK - nid005991, task 178  2 [108441]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+ 56: cpu-bind=MASK - nid005199, task 59  3 [36448]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+176: cpu-bind=MASK - nid005991, task 179  3 [108442]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+  0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+  0: #
+  0: # Using devices
+179: nid005991: Test CUDA failure common.cu:986 'no CUDA-capable device is detected'
+179:  .. nid005991 pid 108442: Test failure common.cu:893
+srun: error: nid005991: task 179: Exited with exit code 2
+srun: Terminating StepId=152395.0
+  0: slurmstepd: error: *** STEP 152395.0 ON nid005184 CANCELLED AT 2025-02-11T13:15:55 ***
+srun: error: nid005196: tasks 44-46: Terminated
+srun: error: nid005194: tasks 36-37,39: Terminated
+srun: error: nid006398: tasks 300-303: Terminated
+srun: error: nid006493: tasks 420-422: Terminated
+srun: error: nid006091: tasks 208-211: Terminated
+srun: error: nid005202: tasks 68-70: Terminated
+srun: error: nid006479: tasks 408-410: Terminated
+srun: error: nid005188: tasks 16-19: Terminated
+srun: error: nid005190: tasks 20-22: Terminated
+srun: error: nid006510: tasks 460-463: Terminated
+srun: error: nid006379: tasks 260-262: Terminated
+srun: error: nid006520: tasks 480-482: Terminated
+srun: error: nid005209: tasks 88-91: Terminated
+srun: error: nid006408: tasks 320-322: Terminated
+srun: error: nid006493: task 423: Terminated
+srun: error: nid006492: tasks 416-419: Terminated
+srun: error: nid005979: tasks 136-139: Terminated
+srun: error: nid006520: task 483: Terminated
+srun: error: nid005222: tasks 124-127: Terminated
+srun: error: nid006366: tasks 236-239: Terminated
+srun: error: nid006418: tasks 340-343: Terminated
+srun: error: nid006379: task 263: Terminated
+srun: error: nid006378: tasks 256-259: Terminated
+srun: error: nid006408: task 323: Terminated
+srun: error: nid006504: tasks 448-450: Terminated
+srun: error: nid005210: tasks 92-95: Terminated
+srun: error: nid006513: tasks 468-471: Terminated
+srun: error: nid006466: tasks 388-391: Terminated
+srun: error: nid006496: tasks 428-431: Terminated
+srun: error: nid006460: tasks 372-375: Terminated
+srun: error: nid006393: tasks 280-282: Terminated
+srun: error: nid005190: task 23: Terminated
+srun: error: nid006541: tasks 492-495: Terminated
+srun: error: nid006371: tasks 244-246: Terminated
+srun: error: nid005196: task 47: Terminated
+srun: error: nid006540: tasks 488-491: Terminated
+srun: error: nid005992: tasks 180-182: Terminated
+srun: error: nid006393: task 283: Terminated
+srun: error: nid005981: tasks 144-147: Terminated
+srun: error: nid005991: tasks 176-178: Terminated
+srun: error: nid006503: tasks 444-447: Terminated
+srun: error: nid006082: tasks 196-199: Terminated
+srun: error: nid006380: tasks 264-266: Terminated
+srun: error: nid006455: tasks 356-359: Terminated
+srun: error: nid005204: tasks 76-77,79: Terminated
+srun: error: nid005992: task 183: Terminated
+srun: error: nid005187: tasks 12-15: Terminated
+srun: error: nid005990: tasks 172-175: Terminated
+srun: error: nid006514: tasks 472-475: Terminated
+srun: error: nid005199: tasks 56-59: Terminated
+srun: error: nid006497: tasks 432-435: Terminated
+srun: error: nid006374: tasks 248-251: Terminated
+srun: error: nid006380: task 267: Terminated
+srun: error: nid005982: tasks 148-151: Terminated
+srun: error: nid006400: tasks 308-311: Terminated
+srun: error: nid005203: tasks 72-75: Terminated
+srun: error: nid006536: tasks 484-487: Terminated
+srun: error: nid006463: tasks 380-383: Terminated
+srun: error: nid006550: tasks 504-507: Terminated
+srun: error: nid006458: tasks 364-367: Terminated
+srun: error: nid005984: tasks 152-155: Terminated
+srun: error: nid005200: tasks 60-63: Terminated
+srun: error: nid006396: tasks 292-295: Terminated
+srun: error: nid006468: tasks 392-395: Terminated
+srun: error: nid006410: tasks 324-327: Terminated
+srun: error: nid006384: tasks 268-271: Terminated
+srun: error: nid006385: tasks 272-275: Terminated
+srun: error: nid005988: tasks 168-171: Terminated
+srun: error: nid005986: tasks 160-163: Terminated
+srun: error: nid005214: tasks 104-107: Terminated
+srun: error: nid006356: tasks 228-231: Terminated
+srun: error: nid005185: tasks 4-7: Terminated
+srun: error: nid006501: tasks 440-443: Terminated
+srun: error: nid006456: tasks 360-363: Terminated
+srun: error: nid006485: tasks 412-415: Terminated
+srun: error: nid006459: tasks 368-371: Terminated
+srun: error: nid005978: tasks 132-135: Terminated
+srun: error: nid005201: tasks 64-67: Terminated
+srun: error: nid005997: tasks 188-191: Terminated
+srun: error: nid006401: tasks 312-314: Terminated
+srun: error: nid006495: tasks 424-427: Terminated
+srun: error: nid006394: tasks 284-287: Terminated
+srun: error: nid005191: tasks 24-27: Terminated
+srun: error: nid006543: tasks 496-498: Terminated
+srun: error: nid006512: tasks 464-467: Terminated
+srun: error: nid005208: tasks 84-87: Terminated
+srun: error: nid006358: tasks 232-235: Terminated
+srun: error: nid005218: tasks 116-119: Terminated
+srun: error: nid006401: task 315: Terminated
+srun: error: nid005198: tasks 52-55: Terminated
+srun: error: nid006092: tasks 212-215: Terminated
+srun: error: nid006413: tasks 332-335: Terminated
+srun: error: nid005192: tasks 28-31: Terminated
+srun: error: nid005186: tasks 8-11: Terminated
+srun: error: nid006479: task 411: Terminated
+srun: error: nid006507: tasks 452-455: Terminated
+srun: error: nid006464: tasks 384-387: Terminated
+srun: error: nid005194: task 38: Terminated
+srun: error: nid006387: tasks 276-279: Terminated
+srun: error: nid006371: task 247: Terminated
+srun: error: nid006412: tasks 328-331: Terminated
+srun: error: nid005197: tasks 48-51: Terminated
+srun: error: nid006546: tasks 500-503: Terminated
+srun: error: nid006352: tasks 224-227: Terminated
+srun: error: nid006395: tasks 288-291: Terminated
+srun: error: nid005204: task 78: Terminated
+srun: error: nid005223: tasks 128-131: Terminated
+srun: error: nid005202: task 71: Terminated
+srun: error: nid006087: tasks 200-203: Terminated
+srun: error: nid006504: task 451: Terminated
+srun: error: nid005985: tasks 156-159: Terminated
+srun: error: nid005207: tasks 80-83: Terminated
+srun: error: nid005215: tasks 108-111: Terminated
+srun: error: nid006397: tasks 296-299: Terminated
+srun: error: nid006415: tasks 336-339: Terminated
+srun: error: nid005217: tasks 112-115: Terminated
+srun: error: nid005211: tasks 96-99: Terminated
+srun: error: nid006543: task 499: Terminated
+srun: error: nid006399: tasks 304-307: Terminated
+srun: error: nid006377: tasks 252-255: Terminated
+srun: error: nid006461: tasks 376-379: Terminated
+srun: error: nid005993: tasks 184-187: Terminated
+srun: error: nid006368: tasks 240-243: Terminated
+srun: error: nid005195: tasks 40-43: Terminated
+srun: error: nid005987: tasks 164-167: Terminated
+srun: error: nid005980: tasks 140-143: Terminated
+srun: error: nid006498: tasks 436-439: Terminated
+srun: error: nid005999: tasks 192-195: Terminated
+srun: error: nid005221: tasks 120-123: Terminated
+srun: error: nid005184: tasks 0-3: Terminated
+srun: error: nid006453: tasks 348-351: Terminated
+srun: error: nid006475: tasks 400-403: Terminated
+srun: error: nid006344: tasks 220-223: Terminated
+srun: error: nid005212: tasks 100-103: Terminated
+srun: error: nid006451: tasks 344-347: Terminated
+srun: error: nid006508: tasks 456-459: Terminated
+srun: error: nid006470: tasks 396-399: Terminated
+srun: error: nid006405: tasks 316-319: Terminated
+srun: error: nid006476: tasks 404-407: Terminated
+srun: error: nid006562: tasks 508-511: Terminated
+srun: error: nid006516: tasks 476-479: Terminated
+srun: error: nid006093: tasks 216-219: Terminated
+srun: error: nid006454: tasks 352-355: Terminated
+srun: error: nid005193: tasks 32-35: Terminated
+srun: error: nid006088: tasks 204-207: Terminated
+srun: Force Terminated StepId=152395.0
