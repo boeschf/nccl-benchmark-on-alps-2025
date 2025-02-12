@@ -83,8 +83,10 @@ def plot_busbw_vs_nodes(data_store):
     for identifier, node_data in data_store.items():
         for num_nodes, dfs in node_data.items():
             if dfs:
+                print(f"Processing {identifier}: message sizes = {dfs[0].iloc[:, 0].unique()}")
                 all_message_sizes.update(dfs[0].iloc[:, 0])  # First column is message size
 
+    print(f"Found message sizes: {all_message_sizes}")
     all_message_sizes = sorted(all_message_sizes)  # Ensure sorted order
 
     # Iterate over each message size
@@ -92,7 +94,7 @@ def plot_busbw_vs_nodes(data_store):
         print(f"message size = {message_size}")
         message_size_mib = message_size / (1024 * 1024)  # Convert bytes to MiB
 
-        fig, ax = plt.subplots(figsize=(16, 7))
+        fig, ax = plt.subplots(figsize=(20, 7))
 
         configs = list(data_store.keys())
         node_counts = sorted(set(num_nodes for identifier in data_store for num_nodes in data_store[identifier]))
@@ -156,14 +158,14 @@ def plot_busbw_vs_nodes(data_store):
                 x=bar.get_x() + bar.get_width() / 2,
                 y=row["Bus Bandwidth (GB/s)"],
                 yerr=[[row["Bus Bandwidth (GB/s)"] - row["Min"]], [row["Max"] - row["Bus Bandwidth (GB/s)"]]],
-                fmt="none", capsize=5, capthick=2, color="black", alpha=0.7
+                fmt="none", capsize=3, capthick=1, color="white", alpha=0.7
             )
             # Add text above bars to indicate number of runs
             ax.text(
                 bar.get_x() + bar.get_width() / 2,  # Center text above bar
                 row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
                 f"{row['Num Runs']}",  # Display number of runs
-                ha="center", va="bottom", fontsize=10, fontweight="bold", color="black"
+                ha="center", va="bottom", fontsize=8, color="black"
             )
             # Add text at the bottom of the bars to indicate number of errors
             if row["Num Errors"] > 0:
@@ -172,7 +174,7 @@ def plot_busbw_vs_nodes(data_store):
                     #row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
                     0,
                     f"{row['Num Errors']}",  # Display number of runs
-                    ha="center", va="bottom", fontsize=10, fontweight="bold", color="white"
+                    ha="center", va="bottom", fontsize=8, fontweight="bold", color="white"
                 )
 
         # Adjust legend position
