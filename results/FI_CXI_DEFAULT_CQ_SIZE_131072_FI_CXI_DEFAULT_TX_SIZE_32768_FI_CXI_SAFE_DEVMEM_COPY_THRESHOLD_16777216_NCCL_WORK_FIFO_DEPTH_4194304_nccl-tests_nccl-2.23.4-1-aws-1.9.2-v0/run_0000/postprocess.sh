@@ -6,6 +6,6 @@
 ../../../parse_output.sh "./job-n-00064-N-0016-153525.out" "./job-n-00064-N-0016"
 ../../../parse_output.sh "./job-n-00128-N-0032-153526.out" "./job-n-00128-N-0032"
 ../../../parse_output.sh "./job-n-00256-N-0064-153527.out" "./job-n-00256-N-0064"
-../../../parse_output.sh "./job-n-00512-N-0128-153528.out" "./job-n-00512-N-0128"
+../../../parse_output.sh "./job-n-00512-N-0128-153740.out" "./job-n-00512-N-0128"
 ../../../parse_output.sh "./job-n-01024-N-0256-153529.out" "./job-n-01024-N-0256"
 ../../../parse_output.sh "./job-n-02048-N-0512-153530.out" "./job-n-02048-N-0512"
