@@ -1,0 +1,11 @@
+#!/bin/bash
+../../../parse_output.sh "./job-n-00004-N-0001-153581.out" "./job-n-00004-N-0001"
+../../../parse_output.sh "./job-n-00008-N-0002-153582.out" "./job-n-00008-N-0002"
+../../../parse_output.sh "./job-n-00016-N-0004-153583.out" "./job-n-00016-N-0004"
+../../../parse_output.sh "./job-n-00032-N-0008-153584.out" "./job-n-00032-N-0008"
+../../../parse_output.sh "./job-n-00064-N-0016-153585.out" "./job-n-00064-N-0016"
+../../../parse_output.sh "./job-n-00128-N-0032-153586.out" "./job-n-00128-N-0032"
+../../../parse_output.sh "./job-n-00256-N-0064-153587.out" "./job-n-00256-N-0064"
+../../../parse_output.sh "./job-n-00512-N-0128-153588.out" "./job-n-00512-N-0128"
+../../../parse_output.sh "./job-n-01024-N-0256-153589.out" "./job-n-01024-N-0256"
+../../../parse_output.sh "./job-n-02048-N-0512-153590.out" "./job-n-02048-N-0512"

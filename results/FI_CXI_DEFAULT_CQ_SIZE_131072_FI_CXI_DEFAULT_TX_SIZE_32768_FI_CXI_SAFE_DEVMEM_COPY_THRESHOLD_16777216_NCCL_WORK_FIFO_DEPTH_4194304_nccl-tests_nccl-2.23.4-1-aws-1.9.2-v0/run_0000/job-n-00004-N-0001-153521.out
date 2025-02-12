@@ -1,0 +1,90 @@
++ export MPICH_NO_BUFFER_ALIAS_CHECK=1
++ MPICH_NO_BUFFER_ALIAS_CHECK=1
++ export MPICH_GPU_SUPPORT_ENABLED=0
++ MPICH_GPU_SUPPORT_ENABLED=0
++ export FI_CXI_DEFAULT_CQ_SIZE=131072
++ FI_CXI_DEFAULT_CQ_SIZE=131072
++ export FI_CXI_DEFAULT_TX_SIZE=32768
++ FI_CXI_DEFAULT_TX_SIZE=32768
++ export FI_CXI_SAFE_DEVMEM_COPY_THRESHOLD=16777216
++ FI_CXI_SAFE_DEVMEM_COPY_THRESHOLD=16777216
++ export 'NCCL_NET=AWS Libfabric'
++ NCCL_NET='AWS Libfabric'
++ export MPICH_OFI_STARTUP_CONNECT=1
++ MPICH_OFI_STARTUP_CONNECT=1
++ export NCCL_TESTS_DEVICE=0
++ NCCL_TESTS_DEVICE=0
++ export FI_CXI_DISABLE_HOST_REGISTER=1
++ FI_CXI_DISABLE_HOST_REGISTER=1
++ export FI_HMEM_CUDA_USE_GDRCOPY=1
++ FI_HMEM_CUDA_USE_GDRCOPY=1
++ export NCCL_WORK_FIFO_DEPTH=4194304
++ NCCL_WORK_FIFO_DEPTH=4194304
++ export FI_CXI_RX_MATCH_MODE=software
++ FI_CXI_RX_MATCH_MODE=software
++ export NCCL_NET_GDR_LEVEL=PHB
++ NCCL_NET_GDR_LEVEL=PHB
++ export CUDA_CACHE_DISABLE=1
++ CUDA_CACHE_DISABLE=1
++ export MPICH_OFI_CXI_COUNTER_REPORT=2
++ MPICH_OFI_CXI_COUNTER_REPORT=2
++ export MPICH_COLL_OPT_OFF=mpi_allgather
++ MPICH_COLL_OPT_OFF=mpi_allgather
++ export FI_MR_CACHE_MONITOR=userfaultfd
++ FI_MR_CACHE_MONITOR=userfaultfd
++ export MPICH_SMP_SINGLE_COPY_MODE=NONE
++ MPICH_SMP_SINGLE_COPY_MODE=NONE
++ export NCCL_CROSS_NIC=0
++ NCCL_CROSS_NIC=0
++ http_proxy=http://proxy.cscs.ch:8080
++ https_proxy=https://proxy.cscs.ch:8080
++ srun -l --cpu-bind=verbose,mask_cpu:0xffffffffffffffffff,0xffffffffffffffffff000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000,0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 /iopsstor/scratch/cscs/boeschf/nccl-testing-new/launch all_reduce_perf -b 8 -e 4294967296 -f 2 -w 8 -n 24
+0: cpu-bind=MASK - nid007413, task  0  0 [294279]: mask 0xffffffffffffffffff set
+0: cpu-bind=MASK - nid007413, task  1  1 [294280]: mask 0xffffffffffffffffff000000000000000000 set
+0: cpu-bind=MASK - nid007413, task  2  2 [294281]: mask 0xffffffffffffffffff000000000000000000000000000000000000 set
+0: cpu-bind=MASK - nid007413, task  3  3 [294282]: mask 0xffffffffffffffffff000000000000000000000000000000000000000000000000000000 set
+0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+0: #
+0: # Using devices
+0: #  Rank  0 Group  0 Pid 294279 on  nid007413 device  0 [0x01] NVIDIA GH200 120GB
+0: #  Rank  1 Group  0 Pid 294280 on  nid007413 device  0 [0x01] NVIDIA GH200 120GB
+0: #  Rank  2 Group  0 Pid 294281 on  nid007413 device  0 [0x01] NVIDIA GH200 120GB
+0: #  Rank  3 Group  0 Pid 294282 on  nid007413 device  0 [0x01] NVIDIA GH200 120GB
+0: #
+0: #                                                              out-of-place                       in-place          
+0: #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+0: #        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+0:            8             2     float     sum      -1     7.92    0.00    0.00      0     8.14    0.00    0.00      0
+0:           16             4     float     sum      -1     8.05    0.00    0.00      0     8.06    0.00    0.00      0
+0:           32             8     float     sum      -1     8.55    0.00    0.01      0     8.62    0.00    0.01      0
+0:           64            16     float     sum      -1     9.20    0.01    0.01      0     9.14    0.01    0.01      0
+0:          128            32     float     sum      -1     9.34    0.01    0.02      0     9.07    0.01    0.02      0
+0:          256            64     float     sum      -1     9.54    0.03    0.04      0     9.12    0.03    0.04      0
+0:          512           128     float     sum      -1     9.51    0.05    0.08      0     9.28    0.06    0.08      0
+0:         1024           256     float     sum      -1     9.65    0.11    0.16      0     9.12    0.11    0.17      0
+0:         2048           512     float     sum      -1     9.53    0.21    0.32      0     9.37    0.22    0.33      0
+0:         4096          1024     float     sum      -1     9.80    0.42    0.63      0     9.38    0.44    0.65      0
+0:         8192          2048     float     sum      -1    10.09    0.81    1.22      0     9.63    0.85    1.28      0
+0:        16384          4096     float     sum      -1    10.80    1.52    2.27      0    10.33    1.59    2.38      0
+0:        32768          8192     float     sum      -1    10.98    2.98    4.48      0    10.67    3.07    4.61      0
+0:        65536         16384     float     sum      -1    11.22    5.84    8.76      0    10.71    6.12    9.18      0
+0:       131072         32768     float     sum      -1    11.54   11.36   17.04      0    11.04   11.87   17.80      0
+0:       262144         65536     float     sum      -1    11.78   22.26   33.39      0    11.29   23.22   34.83      0
+0:       524288        131072     float     sum      -1    14.47   36.22   54.33      0    13.49   38.87   58.30      0
+0:      1048576        262144     float     sum      -1    18.67   56.16   84.24      0    18.52   56.61   84.91      0
+0:      2097152        524288     float     sum      -1    30.15   69.56  104.35      0    30.03   69.84  104.76      0
+0:      4194304       1048576     float     sum      -1    43.88   95.58  143.37      0    43.21   97.07  145.61      0
+0:      8388608       2097152     float     sum      -1    62.56  134.10  201.15      0    62.35  134.54  201.81      0
+0:     16777216       4194304     float     sum      -1    101.5  165.35  248.02      0    99.11  169.28  253.92      0
+0:     33554432       8388608     float     sum      -1    178.6  187.84  281.76      0    177.9  188.62  282.93      0
+0:     67108864      16777216     float     sum      -1    335.4  200.10  300.14      0    332.7  201.70  302.55      0
+0:    134217728      33554432     float     sum      -1    632.8  212.09  318.14      0    633.9  211.72  317.59      0
+0:    268435456      67108864     float     sum      -1   1227.8  218.64  327.95      0   1224.4  219.24  328.86      0
+0:    536870912     134217728     float     sum      -1   2413.9  222.41  333.62      0   2404.4  223.28  334.92      0
+0:   1073741824     268435456     float     sum      -1   4765.7  225.31  337.96      0   4764.1  225.38  338.07      0
+0:   2147483648     536870912     float     sum      -1   9499.0  226.07  339.11      0   9507.6  225.87  338.81      0
+0:   4294967296    1073741824     float     sum      -1    18989  226.18  339.27      0    19005  225.99  338.99      0
+0: # Out of bounds values : 0 OK
+0: # Avg bus bandwidth    : 116.421 
+0: #
+0: 
