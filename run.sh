@@ -6,13 +6,18 @@ NTASKS_PER_NODE=4
 TIME_LIMIT="00:10:00"
 
 # Default user environment
-DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.9.2:v0"
+DEFAULT_UENV="nccl-tests/nccl-2.26.2-1-aws-1.9.2:v0"
+#DEFAULT_UENV="nccl-tests/nccl-2.26.2-1-aws-1.13.0:v0"
+#DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.9.2:v0"
 #DEFAULT_UENV="nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0"
 UENV="$DEFAULT_UENV"
 
 # Default launcher script
 DEFAULT_LAUNCHER="./launch"
 LAUNCHER="$DEFAULT_LAUNCHER"
+
+DEFAULT_OUTPUT_DIR="./results"
+OUTPUT_DIR="${DEFAULT_OUTPUT_DIR}"
 
 # Default environment variables
 declare -A DEFAULT_ENV_VARS=(
@@ -26,6 +31,8 @@ declare -A DEFAULT_ENV_VARS=(
     [NCCL_CROSS_NIC]=0
     [NCCL_NET_GDR_LEVEL]=PHB
     [NCCL_NET]="AWS Libfabric"
+    [NCCL_DEBUG]=INFO
+    [FI_LOG_LEVEL]="INFO"
     [FI_CXI_DISABLE_HOST_REGISTER]=1
     [FI_MR_CACHE_MONITOR]=userfaultfd
     [FI_CXI_RX_MATCH_MODE]=software
@@ -45,6 +52,9 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --launcher=*)  # Handle launcher script parameter first
             LAUNCHER="${1#*=}"
+            ;;
+        --output=*)  # Handle launcher script parameter first
+            OUTPUT_DIR="${1#*=}"
             ;;
         *=*)  # Handle key=value pairs as environment variables
             VAR_NAME="${1%%=*}"
@@ -103,11 +113,11 @@ for (( i=0; i<$NTASKS_PER_NODE && i<4; i++ )); do
 done
 
 # Define result directory
-RESULT_DIR="./results/${IDENTIFIER}"
-mkdir -p "$RESULT_DIR"
+RESULT_DIR="${OUTPUT_DIR}/${IDENTIFIER}"
+mkdir -p "${OUTPUT_DIR}"
+mkdir -p "${RESULT_DIR}"
 
 # Find the next available run_xxxx directory
-mkdir -p "$RESULT_DIR"
 RUN_COUNT=0
 while [[ -d "$RESULT_DIR/run_$(printf "%04d" $RUN_COUNT)" ]]; do
     ((RUN_COUNT++))
@@ -117,10 +127,6 @@ mkdir -p "$RUN_DIR"
 
 # Store the identifier in a file for easy parsing later
 echo "$IDENTIFIER_0" > "${RESULT_DIR}/identifier.txt"
-
-# create a postprocessing script
-echo "#!/bin/bash" > "${RUN_DIR}/postprocess.sh"
-chmod +x "${RUN_DIR}/postprocess.sh"
 
 # Function to decide whether to quote a value
 quote_if_needed() {
@@ -144,11 +150,14 @@ for NODES in "${NODE_COUNTS[@]}"; do
     PREFIX="${RUN_DIR}/job-${POSTFIX}"
 
     JOB_SCRIPT="${PREFIX}.sh"
+    OUT_DATA_PREFIX="${PREFIX}"
+    NCCL_DEBUG_PREFIX="${PREFIX}"
     cat <<EOT > "${JOB_SCRIPT}"
 #!/bin/bash
 
 #SBATCH --job-name nccl-tests
-#SBATCH --output=${PREFIX}-%j.out
+#SBATCH --output=${OUT_DATA_PREFIX}-%j-logs/std.out
+#SBATCH --error=${OUT_DATA_PREFIX}-%j-logs/std.err
 #SBATCH --time=${TIME_LIMIT}
 #SBATCH --nodes=${NODES}
 #SBATCH --ntasks-per-node=${NTASKS_PER_NODE}
@@ -158,6 +167,10 @@ for NODES in "${NODE_COUNTS[@]}"; do
 #SBATCH --account=a-csstaff
 #SBATCH --uenv=${UENV}:/user-environment
 #SBATCH --view=default
+#SBATCH --network=disable_rdzv_get
+
+OUT_DATA_DIR="${OUT_DATA_PREFIX}-\${SLURM_JOB_ID}-logs"
+mkdir -p \${OUT_DATA_DIR}
 
 set -x
 
@@ -174,20 +187,22 @@ EOT
     # Append the job execution command
     cat <<EOT >> "${JOB_SCRIPT}"
 
+OUT_DATA="\${OUT_DATA_DIR}/bench.log"
+NCCL_DEBUG_DIR="\${OUT_DATA_DIR}/nccl-debug"
+mkdir -p "\${NCCL_DEBUG_DIR}"
+export NCCL_DEBUG_FILE="\${NCCL_DEBUG_DIR}/nccl.%h.%p.log"
+
 # Launch executable
 http_proxy=http://proxy.cscs.ch:8080 https_proxy=https://proxy.cscs.ch:8080 \\
 srun -l \\
     --cpu-bind=${CPUBIND} \\
     ${LAUNCHER} \\
-    all_reduce_perf -b 8 -e 4294967296 -f 2 -w 8 -n 24
+    all_reduce_perf -b 8 -e 4294967296 -f 2 -w 8 -n 24 > \${OUT_DATA}
 EOT
 
     # Submit job and capture job ID
     chmod +x "${JOB_SCRIPT}"
     JOB_ID=$(sbatch "${JOB_SCRIPT}" | awk '{print $NF}')
     echo "Job submitted with ID $JOB_ID"
-
-    # Add to postprocessing script
-    printf '../../../parse_output.sh "%s" "%s"\n' "./job-${POSTFIX}-${JOB_ID}.out" "./job-${POSTFIX}" >> "${RUN_DIR}/postprocess.sh"
 
 done

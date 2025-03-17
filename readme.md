@@ -81,6 +81,8 @@ structure could look like this
 where each run directory will contain the submission scripts and a post-processing
 script:
 
+    results
+    :
     ├── NCCL_CROSS_NIC_2_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
     │   ├── identifier.txt
     │   └── run_0000
@@ -100,29 +102,61 @@ script:
 After the jobs have finished, you can run the `postprocess.sh` script in the
 run subdirectory to generate a summary of the results which can the later be
 used to generate plots with the `plot_results.py` script.
+Eventually, you will find the following files in the results directories:
+
+- standard output: `job-n-xxxxx-N-yyyy-zzzzzz.out`
+- `nccl` debug info: `job-n-xxxxx-N-yyyy-zzzzzz.nccl`
+- benchmark result: `job-n-xxxxx-N-yyyy-zzzzzz.log`
+- benchmark result table: `job-n-xxxxx-N-yyyy.txt`
+- benchmark result table: `job-n-xxxxx-N-yyyy.csv`
+
+    results
+    :
+    ├── NCCL_CROSS_NIC_2_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    │   ├── identifier.txt
+    │   └── run_0000
+    :       :
+    │       ├── job-n-00256-N-0064-257708.log
+    │       ├── job-n-00256-N-0064-257708.nccl
+    │       ├── job-n-00256-N-0064-257708.out
+    │       ├── job-n-00256-N-0064.csv
+    │       ├── job-n-00256-N-0064.sh
+    │       ├── job-n-00256-N-0064.txt
+    :       :
+    │       └── postprocess.sh
+    :
 
 The default environment variables are set in the `run.sh` script:
-
     
+
     CUDA_CACHE_DISABLE=1
     MPICH_NO_BUFFER_ALIAS_CHECK=1
     MPICH_OFI_STARTUP_CONNECT=1
     MPICH_SMP_SINGLE_COPY_MODE=NONE
     MPICH_GPU_SUPPORT_ENABLED=0
     MPICH_OFI_CXI_COUNTER_REPORT=2
-    MPICH_COLL_OPT_OFF]=mpi_allgather
+    MPICH_COLL_OPT_OFF=mpi_allgather
     NCCL_CROSS_NIC=0
     NCCL_NET_GDR_LEVEL=PHB
-    NCCL_NET]="AWS Libfabric"
+    NCCL_NET="AWS Libfabric"
+    NCCL_DEBUG=INFO
+    FI_LOG_LEVEL="INFO"
     FI_CXI_DISABLE_HOST_REGISTER=1
     FI_MR_CACHE_MONITOR=userfaultfd
     FI_CXI_RX_MATCH_MODE=software
     FI_HMEM_CUDA_USE_GDRCOPY=1
     NCCL_TESTS_DEVICE=0
 
+
 The default launch script is [launch](launch) which sets the visible GPU according to
 the local `slurm rank` and restricts `nccl` to use the slingshot high-speed
 network.
+
+Furthermore, all benchmarks are launched with the `slurm` option
+
+
+    --network=disable_rdzv_get
+
 
 ## Results
 

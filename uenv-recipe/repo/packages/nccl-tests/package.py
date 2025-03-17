@@ -1,4 +1,5 @@
-# Copyright Spack Project Developers. See COPYRIGHT file for details.
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
@@ -11,9 +12,9 @@ class NcclTests(MakefilePackage, CudaPackage):
     the correctness of NCCL operations."""
 
     homepage = "https://github.com/NVIDIA/nccl-tests"
-    #url = "https://github.com/NVIDIA/nccl-tests/archive/v2.0.0.tar.gz"
-    url = "https://github.com/NVIDIA/nccl-tests/archive/refs/tags/v2.14.0.tar.gz"
+    url = "https://github.com/NVIDIA/nccl-tests/archive/refs/tags/v2.14.1.tar.gz"
 
+    version("2.14.1", sha256="51ee5af32fa7d16b31e76903d0339f644068b6a34a81e450b98bd7b0b8746af1")
     version("2.14.0", sha256="6bcdd98c9ffe55dc442e0378fabfe82864c2d61cf1cffeb68ea2698221b5d7b2")
     version("2.13.6", sha256="52b472a58a4918d3221a9b8c4bd9335382643d7e241983918b64692d685cc3d1")
     version("2.0.0", sha256="731fc3b7c37de59cfe880bf198349ac185639ef23570749ea6aef334c850c49c")
