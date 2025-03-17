@@ -51,10 +51,10 @@ The `run.sh` script launches a range of jobs. It takes as arguments changes to
 the environment variables, as well as the particular uenv to use. The script is
 intended to be run on the login node. An example invocation would be:
 
-    ./run.sh NCCL_IGNORE_CPU_AFFINITY=1 nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0 --launcher=launch_with_fixed_hsn
+    ./run.sh NCCL_IGNORE_CPU_AFFINITY=1 nccl-tests/nccl-2.26.2-1-aws-1.13.0:v0 --launcher=launch_with_fixed_hsn
 
 This will run the benchmarks with the `NCCL_IGNORE_CPU_AFFINITY` environment
-variable set to `1` and the `nccl-tests/nccl-2.23.4-1-aws-1.13.0:v0` uenv, and
+variable set to `1` and the `nccl-tests/nccl-2.26.2-1-aws-1.13.0:v0` uenv, and
 will use the `launch_with_fixed_hsn` launch script.
 
 The script will create a directory `results` in the current working directory
@@ -66,12 +66,12 @@ will be stored. In order to gather statistics from multiple runs, a new
 structure could look like this
 
     results
-    ├── launch_with_fixed_hsn_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    ├── launch_with_fixed_hsn_nccl-tests_nccl-2.26.2-1-aws-1.9.2-v0
     │   ├── identifier.txt
     │   ├── run_0000
     │   ├── run_0001
     │   └── run_0002
-    ├── NCCL_CROSS_NIC_1_launch_with_fixed_hsn_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
+    ├── NCCL_CROSS_NIC_1_launch_with_fixed_hsn_nccl-tests_nccl-2.26.2-1-aws-1.9.2-v0
     │   ├── identifier.txt
     │   ├── run_0000
     │   ├── run_0001
@@ -95,18 +95,20 @@ script:
     │       ├── job-n-00256-N-0064.sh
     │       ├── job-n-00512-N-0128.sh
     │       ├── job-n-01024-N-0256.sh
-    │       ├── job-n-02048-N-0512.sh
-    │       └── postprocess.sh
-
+    │       └── job-n-02048-N-0512.sh
+    :
 
 After the jobs have finished, you can run the `postprocess.sh` script in the
-run subdirectory to generate a summary of the results which can the later be
+top level directory to generate a summary of the results which can the later be
 used to generate plots with the `plot_results.py` script.
-Eventually, you will find the following files in the results directories:
+Eventually, you will find the following files and directories in the results directories:
 
-- standard output: `job-n-xxxxx-N-yyyy-zzzzzz.out`
-- `nccl` debug info: `job-n-xxxxx-N-yyyy-zzzzzz.nccl`
-- benchmark result: `job-n-xxxxx-N-yyyy-zzzzzz.log`
+- job script: `job-n-xxxxx-N-yyyy.sh`
+- log files: `job-n-00004-N-0001-258875-logs`
+    - benchmark results: `bench.log`
+    - nccl debug info: `nccl-debug`
+    - standard error: `std.err`
+    - standard output: `std.out`
 - benchmark result table: `job-n-xxxxx-N-yyyy.txt`
 - benchmark result table: `job-n-xxxxx-N-yyyy.csv`
 
@@ -116,18 +118,17 @@ Eventually, you will find the following files in the results directories:
     │   ├── identifier.txt
     │   └── run_0000
     :       :
-    │       ├── job-n-00256-N-0064-257708.log
-    │       ├── job-n-00256-N-0064-257708.nccl
-    │       ├── job-n-00256-N-0064-257708.out
-    │       ├── job-n-00256-N-0064.csv
-    │       ├── job-n-00256-N-0064.sh
-    │       ├── job-n-00256-N-0064.txt
+    │       ├── job-n-01024-N-0256-258883-logs
+    │       │   ├── bench.log
+    │       │   ├── nccl-debug
+    │       │   ├── std.err
+    │       │   └── std.out
+    │       ├── job-n-01024-N-0256.csv
+    │       ├── job-n-01024-N-0256.sh
+    │       ├── job-n-01024-N-0256.txt
     :       :
-    │       └── postprocess.sh
-    :
 
 The default environment variables are set in the `run.sh` script:
-    
 
     CUDA_CACHE_DISABLE=1
     MPICH_NO_BUFFER_ALIAS_CHECK=1
@@ -162,7 +163,7 @@ Furthermore, all benchmarks are launched with the `slurm` option
 
 Results are plotted for different message sizes. The legends indicate the
 difference with respect to the default environment variables. The `nccl`
-version is fixed at `2.23.4-1` while there are two versions of the
+version is fixed at `2.26.2-1` while there are two versions of the
 `aws-ofi-plugin`: `1.9.2` and `1.13.0`. The number of runs is indicated above
 the bars. The hatched bars indicate that the sanity check has failed for at
 least one run and wrong results were obtained. The number of failed runs is
