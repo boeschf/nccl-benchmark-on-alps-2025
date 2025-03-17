@@ -103,16 +103,6 @@ top level directory to generate a summary of the results which can the later be
 used to generate plots with the `plot_results.py` script.
 Eventually, you will find the following files and directories in the results directories:
 
-- job script: `job-n-xxxxx-N-yyyy.sh`
-- log files: `job-n-00004-N-0001-258875-logs`
-    - benchmark results: `bench.log`
-    - nccl debug info: `nccl-debug`
-    - standard error: `std.err`
-    - standard output: `std.out`
-- benchmark result table: `job-n-xxxxx-N-yyyy.txt`
-- benchmark result table: `job-n-xxxxx-N-yyyy.csv`
-
-
     results
     :
     ├── NCCL_CROSS_NIC_2_nccl-tests_nccl-2.23.4-1-aws-1.9.2-v0
@@ -128,6 +118,18 @@ Eventually, you will find the following files and directories in the results dir
     │       ├── job-n-01024-N-0256.sh
     │       ├── job-n-01024-N-0256.txt
     :       :
+
+i.e., for each job, there will be a directory containing
+
+- job script: `job-n-xxxxx-N-yyyy.sh`
+- log files: `job-n-xxxxx-N-yyyy-zzzzzz-logs`
+    - benchmark results: `bench.log`
+    - nccl debug info: `nccl-debug`
+    - standard error: `std.err`
+    - standard output: `std.out`
+- benchmark result table: `job-n-xxxxx-N-yyyy.txt`
+- benchmark result table: `job-n-xxxxx-N-yyyy.csv`
+
 
 The default environment variables are set in the `run.sh` script:
 

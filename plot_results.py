@@ -9,7 +9,7 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results_disable_rdzv_get"
+RESULTS_DIR = "results"
 PLOTS_DIR = "plots"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
