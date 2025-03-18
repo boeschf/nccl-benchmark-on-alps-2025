@@ -1,0 +1,66 @@
+0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+0: #
+0: # Using devices
+0: #  Rank  0 Group  0 Pid  43817 on  nid007368 device  0 [0009:01:00] NVIDIA GH200 120GB
+0: #  Rank  1 Group  0 Pid  43818 on  nid007368 device  0 [0019:01:00] NVIDIA GH200 120GB
+0: #  Rank  2 Group  0 Pid  43819 on  nid007368 device  0 [0029:01:00] NVIDIA GH200 120GB
+0: #  Rank  3 Group  0 Pid  43820 on  nid007368 device  0 [0039:01:00] NVIDIA GH200 120GB
+0: #  Rank  4 Group  0 Pid  44749 on  nid007369 device  0 [0009:01:00] NVIDIA GH200 120GB
+0: #  Rank  5 Group  0 Pid  44750 on  nid007369 device  0 [0019:01:00] NVIDIA GH200 120GB
+0: #  Rank  6 Group  0 Pid  44751 on  nid007369 device  0 [0029:01:00] NVIDIA GH200 120GB
+0: #  Rank  7 Group  0 Pid  44752 on  nid007369 device  0 [0039:01:00] NVIDIA GH200 120GB
+0: #
+0: #                                                              out-of-place                       in-place          
+0: #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+0: #        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+0:            8             2     float     sum      -1    17.42    0.00    0.00      0    16.32    0.00    0.00      0
+0:           16             4     float     sum      -1    16.31    0.00    0.00      0    16.22    0.00    0.00      0
+0:           32             8     float     sum      -1    16.54    0.00    0.00      0    16.14    0.00    0.00      0
+0:           64            16     float     sum      -1    16.56    0.00    0.01      0    16.40    0.00    0.01      0
+0:          128            32     float     sum      -1    18.26    0.01    0.01      0    17.83    0.01    0.01      0
+0:          256            64     float     sum      -1    18.19    0.01    0.02      0    18.05    0.01    0.02      0
+0:          512           128     float     sum      -1    18.61    0.03    0.05      0    18.20    0.03    0.05      0
+0:         1024           256     float     sum      -1    19.21    0.05    0.09      0    19.06    0.05    0.09      0
+0:         2048           512     float     sum      -1    20.11    0.10    0.18      0    19.91    0.10    0.18      0
+0:         4096          1024     float     sum      -1    22.26    0.18    0.32      0    21.37    0.19    0.34      0
+0:         8192          2048     float     sum      -1    27.76    0.30    0.52      0    21.67    0.38    0.66      0
+0:        16384          4096     float     sum      -1    28.29    0.58    1.01      0    22.78    0.72    1.26      0
+0:        32768          8192     float     sum      -1    30.06    1.09    1.91      0    23.73    1.38    2.42      0
+0:        65536         16384     float     sum      -1    119.5    0.55    0.96      0    108.0    0.61    1.06      0
+0:       131072         32768     float     sum      -1    119.7    1.09    1.92      0    119.0    1.10    1.93      0
+0:       262144         65536     float     sum      -1    227.2    1.15    2.02      0    260.0    1.01    1.76      0
+0:       524288        131072     float     sum      -1    470.3    1.11    1.95      0    441.5    1.19    2.08      0
+0:      1048576        262144     float     sum      -1    728.9    1.44    2.52      0    696.4    1.51    2.63      0
+0:      2097152        524288     float     sum      -1    140.4   14.94   26.15      0    141.5   14.82   25.94      0
+0:      4194304       1048576     float     sum      -1    214.5   19.55   34.21      0    216.0   19.42   33.99      0
+0:      8388608       2097152     float     sum      -1    340.2   24.66   43.15      0    339.0   24.75   43.31      0
+0:     16777216       4194304     float     sum      -1    572.9   29.29   51.25      0    562.9   29.80   52.16      0
+0:     33554432       8388608     float     sum      -1    878.3   38.21   66.86      0    878.9   38.18   66.81      0
+0:     67108864      16777216     float     sum      -1   1441.6   46.55   81.47      0   1455.1   46.12   80.71      0
+0:    134217728      33554432     float     sum      -1   2373.8   56.54   98.95      0   2376.2   56.48   98.85      0
+0:    268435456      67108864     float     sum      -1   3774.3   71.12  124.46      0   3791.9   70.79  123.89      0
+0:    536870912     134217728     float     sum      -1   6733.7   79.73  139.53      0   6737.3   79.69  139.45      0
+0:   1073741824     268435456     float     sum      -1    12601   85.21  149.12      0    12535   85.66  149.91      0
+0:   2147483648     536870912     float     sum      -1    24247   88.57  154.99      0    24229   88.63  155.11      0
+0:   4294967296    1073741824     float     sum      -1    47480   90.46  158.30      0    47475   90.47  158.32      0
+0: # Out of bounds values : 0 OK
+0: # Avg bus bandwidth    : 38.0813 
+0: #
+0: 
+0: MPICH Slingshot Network Summary: 0 network timeouts
+0: 
+0: MPICH Slingshot CXI Counter Summary:
+0: Counter                                Samples          Min         (/s)         Mean         (/s)          Max         (/s)
+0: atu_cache_hit_base_page_size_0               8    293635260   13982631.4    293770446   13989068.9    293825814   13991705.4
+0: atu_cache_hit_derivative1_page_size_0        8       509203      24247.8       510929      24329.9       512893      24423.5
+0: lpe_net_match_priority_0                     8     58885944    2804092.6     58919393    2805685.4     58956483    2807451.6
+0: lpe_net_match_overflow_0                     8        36781       1751.5        37922       1805.8        39197       1866.5
+0: lpe_net_match_request_0                      8          487         23.2         1053         50.2         2147        102.2
+0: lpe_rndzv_puts_0                             8       231384      11018.3       231384      11018.3       231384      11018.3
+0: hni_rx_paused_0                              8          676         32.2          812         38.7          953         45.4
+0: hni_rx_paused_1                              4            6          0.3           17          0.8           46          2.2
+0: parbs_tarb_pi_posted_pkts                    8    471865489   22469785.2    472189539   22485216.2    472652398   22507257.0
+0: parbs_tarb_pi_posted_blocked_cnt             8    329727881   15701327.7    331162425   15769639.3    333105386   15862161.2
+0: parbs_tarb_pi_non_posted_pkts                8    235848987   11230904.1    235961680   11236270.5    236018664   11238984.0
+0: parbs_tarb_pi_non_posted_blocked_cnt         8       108775       5179.8       122247       5821.3       140779       6703.8
+0: 
