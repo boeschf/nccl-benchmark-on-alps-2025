@@ -145,6 +145,8 @@ def plot_busbw_vs_nodes(data_store):
             palette="tab20", ax=ax, size=12
         )
 
+        ax.set_xlim(0, None)
+
         ## Create bar plot
         #bars = sns.barplot(
         #    data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", hue="Config", dodge=True,
