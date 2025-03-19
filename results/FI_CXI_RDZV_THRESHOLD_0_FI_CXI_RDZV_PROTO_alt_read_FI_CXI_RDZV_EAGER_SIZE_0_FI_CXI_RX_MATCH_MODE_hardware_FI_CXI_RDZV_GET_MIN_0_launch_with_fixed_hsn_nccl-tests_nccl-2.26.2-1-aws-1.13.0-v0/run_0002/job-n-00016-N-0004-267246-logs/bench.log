@@ -1,0 +1,76 @@
+ 0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+ 0: #
+ 0: # Using devices
+ 0: #  Rank  0 Group  0 Pid   4685 on  nid005460 device  0 [0009:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  1 Group  0 Pid   4686 on  nid005460 device  0 [0019:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  2 Group  0 Pid   4687 on  nid005460 device  0 [0029:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  3 Group  0 Pid   4688 on  nid005460 device  0 [0039:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  4 Group  0 Pid 107700 on  nid005548 device  0 [0009:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  5 Group  0 Pid 107701 on  nid005548 device  0 [0019:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  6 Group  0 Pid 107702 on  nid005548 device  0 [0029:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  7 Group  0 Pid 107703 on  nid005548 device  0 [0039:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  8 Group  0 Pid 253057 on  nid005549 device  0 [0009:01:00] NVIDIA GH200 120GB
+ 0: #  Rank  9 Group  0 Pid 253058 on  nid005549 device  0 [0019:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 10 Group  0 Pid 253059 on  nid005549 device  0 [0029:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 11 Group  0 Pid 253060 on  nid005549 device  0 [0039:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 12 Group  0 Pid 158165 on  nid005551 device  0 [0009:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 13 Group  0 Pid 158166 on  nid005551 device  0 [0019:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 14 Group  0 Pid 158167 on  nid005551 device  0 [0029:01:00] NVIDIA GH200 120GB
+ 0: #  Rank 15 Group  0 Pid 158168 on  nid005551 device  0 [0039:01:00] NVIDIA GH200 120GB
+ 0: #
+ 0: #                                                              out-of-place                       in-place          
+ 0: #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+ 0: #        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+ 0:            8             2     float     sum      -1    25.06    0.00    0.00      0    24.52    0.00    0.00      0
+ 0:           16             4     float     sum      -1    24.37    0.00    0.00      0    24.09    0.00    0.00      0
+ 0:           32             8     float     sum      -1    23.82    0.00    0.00      0    23.95    0.00    0.00      0
+ 0:           64            16     float     sum      -1    25.03    0.00    0.00      0    24.31    0.00    0.00      0
+ 0:          128            32     float     sum      -1    45.80    0.00    0.01      0    45.73    0.00    0.01      0
+ 0:          256            64     float     sum      -1    48.53    0.01    0.01      0    46.19    0.01    0.01      0
+ 0:          512           128     float     sum      -1    47.38    0.01    0.02      0    46.70    0.01    0.02      0
+ 0:         1024           256     float     sum      -1    48.32    0.02    0.04      0    48.31    0.02    0.04      0
+ 0:         2048           512     float     sum      -1    50.74    0.04    0.08      0    50.50    0.04    0.08      0
+ 0:         4096          1024     float     sum      -1    55.26    0.07    0.14      0    54.39    0.08    0.14      0
+ 0:         8192          2048     float     sum      -1    69.65    0.12    0.22      0    55.08    0.15    0.28      0
+ 0:        16384          4096     float     sum      -1    70.79    0.23    0.43      0    55.80    0.29    0.55      0
+ 0:        32768          8192     float     sum      -1    74.92    0.44    0.82      0    59.37    0.55    1.03      0
+ 0:        65536         16384     float     sum      -1    80.83    0.81    1.52      0    64.53    1.02    1.90      0
+ 0:       131072         32768     float     sum      -1    125.4    1.05    1.96      0    126.7    1.03    1.94      0
+ 0:       262144         65536     float     sum      -1    131.0    2.00    3.75      0    131.9    1.99    3.73      0
+ 0:       524288        131072     float     sum      -1    213.5    2.46    4.60      0    303.2    1.73    3.24      0
+ 0:      1048576        262144     float     sum      -1    388.6    2.70    5.06      0    387.1    2.71    5.08      0
+ 0:      2097152        524288     float     sum      -1    237.3    8.84   16.57      0    235.3    8.91   16.71      0
+ 0:      4194304       1048576     float     sum      -1    370.6   11.32   21.22      0    370.9   11.31   21.20      0
+ 0:      8388608       2097152     float     sum      -1    638.3   13.14   24.64      0    616.0   13.62   25.54      0
+ 0:     16777216       4194304     float     sum      -1   1212.4   13.84   25.95      0   1196.5   14.02   26.29      0
+ 0:     33554432       8388608     float     sum      -1   1265.6   26.51   49.71      0   1263.8   26.55   49.78      0
+ 0:     67108864      16777216     float     sum      -1   1809.6   37.08   69.53      0   1813.9   37.00   69.37      0
+ 0:    134217728      33554432     float     sum      -1   3373.8   39.78   74.59      0   3369.9   39.83   74.68      0
+ 0:    268435456      67108864     float     sum      -1   6788.4   39.54   74.14      0   6805.1   39.45   73.96      0
+ 0:    536870912     134217728     float     sum      -1    13794   38.92   72.97      0    14054   38.20   71.63      0
+ 0:   1073741824     268435456     float     sum      -1    27510   39.03   73.18      0    28243   38.02   71.28      0
+ 0:   2147483648     536870912     float     sum      -1    55709   38.55   72.28      0    55807   38.48   72.15      0
+ 0:   4294967296    1073741824     float     sum      -1   111827   38.41   72.01      0   113931   37.70   70.68      0
+ 0: # Out of bounds values : 0 OK
+ 0: # Avg bus bandwidth    : 22.1136 
+ 0: #
+ 0: 
+ 0: MPICH Slingshot Network Summary: 0 network timeouts
+ 0: 
+ 0: MPICH Slingshot CXI Counter Summary:
+ 0: Counter                                Samples          Min         (/s)         Mean         (/s)          Max         (/s)
+ 0: atu_cache_evictions                          1            1          0.0            1          0.0            1          0.0
+ 0: atu_cache_hit_base_page_size_0              16    550107428   18350426.4    550551758   18667999.4    550887695   18979263.6
+ 0: atu_cache_hit_derivative1_page_size_0       16       780809      26272.3       789460      26767.5       799084      27316.9
+ 0: lpe_net_match_priority_0                    16    110673530    3691946.3    110777697    3756227.6    110877306    3819756.7
+ 0: lpe_net_match_overflow_0                    16        82061       2829.7        90552       3069.7        93971       3226.0
+ 0: lpe_net_match_request_0                     16          171          5.9          906         30.7         2181         73.6
+ 0: lpe_rndzv_puts_0                            16       347740      11626.0       349328      11844.6       351959      12057.7
+ 0: hni_rx_paused_0                             16          733         25.3         1994         67.4         2780         95.9
+ 0: hni_rx_paused_1                             16         8237        284.0        27539        929.9        53512       1783.7
+ 0: hni_tx_paused_1                             16     13971245     465708.2     33896804    1142705.0     80845415    2694847.2
+ 0: parbs_tarb_pi_posted_pkts                   16    882907651   29452723.6    883748470   29965955.3    884715845   30476701.3
+ 0: parbs_tarb_pi_posted_blocked_cnt            16    514421520   17325674.2    527037808   17870975.4    538195917   18558479.9
+ 0: parbs_tarb_pi_non_posted_pkts               16    441428020   14725323.1    441797169   14980368.1    442083664   15230470.6
+ 0: parbs_tarb_pi_non_posted_blocked_cnt        16        53478       1844.1        91758       3101.2       126738       4224.6
+ 0: 
