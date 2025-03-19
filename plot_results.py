@@ -141,11 +141,14 @@ def plot_busbw_vs_nodes(data_store):
         plot_df.sort_values(by=["Config", "Nodes"], inplace=True)
 
         bars = sns.stripplot(
-            data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", jitter=0.35, hue="Config", dodge=True,
+            data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)",
+            jitter=0.35,
+            hue="Config",
+            dodge=True,
             palette="tab20", ax=ax, size=12
         )
 
-        ax.set_xlim(0, None)
+        #ax.set_ylim(0, None)
 
         ## Create bar plot
         #bars = sns.barplot(
