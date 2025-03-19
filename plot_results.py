@@ -9,8 +9,8 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results"
-PLOTS_DIR = "plots"
+RESULTS_DIR = "results_nccl_debug_all2all"
+PLOTS_DIR = "plots_nccl_debug_all2all"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Regex pattern to match job result CSV files
@@ -140,7 +140,7 @@ def plot_busbw_vs_nodes(data_store):
         # Create bar plot
         bars = sns.barplot(
             data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", hue="Config", dodge=True,
-            palette="tab10", ax=ax, errorbar=None
+            palette="tab20", ax=ax, errorbar=None
         )
 
         # Approximate text height in data coordinates
@@ -191,7 +191,8 @@ def plot_busbw_vs_nodes(data_store):
         plt.yticks(fontsize=10)
 
         # Tight layout and save plot
-        plt.tight_layout(rect=[0, 0, 0.85, 1])  # Leave space for legend
+        #plt.tight_layout(rect=[0, 0, 0.85, 1])  # Leave space for legend
+        plt.tight_layout(rect=[0, 0, 0.85, 1.25])  # Leave space for legend
         save_path_png = os.path.join(PLOTS_DIR, f"busbw_vs_nodes_{message_size}.png")
         save_path_svg = os.path.join(PLOTS_DIR, f"busbw_vs_nodes_{message_size}.svg")
         plt.savefig(save_path_png, dpi=400, bbox_inches="tight")
