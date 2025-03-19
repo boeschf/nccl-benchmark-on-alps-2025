@@ -115,17 +115,20 @@ def plot_busbw_vs_nodes(data_store):
                         has_errors = (row["#wrong"] > 0).any()  # Check if any errors exist
                         num_errors = (row["#wrong"] > 0).sum()  # Count number of errors
 
-                        plot_data.append({
-                            "Nodes": num_nodes,
-                            "Config": identifier,
-                            #"Bus Bandwidth (GB/s)": busbw_median,
-                            "Bus Bandwidth (GB/s)": busbw_max,
-                            "Min": busbw_min,
-                            "Max": busbw_max,
-                            "Has Errors": has_errors,
-                            "Num Errors": num_errors,
-                            "Num Runs": num_runs  # Store number of runs
-                        })
+                        for idx, value in enumerate(row["busbw"]):  # Iterate over individual busbw values
+                            plot_data.append({
+                                "Nodes": num_nodes,
+                                "Config": identifier,
+                                #"Bus Bandwidth (GB/s)": busbw_median,
+                                #"Bus Bandwidth (GB/s)": busbw_max,
+                                "Bus Bandwidth (GB/s)": value,
+                                "Min": busbw_min,
+                                "Max": busbw_max,
+                                "Run ID": f"{idx}",
+                                "Has Errors": has_errors,
+                                "Num Errors": num_errors,
+                                "Num Runs": num_runs,  # Store number of runs
+                            })
 
 
         # Convert to Pandas DataFrame
@@ -137,45 +140,73 @@ def plot_busbw_vs_nodes(data_store):
         # Sort plot_df by Nodes to match Seaborn's rendering order
         plot_df.sort_values(by=["Config", "Nodes"], inplace=True)
 
-        # Create bar plot
-        bars = sns.barplot(
-            data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", hue="Config", dodge=True,
-            palette="tab20", ax=ax, errorbar=None
+        bars = sns.stripplot(
+            data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", jitter=0.35, hue="Config", dodge=True,
+            palette="tab20", ax=ax, size=12
         )
+
+        ## Create bar plot
+        #bars = sns.barplot(
+        #    data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)", hue="Config", dodge=True,
+        #    palette="tab20", ax=ax, errorbar=None
+        #)
 
         # Approximate text height in data coordinates
         fontsize_points = 10  # Font size in points
         fig_to_data = ax.transData.inverted().transform  # Convert figure to data coords
         _, text_height = fig_to_data((0, fontsize_points))  # Convert font size to data space
 
-        for bar, (_, row) in zip(bars.patches, plot_df.iterrows()):
-            # Apply hatching for bars where #wrong > 0
-            if row["Has Errors"]:
-                bar.set_hatch("//")  # Apply hatch pattern for errors
-                bar.set_edgecolor("black")  # Ensure hatch is visible
-            # Add min-max error bars manually
-            ax.errorbar(
-                x=bar.get_x() + bar.get_width() / 2,
-                y=row["Bus Bandwidth (GB/s)"],
-                yerr=[[row["Bus Bandwidth (GB/s)"] - row["Min"]], [row["Max"] - row["Bus Bandwidth (GB/s)"]]],
-                fmt="none", capsize=3, capthick=1, color="white", alpha=0.7
-            )
-            # Add text above bars to indicate number of runs
-            ax.text(
-                bar.get_x() + bar.get_width() / 2,  # Center text above bar
-                row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
-                f"{row['Num Runs']}",  # Display number of runs
-                ha="center", va="bottom", fontsize=8, color="black"
-            )
-            # Add text at the bottom of the bars to indicate number of errors
-            if row["Num Errors"] > 0:
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2,  # Center text above bar
-                    #row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
-                    0,
-                    f"{row['Num Errors']}",  # Display number of runs
-                    ha="center", va="bottom", fontsize=8, fontweight="bold", color="white"
-                )
+        # Extract plotted points from all hue categories (each Config)
+        scatter_points = []  # Stores all (x, y) positions
+        for collection in ax.collections:
+            scatter_points.extend(collection.get_offsets())  # Collect all dot positions
+
+        # Flatten into a NumPy array
+        scatter_points = np.array(scatter_points)
+
+        # Ensure the number of extracted points matches the number of rows in plot_df
+        if len(scatter_points) != len(plot_df):
+            print(f"Warning: Mismatch in number of plotted points ({len(scatter_points)}) and data rows ({len(plot_df)})!")
+
+        # Annotate each dot with its Run ID
+        #for i, (point, (_, row)) in enumerate(zip(scatter_points, plot_df.iterrows())):
+        #    x_coord, y_coord = point  # Extract actual x, y position
+        #    ax.text(
+        #        x_coord - 0.00*text_height,
+        #        y_coord - 0.004*text_height,
+        #        row["Run ID"],  # Label with Run ID
+        #        fontsize=8, color="black", ha="left", va="bottom"
+        #    )
+
+
+        #for bar, (_, row) in zip(bars.patches, plot_df.iterrows()):
+        #    # Apply hatching for bars where #wrong > 0
+        #    if row["Has Errors"]:
+        #        bar.set_hatch("//")  # Apply hatch pattern for errors
+        #        bar.set_edgecolor("black")  # Ensure hatch is visible
+        #    # Add min-max error bars manually
+        #    ax.errorbar(
+        #        x=bar.get_x() + bar.get_width() / 2,
+        #        y=row["Bus Bandwidth (GB/s)"],
+        #        yerr=[[row["Bus Bandwidth (GB/s)"] - row["Min"]], [row["Max"] - row["Bus Bandwidth (GB/s)"]]],
+        #        fmt="none", capsize=3, capthick=1, color="white", alpha=0.7
+        #    )
+        #    # Add text above bars to indicate number of runs
+        #    ax.text(
+        #        bar.get_x() + bar.get_width() / 2,  # Center text above bar
+        #        row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
+        #        f"{row['Num Runs']}",  # Display number of runs
+        #        ha="center", va="bottom", fontsize=8, color="black"
+        #    )
+        #    # Add text at the bottom of the bars to indicate number of errors
+        #    if row["Num Errors"] > 0:
+        #        ax.text(
+        #            bar.get_x() + bar.get_width() / 2,  # Center text above bar
+        #            #row["Max"] - 0.05*text_height, # - 1.02*text_height,  # Slightly above the bar
+        #            0,
+        #            f"{row['Num Errors']}",  # Display number of runs
+        #            ha="center", va="bottom", fontsize=8, fontweight="bold", color="white"
+        #        )
 
         # Adjust legend position
         plt.legend(title="Configurations", fontsize=9, title_fontsize=10, loc="upper left",
