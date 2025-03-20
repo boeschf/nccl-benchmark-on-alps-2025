@@ -3,7 +3,7 @@
 # Define fixed parameters
 #NODE_COUNTS=(1 2 4 8 16 32 64 128 256 512)
 #NODE_COUNTS=(1 8 14 24 28)
-NODE_COUNTS=(28)
+NODE_COUNTS=(14)
 NTASKS_PER_NODE=4
 TIME_LIMIT="00:10:00"
 
@@ -24,7 +24,8 @@ OUTPUT_DIR="${DEFAULT_OUTPUT_DIR}"
 # Declare an associative array
 declare -A node_map
 # Base node ID (modify as needed)
-base_id=5056
+#base_id=5056
+base_id=5070
 # Populate the map
 for i in {1..28}; do
     start_id=$base_id
