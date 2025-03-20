@@ -198,7 +198,7 @@ indicated at the bottom of the bars.
 ![busbw for message size =  4294967040  ](plots_nccl_debug_all2all/busbw_vs_nodes_4294967040.svg)
 
 
-### All2All (14 nodes/ 2 chassis)
+### All2All (14 nodes/ 1 chassis)
 
 ![busbw for message size =  1792        ](plots_nccl_debug_all2all_14/busbw_vs_nodes_1792.svg)
 ![busbw for message size =  3584        ](plots_nccl_debug_all2all_14/busbw_vs_nodes_3584.svg)
