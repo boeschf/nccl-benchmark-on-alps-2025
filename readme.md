@@ -172,7 +172,7 @@ the bars. The hatched bars indicate that the sanity check has failed for at
 least one run and wrong results were obtained. The number of failed runs is
 indicated at the bottom of the bars.
 
-### All2All
+### All2All (28 nodes/ 2 chassis)
 
 ![busbw for message size =  1792        ](plots_nccl_debug_all2all/busbw_vs_nodes_1792.svg)
 ![busbw for message size =  3584        ](plots_nccl_debug_all2all/busbw_vs_nodes_3584.svg)
@@ -196,5 +196,31 @@ indicated at the bottom of the bars.
 ![busbw for message size =  1073741312  ](plots_nccl_debug_all2all/busbw_vs_nodes_1073741312.svg)
 ![busbw for message size =  2147482624  ](plots_nccl_debug_all2all/busbw_vs_nodes_2147482624.svg)
 ![busbw for message size =  4294967040  ](plots_nccl_debug_all2all/busbw_vs_nodes_4294967040.svg)
+
+
+### All2All (14 nodes/ 2 chassis)
+
+![busbw for message size =  1792        ](plots_nccl_debug_all2all_14/busbw_vs_nodes_1792.svg)
+![busbw for message size =  3584        ](plots_nccl_debug_all2all_14/busbw_vs_nodes_3584.svg)
+![busbw for message size =  7168        ](plots_nccl_debug_all2all_14/busbw_vs_nodes_7168.svg)
+![busbw for message size =  16128       ](plots_nccl_debug_all2all_14/busbw_vs_nodes_16128.svg)
+![busbw for message size =  32256       ](plots_nccl_debug_all2all_14/busbw_vs_nodes_32256.svg)
+![busbw for message size =  64512       ](plots_nccl_debug_all2all_14/busbw_vs_nodes_64512.svg)
+![busbw for message size =  523264      ](plots_nccl_debug_all2all_14/busbw_vs_nodes_523264.svg)
+![busbw for message size =  130816      ](plots_nccl_debug_all2all_14/busbw_vs_nodes_130816.svg)
+![busbw for message size =  261632      ](plots_nccl_debug_all2all_14/busbw_vs_nodes_261632.svg)
+![busbw for message size =  1048320     ](plots_nccl_debug_all2all_14/busbw_vs_nodes_1048320.svg)
+![busbw for message size =  2096640     ](plots_nccl_debug_all2all_14/busbw_vs_nodes_2096640.svg)
+![busbw for message size =  4193280     ](plots_nccl_debug_all2all_14/busbw_vs_nodes_4193280.svg)
+![busbw for message size =  8388352     ](plots_nccl_debug_all2all_14/busbw_vs_nodes_8388352.svg)
+![busbw for message size =  16776704    ](plots_nccl_debug_all2all_14/busbw_vs_nodes_16776704.svg)
+![busbw for message size =  33553408    ](plots_nccl_debug_all2all_14/busbw_vs_nodes_33553408.svg)
+![busbw for message size =  67108608    ](plots_nccl_debug_all2all_14/busbw_vs_nodes_67108608.svg)
+![busbw for message size =  134217216   ](plots_nccl_debug_all2all_14/busbw_vs_nodes_134217216.svg)
+![busbw for message size =  268434432   ](plots_nccl_debug_all2all_14/busbw_vs_nodes_268434432.svg)
+![busbw for message size =  536870656   ](plots_nccl_debug_all2all_14/busbw_vs_nodes_536870656.svg)
+![busbw for message size =  1073741312  ](plots_nccl_debug_all2all_14/busbw_vs_nodes_1073741312.svg)
+![busbw for message size =  2147482624  ](plots_nccl_debug_all2all_14/busbw_vs_nodes_2147482624.svg)
+![busbw for message size =  4294967040  ](plots_nccl_debug_all2all_14/busbw_vs_nodes_4294967040.svg)
 
 

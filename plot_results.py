@@ -9,8 +9,8 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results_nccl_debug_all2all"
-PLOTS_DIR = "plots_nccl_debug_all2all"
+RESULTS_DIR = "results_nccl_debug_all2all_14"
+PLOTS_DIR = "plots_nccl_debug_all2all_14"
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Regex pattern to match job result CSV files
