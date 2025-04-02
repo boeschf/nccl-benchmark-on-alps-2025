@@ -8,4 +8,13 @@ declare -a HSN_MAPPING=("hsn0" "hsn2" "hsn3" "hsn1")
 # Use the mapping for NCCL_SOCKET_IFNAME
 export NCCL_SOCKET_IFNAME="=${HSN_MAPPING[$SLURM_LOCALID]}"
 
+## Compute CPU affinity range: 71 cores starting from SLURM_LOCALID * 72 + 1
+#CPU_START=$((SLURM_LOCALID * 72 + 1))
+#CPU_END=$((CPU_START + 70))
+#
+## Create the CPU range string for taskset
+#CPU_RANGE="${CPU_START}-${CPU_END}"
+#
+## Execute the command with taskset
+#exec taskset -c $CPU_RANGE "$@"
 exec "$@"
