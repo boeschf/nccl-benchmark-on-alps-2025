@@ -9,13 +9,27 @@ import seaborn as sns
 sns.set_style("whitegrid")
 
 # Path
-RESULTS_DIR = "results_nccl_debug_all2all_14"
-PLOTS_DIR = "plots_nccl_debug_all2all_14"
+#RESULTS_DIR = "results_new_image_2"
+#PLOTS_DIR = "plots_new_image_2"
+#RESULTS_DIR = "results_nccl_libfabric_debug_santis"
+#PLOTS_DIR = "plots_nccl_libfabric_debug_santis"
+#RESULTS_DIR = "results_cscs_debug_santis_all2all_8"
+#PLOTS_DIR = "plots_cscs_debug_santis_all2all_8"
+#RESULTS_DIR = "results_santis_04022025"
+#PLOTS_DIR = "plots_santis_04022025"
+#RESULTS_DIR = "results_santis_04032025_all2all_CSCS_DEBUG_2"
+#PLOTS_DIR = "plots_santis_04032025_all2all_CSCS_DEBUG_2"
+RESULTS_DIR = "results_santis_04032025_allreduce_CSCS_DEBUG_2"
+PLOTS_DIR = "plots_santis_04032025_allreduce_CSCS_DEBUG_2"
+
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
 # Regex pattern to match job result CSV files
 JOB_FILE_PATTERN = re.compile(r"job-n-\d{5}-N-(\d{4})\.csv")
-IDENTIFIER_PATTERN = re.compile(r"nccl-tests/nccl-([\d.\-]+)-aws-([\d.\-]+):.*$")
+#IDENTIFIER_PATTERN = re.compile(r"nccl-tests/nccl-([\d.\-]+)-aws-([\d.\-]+):.*$")
+IDENTIFIER_PATTERN = re.compile(
+    r"nccl-tests/nccl-([\d.\-]+)-aws-([\d.\-]+)(?::[^@]*)?(?:@([\w\-\.]+))?$"
+)
 
 
 # Storage for parsed data
@@ -39,7 +53,11 @@ for config_folder in os.listdir(RESULTS_DIR):
     if match:
         nccl_version = match.group(1)
         aws_version = match.group(2)
+        tag = match.group(3)
         identifier = identifier[:match.start()] + f"nccl@{nccl_version}_aws@{aws_version}"
+        if tag:
+            identifier += f"_{tag}"
+        print(f"identifier = {identifier}")
     else:
         print(f"Failed to extract NCCL and AWS versions from identifier. {identifier}")
 
@@ -66,14 +84,17 @@ for config_folder in os.listdir(RESULTS_DIR):
                 continue
 
             # Read the CSV file into a DataFrame
-            csv_path = os.path.join(run_path, filename)
-            print(f"Reading: {csv_path}")
-            df = pd.read_csv(csv_path)
+            try:
+                csv_path = os.path.join(run_path, filename)
+                print(f"Reading: {csv_path}")
+                df = pd.read_csv(csv_path)
 
-            # Store the data indexed by identifier and number of nodes
-            if num_nodes not in data_store[identifier]:
-                data_store[identifier][num_nodes] = []
-            data_store[identifier][num_nodes].append(df)
+                # Store the data indexed by identifier and number of nodes
+                if num_nodes not in data_store[identifier]:
+                    data_store[identifier][num_nodes] = []
+                data_store[identifier][num_nodes].append(df)
+            except:
+                print(f"Failed to read: {csv_path}")
 
 # Function to create bar plots for each message size
 def plot_busbw_vs_nodes(data_store):
@@ -142,11 +163,25 @@ def plot_busbw_vs_nodes(data_store):
 
         bars = sns.stripplot(
             data=plot_df, x="Nodes", y="Bus Bandwidth (GB/s)",
-            jitter=0.35,
+            jitter=0.15,
             hue="Config",
             dodge=True,
-            palette="tab20", ax=ax, size=12
+            palette="tab20", ax=ax, size=8,
         )
+        #plt.grid(True, axis='x')
+        # Get the tick positions
+        xticks = ax.get_xticks()
+        xticks = np.array(xticks)
+
+        # Calculate midpoints between x-ticks for vertical divider lines
+        midpoints = (xticks[:-1] + xticks[1:]) / 2
+
+        # Add vertical lines at midpoints
+        for x in midpoints:
+            ax.axvline(x=x, color='gray', linestyle='--', linewidth=0.5, alpha=0.6)
+
+        # Optional: Remove default x-grid if it's still confusing
+        ax.grid(False, axis='x')
 
         #ax.set_ylim(0, None)
 
