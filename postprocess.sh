@@ -41,8 +41,12 @@ find "$ROOT_DIR" -type d -regextype posix-extended -regex ".*/$PATTERN" | sort |
     folder_name=$(basename "$dir")
     
     # Extract the PREFIX (job-n-xxxxx-N-yyyy)
-    if [[ $folder_name =~ (job-n-[0-9]+-N-[0-9]+)-[0-9]+-logs ]]; then
-        PREFIX="${dir%/*}/${BASH_REMATCH[1]}"
+    #if [[ $folder_name =~ (job-n-[0-9]+-N-[0-9]+)-[0-9]+-logs ]]; then
+    #    PREFIX="${dir%/*}/${BASH_REMATCH[1]}"
+    if [[ $folder_name =~ job-n-([0-9]+)-N-([0-9]+)-[0-9]+-logs ]]; then
+        PREFIX="${dir%/*}/job-n-${BASH_REMATCH[1]}-N-${BASH_REMATCH[2]}"
+        NODES=${BASH_REMATCH[2]}
+        TASKS=${BASH_REMATCH[1]}
     else
         echo "Skipping invalid folder: $folder_name"
         continue
@@ -51,12 +55,16 @@ find "$ROOT_DIR" -type d -regextype posix-extended -regex ".*/$PATTERN" | sort |
     # Define the log file path
     LOGFILE="$dir/bench.log"
     
-    # Check if the log file exists
+    ## Check if the log file exists
+    echo ""
+    echo "N = ${NODES}"
     if [[ -f "$LOGFILE" ]]; then
         echo "Processing: $LOGFILE with prefix $PREFIX"
+        echo ""
         parse_output "$LOGFILE" "$PREFIX"
     else
         echo "Log file not found: $LOGFILE"
     fi
+    echo ""
 done
 
