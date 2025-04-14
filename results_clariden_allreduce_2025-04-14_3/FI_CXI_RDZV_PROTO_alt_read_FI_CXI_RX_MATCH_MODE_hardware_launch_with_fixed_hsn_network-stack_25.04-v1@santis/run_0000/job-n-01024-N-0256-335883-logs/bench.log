@@ -1,0 +1,1335 @@
+   0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+   0: #
+   0: # Using devices
+   0: #  Rank  0 Group  0 Pid  88746 on  nid006569 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  1 Group  0 Pid  88747 on  nid006569 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank  2 Group  0 Pid  88748 on  nid006569 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank  3 Group  0 Pid  88749 on  nid006569 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank  4 Group  0 Pid  97434 on  nid006570 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  5 Group  0 Pid  97435 on  nid006570 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank  6 Group  0 Pid  97436 on  nid006570 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank  7 Group  0 Pid  97437 on  nid006570 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank  8 Group  0 Pid 188447 on  nid006576 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  9 Group  0 Pid 188448 on  nid006576 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 10 Group  0 Pid 188449 on  nid006576 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 11 Group  0 Pid 188450 on  nid006576 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 12 Group  0 Pid 175310 on  nid006577 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 13 Group  0 Pid 175311 on  nid006577 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 14 Group  0 Pid 175312 on  nid006577 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 15 Group  0 Pid 175313 on  nid006577 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 16 Group  0 Pid 190720 on  nid006578 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 17 Group  0 Pid 190721 on  nid006578 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 18 Group  0 Pid 190722 on  nid006578 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 19 Group  0 Pid 190723 on  nid006578 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 20 Group  0 Pid 132669 on  nid006579 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 21 Group  0 Pid 132670 on  nid006579 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 22 Group  0 Pid 132671 on  nid006579 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 23 Group  0 Pid 132672 on  nid006579 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 24 Group  0 Pid 182051 on  nid006580 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 25 Group  0 Pid 182052 on  nid006580 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 26 Group  0 Pid 182053 on  nid006580 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 27 Group  0 Pid 182054 on  nid006580 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 28 Group  0 Pid 154981 on  nid006581 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 29 Group  0 Pid 154982 on  nid006581 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 30 Group  0 Pid 154983 on  nid006581 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 31 Group  0 Pid 154984 on  nid006581 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 32 Group  0 Pid 157076 on  nid006583 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 33 Group  0 Pid 157077 on  nid006583 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 34 Group  0 Pid 157078 on  nid006583 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 35 Group  0 Pid 157079 on  nid006583 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 36 Group  0 Pid 109813 on  nid006585 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 37 Group  0 Pid 109814 on  nid006585 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 38 Group  0 Pid 109815 on  nid006585 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 39 Group  0 Pid 109816 on  nid006585 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 40 Group  0 Pid  94137 on  nid006587 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 41 Group  0 Pid  94138 on  nid006587 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 42 Group  0 Pid  94139 on  nid006587 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 43 Group  0 Pid  94140 on  nid006587 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 44 Group  0 Pid  82653 on  nid006589 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 45 Group  0 Pid  82654 on  nid006589 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 46 Group  0 Pid  82655 on  nid006589 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 47 Group  0 Pid  82656 on  nid006589 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 48 Group  0 Pid 114251 on  nid006591 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 49 Group  0 Pid 114252 on  nid006591 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 50 Group  0 Pid 114253 on  nid006591 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 51 Group  0 Pid 114254 on  nid006591 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 52 Group  0 Pid 193012 on  nid006595 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 53 Group  0 Pid 193013 on  nid006595 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 54 Group  0 Pid 193014 on  nid006595 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 55 Group  0 Pid 193015 on  nid006595 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 56 Group  0 Pid 169655 on  nid006596 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 57 Group  0 Pid 169656 on  nid006596 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 58 Group  0 Pid 169657 on  nid006596 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 59 Group  0 Pid 169658 on  nid006596 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 60 Group  0 Pid 156622 on  nid006597 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 61 Group  0 Pid 156623 on  nid006597 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 62 Group  0 Pid 156624 on  nid006597 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 63 Group  0 Pid 156625 on  nid006597 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 64 Group  0 Pid 159330 on  nid006598 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 65 Group  0 Pid 159331 on  nid006598 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 66 Group  0 Pid 159332 on  nid006598 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 67 Group  0 Pid 159333 on  nid006598 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 68 Group  0 Pid 196639 on  nid006599 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 69 Group  0 Pid 196640 on  nid006599 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 70 Group  0 Pid 196641 on  nid006599 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 71 Group  0 Pid 196642 on  nid006599 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 72 Group  0 Pid 195827 on  nid006600 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 73 Group  0 Pid 195828 on  nid006600 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 74 Group  0 Pid 195829 on  nid006600 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 75 Group  0 Pid 195830 on  nid006600 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 76 Group  0 Pid 193019 on  nid006601 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 77 Group  0 Pid 193020 on  nid006601 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 78 Group  0 Pid 193021 on  nid006601 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 79 Group  0 Pid 193022 on  nid006601 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 80 Group  0 Pid 157849 on  nid006602 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 81 Group  0 Pid 157850 on  nid006602 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 82 Group  0 Pid 157851 on  nid006602 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 83 Group  0 Pid 157852 on  nid006602 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 84 Group  0 Pid 165790 on  nid006603 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 85 Group  0 Pid 165791 on  nid006603 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 86 Group  0 Pid 165792 on  nid006603 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 87 Group  0 Pid 165793 on  nid006603 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 88 Group  0 Pid 173220 on  nid006604 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 89 Group  0 Pid 173221 on  nid006604 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 90 Group  0 Pid 173222 on  nid006604 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 91 Group  0 Pid 173223 on  nid006604 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 92 Group  0 Pid 188713 on  nid006605 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 93 Group  0 Pid 188714 on  nid006605 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 94 Group  0 Pid 188715 on  nid006605 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 95 Group  0 Pid 188716 on  nid006605 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 96 Group  0 Pid 175034 on  nid006606 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 97 Group  0 Pid 175035 on  nid006606 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 98 Group  0 Pid 175036 on  nid006606 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 99 Group  0 Pid 175037 on  nid006606 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 100 Group  0 Pid 165667 on  nid006607 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 101 Group  0 Pid 165668 on  nid006607 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 102 Group  0 Pid 165669 on  nid006607 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 103 Group  0 Pid 165670 on  nid006607 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 104 Group  0 Pid 171381 on  nid006608 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 105 Group  0 Pid 171382 on  nid006608 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 106 Group  0 Pid 171383 on  nid006608 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 107 Group  0 Pid 171384 on  nid006608 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 108 Group  0 Pid 196816 on  nid006609 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 109 Group  0 Pid 196817 on  nid006609 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 110 Group  0 Pid 196818 on  nid006609 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 111 Group  0 Pid 196819 on  nid006609 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 112 Group  0 Pid 185517 on  nid006610 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 113 Group  0 Pid 185518 on  nid006610 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 114 Group  0 Pid 185519 on  nid006610 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 115 Group  0 Pid 185520 on  nid006610 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 116 Group  0 Pid 188675 on  nid006611 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 117 Group  0 Pid 188676 on  nid006611 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 118 Group  0 Pid 188677 on  nid006611 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 119 Group  0 Pid 188678 on  nid006611 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 120 Group  0 Pid 191567 on  nid006612 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 121 Group  0 Pid 191568 on  nid006612 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 122 Group  0 Pid 191569 on  nid006612 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 123 Group  0 Pid 191570 on  nid006612 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 124 Group  0 Pid 190850 on  nid006613 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 125 Group  0 Pid 190851 on  nid006613 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 126 Group  0 Pid 190852 on  nid006613 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 127 Group  0 Pid 190853 on  nid006613 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 128 Group  0 Pid 183188 on  nid006614 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 129 Group  0 Pid 183189 on  nid006614 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 130 Group  0 Pid 183190 on  nid006614 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 131 Group  0 Pid 183191 on  nid006614 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 132 Group  0 Pid 188321 on  nid006615 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 133 Group  0 Pid 188322 on  nid006615 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 134 Group  0 Pid 188323 on  nid006615 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 135 Group  0 Pid 188324 on  nid006615 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 136 Group  0 Pid 162521 on  nid006616 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 137 Group  0 Pid 162522 on  nid006616 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 138 Group  0 Pid 162523 on  nid006616 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 139 Group  0 Pid 162524 on  nid006616 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 140 Group  0 Pid 165522 on  nid006617 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 141 Group  0 Pid 165523 on  nid006617 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 142 Group  0 Pid 165524 on  nid006617 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 143 Group  0 Pid 165525 on  nid006617 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 144 Group  0 Pid 185121 on  nid006618 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 145 Group  0 Pid 185122 on  nid006618 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 146 Group  0 Pid 185123 on  nid006618 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 147 Group  0 Pid 185124 on  nid006618 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 148 Group  0 Pid 177191 on  nid006619 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 149 Group  0 Pid 177192 on  nid006619 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 150 Group  0 Pid 177193 on  nid006619 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 151 Group  0 Pid 177194 on  nid006619 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 152 Group  0 Pid 193083 on  nid006621 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 153 Group  0 Pid 193084 on  nid006621 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 154 Group  0 Pid 193085 on  nid006621 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 155 Group  0 Pid 193086 on  nid006621 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 156 Group  0 Pid 192498 on  nid006622 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 157 Group  0 Pid 192499 on  nid006622 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 158 Group  0 Pid 192500 on  nid006622 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 159 Group  0 Pid 192501 on  nid006622 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 160 Group  0 Pid 189638 on  nid006623 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 161 Group  0 Pid 189639 on  nid006623 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 162 Group  0 Pid 189640 on  nid006623 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 163 Group  0 Pid 189641 on  nid006623 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 164 Group  0 Pid 186886 on  nid006624 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 165 Group  0 Pid 186887 on  nid006624 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 166 Group  0 Pid 186888 on  nid006624 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 167 Group  0 Pid 186889 on  nid006624 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 168 Group  0 Pid 194574 on  nid006625 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 169 Group  0 Pid 194575 on  nid006625 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 170 Group  0 Pid 194576 on  nid006625 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 171 Group  0 Pid 194577 on  nid006625 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 172 Group  0 Pid 189867 on  nid006626 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 173 Group  0 Pid 189868 on  nid006626 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 174 Group  0 Pid 189869 on  nid006626 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 175 Group  0 Pid 189870 on  nid006626 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 176 Group  0 Pid 195453 on  nid006627 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 177 Group  0 Pid 195454 on  nid006627 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 178 Group  0 Pid 195455 on  nid006627 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 179 Group  0 Pid 195456 on  nid006627 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 180 Group  0 Pid 196415 on  nid006628 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 181 Group  0 Pid 196416 on  nid006628 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 182 Group  0 Pid 196417 on  nid006628 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 183 Group  0 Pid 196418 on  nid006628 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 184 Group  0 Pid 190827 on  nid006629 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 185 Group  0 Pid 190828 on  nid006629 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 186 Group  0 Pid 190829 on  nid006629 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 187 Group  0 Pid 190830 on  nid006629 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 188 Group  0 Pid 184248 on  nid006630 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 189 Group  0 Pid 184249 on  nid006630 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 190 Group  0 Pid 184250 on  nid006630 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 191 Group  0 Pid 184251 on  nid006630 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 192 Group  0 Pid 187525 on  nid006631 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 193 Group  0 Pid 187526 on  nid006631 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 194 Group  0 Pid 187527 on  nid006631 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 195 Group  0 Pid 187528 on  nid006631 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 196 Group  0 Pid 193532 on  nid006632 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 197 Group  0 Pid 193533 on  nid006632 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 198 Group  0 Pid 193534 on  nid006632 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 199 Group  0 Pid 193535 on  nid006632 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 200 Group  0 Pid 193254 on  nid006633 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 201 Group  0 Pid 193255 on  nid006633 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 202 Group  0 Pid 193256 on  nid006633 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 203 Group  0 Pid 193257 on  nid006633 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 204 Group  0 Pid 170988 on  nid006634 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 205 Group  0 Pid 170989 on  nid006634 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 206 Group  0 Pid 170990 on  nid006634 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 207 Group  0 Pid 170991 on  nid006634 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 208 Group  0 Pid 191079 on  nid006635 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 209 Group  0 Pid 191080 on  nid006635 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 210 Group  0 Pid 191081 on  nid006635 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 211 Group  0 Pid 191082 on  nid006635 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 212 Group  0 Pid 191954 on  nid006636 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 213 Group  0 Pid 191955 on  nid006636 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 214 Group  0 Pid 191956 on  nid006636 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 215 Group  0 Pid 191957 on  nid006636 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 216 Group  0 Pid 158738 on  nid006638 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 217 Group  0 Pid 158739 on  nid006638 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 218 Group  0 Pid 158740 on  nid006638 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 219 Group  0 Pid 158741 on  nid006638 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 220 Group  0 Pid 156071 on  nid006639 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 221 Group  0 Pid 156072 on  nid006639 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 222 Group  0 Pid 156073 on  nid006639 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 223 Group  0 Pid 156074 on  nid006639 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 224 Group  0 Pid 188754 on  nid006640 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 225 Group  0 Pid 188755 on  nid006640 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 226 Group  0 Pid 188756 on  nid006640 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 227 Group  0 Pid 188759 on  nid006640 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 228 Group  0 Pid 171712 on  nid006641 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 229 Group  0 Pid 171713 on  nid006641 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 230 Group  0 Pid 171714 on  nid006641 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 231 Group  0 Pid 171715 on  nid006641 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 232 Group  0 Pid 172859 on  nid006642 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 233 Group  0 Pid 172860 on  nid006642 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 234 Group  0 Pid 172861 on  nid006642 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 235 Group  0 Pid 172862 on  nid006642 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 236 Group  0 Pid 177458 on  nid006643 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 237 Group  0 Pid 177459 on  nid006643 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 238 Group  0 Pid 177460 on  nid006643 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 239 Group  0 Pid 177461 on  nid006643 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 240 Group  0 Pid 195637 on  nid006644 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 241 Group  0 Pid 195638 on  nid006644 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 242 Group  0 Pid 195639 on  nid006644 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 243 Group  0 Pid 195640 on  nid006644 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 244 Group  0 Pid 192856 on  nid006646 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 245 Group  0 Pid 192857 on  nid006646 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 246 Group  0 Pid 192858 on  nid006646 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 247 Group  0 Pid 192859 on  nid006646 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 248 Group  0 Pid 172141 on  nid006647 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 249 Group  0 Pid 172142 on  nid006647 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 250 Group  0 Pid 172143 on  nid006647 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 251 Group  0 Pid 172144 on  nid006647 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 252 Group  0 Pid 192535 on  nid006648 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 253 Group  0 Pid 192536 on  nid006648 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 254 Group  0 Pid 192537 on  nid006648 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 255 Group  0 Pid 192538 on  nid006648 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 256 Group  0 Pid 184219 on  nid006649 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 257 Group  0 Pid 184220 on  nid006649 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 258 Group  0 Pid 184221 on  nid006649 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 259 Group  0 Pid 184222 on  nid006649 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 260 Group  0 Pid 185706 on  nid006650 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 261 Group  0 Pid 185707 on  nid006650 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 262 Group  0 Pid 185708 on  nid006650 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 263 Group  0 Pid 185709 on  nid006650 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 264 Group  0 Pid 195492 on  nid006651 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 265 Group  0 Pid 195493 on  nid006651 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 266 Group  0 Pid 195494 on  nid006651 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 267 Group  0 Pid 195495 on  nid006651 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 268 Group  0 Pid 190408 on  nid006652 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 269 Group  0 Pid 190409 on  nid006652 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 270 Group  0 Pid 190410 on  nid006652 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 271 Group  0 Pid 190411 on  nid006652 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 272 Group  0 Pid 200072 on  nid006653 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 273 Group  0 Pid 200073 on  nid006653 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 274 Group  0 Pid 200074 on  nid006653 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 275 Group  0 Pid 200075 on  nid006653 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 276 Group  0 Pid 152170 on  nid006655 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 277 Group  0 Pid 152171 on  nid006655 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 278 Group  0 Pid 152172 on  nid006655 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 279 Group  0 Pid 152173 on  nid006655 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 280 Group  0 Pid 191069 on  nid006656 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 281 Group  0 Pid 191070 on  nid006656 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 282 Group  0 Pid 191071 on  nid006656 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 283 Group  0 Pid 191072 on  nid006656 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 284 Group  0 Pid 190475 on  nid006657 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 285 Group  0 Pid 190476 on  nid006657 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 286 Group  0 Pid 190477 on  nid006657 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 287 Group  0 Pid 190478 on  nid006657 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 288 Group  0 Pid 190559 on  nid006658 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 289 Group  0 Pid 190560 on  nid006658 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 290 Group  0 Pid 190561 on  nid006658 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 291 Group  0 Pid 190562 on  nid006658 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 292 Group  0 Pid 188521 on  nid006659 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 293 Group  0 Pid 188522 on  nid006659 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 294 Group  0 Pid 188523 on  nid006659 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 295 Group  0 Pid 188524 on  nid006659 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 296 Group  0 Pid 195281 on  nid006660 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 297 Group  0 Pid 195282 on  nid006660 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 298 Group  0 Pid 195283 on  nid006660 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 299 Group  0 Pid 195284 on  nid006660 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 300 Group  0 Pid 195873 on  nid006661 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 301 Group  0 Pid 195874 on  nid006661 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 302 Group  0 Pid 195875 on  nid006661 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 303 Group  0 Pid 195876 on  nid006661 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 304 Group  0 Pid 192411 on  nid006662 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 305 Group  0 Pid 192412 on  nid006662 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 306 Group  0 Pid 192413 on  nid006662 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 307 Group  0 Pid 192414 on  nid006662 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 308 Group  0 Pid 165388 on  nid006663 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 309 Group  0 Pid 165389 on  nid006663 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 310 Group  0 Pid 165390 on  nid006663 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 311 Group  0 Pid 165391 on  nid006663 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 312 Group  0 Pid 197262 on  nid006664 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 313 Group  0 Pid 197263 on  nid006664 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 314 Group  0 Pid 197264 on  nid006664 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 315 Group  0 Pid 197265 on  nid006664 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 316 Group  0 Pid 163724 on  nid006665 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 317 Group  0 Pid 163725 on  nid006665 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 318 Group  0 Pid 163726 on  nid006665 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 319 Group  0 Pid 163727 on  nid006665 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 320 Group  0 Pid 172685 on  nid006666 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 321 Group  0 Pid 172686 on  nid006666 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 322 Group  0 Pid 172687 on  nid006666 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 323 Group  0 Pid 172688 on  nid006666 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 324 Group  0 Pid 192193 on  nid006667 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 325 Group  0 Pid 192194 on  nid006667 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 326 Group  0 Pid 192195 on  nid006667 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 327 Group  0 Pid 192196 on  nid006667 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 328 Group  0 Pid 187107 on  nid006668 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 329 Group  0 Pid 187108 on  nid006668 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 330 Group  0 Pid 187109 on  nid006668 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 331 Group  0 Pid 187110 on  nid006668 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 332 Group  0 Pid 191456 on  nid006669 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 333 Group  0 Pid 191457 on  nid006669 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 334 Group  0 Pid 191458 on  nid006669 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 335 Group  0 Pid 191459 on  nid006669 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 336 Group  0 Pid 189616 on  nid006670 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 337 Group  0 Pid 189617 on  nid006670 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 338 Group  0 Pid 189618 on  nid006670 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 339 Group  0 Pid 189619 on  nid006670 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 340 Group  0 Pid 187932 on  nid006671 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 341 Group  0 Pid 187933 on  nid006671 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 342 Group  0 Pid 187934 on  nid006671 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 343 Group  0 Pid 187935 on  nid006671 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 344 Group  0 Pid 185895 on  nid006672 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 345 Group  0 Pid 185896 on  nid006672 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 346 Group  0 Pid 185897 on  nid006672 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 347 Group  0 Pid 185898 on  nid006672 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 348 Group  0 Pid 149970 on  nid006673 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 349 Group  0 Pid 149971 on  nid006673 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 350 Group  0 Pid 149972 on  nid006673 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 351 Group  0 Pid 149973 on  nid006673 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 352 Group  0 Pid 188121 on  nid006674 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 353 Group  0 Pid 188122 on  nid006674 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 354 Group  0 Pid 188123 on  nid006674 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 355 Group  0 Pid 188124 on  nid006674 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 356 Group  0 Pid 191143 on  nid006675 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 357 Group  0 Pid 191144 on  nid006675 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 358 Group  0 Pid 191145 on  nid006675 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 359 Group  0 Pid 191146 on  nid006675 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 360 Group  0 Pid 195210 on  nid006676 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 361 Group  0 Pid 195211 on  nid006676 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 362 Group  0 Pid 195212 on  nid006676 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 363 Group  0 Pid 195213 on  nid006676 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 364 Group  0 Pid 190974 on  nid006677 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 365 Group  0 Pid 190975 on  nid006677 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 366 Group  0 Pid 190976 on  nid006677 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 367 Group  0 Pid 190977 on  nid006677 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 368 Group  0 Pid 190545 on  nid006679 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 369 Group  0 Pid 190546 on  nid006679 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 370 Group  0 Pid 190547 on  nid006679 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 371 Group  0 Pid 190548 on  nid006679 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 372 Group  0 Pid 156979 on  nid006680 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 373 Group  0 Pid 156980 on  nid006680 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 374 Group  0 Pid 156981 on  nid006680 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 375 Group  0 Pid 156982 on  nid006680 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 376 Group  0 Pid 192391 on  nid006681 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 377 Group  0 Pid 192392 on  nid006681 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 378 Group  0 Pid 192393 on  nid006681 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 379 Group  0 Pid 192394 on  nid006681 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 380 Group  0 Pid 191915 on  nid006682 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 381 Group  0 Pid 191916 on  nid006682 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 382 Group  0 Pid 191917 on  nid006682 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 383 Group  0 Pid 191918 on  nid006682 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 384 Group  0 Pid 162065 on  nid006683 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 385 Group  0 Pid 162066 on  nid006683 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 386 Group  0 Pid 162067 on  nid006683 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 387 Group  0 Pid 162068 on  nid006683 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 388 Group  0 Pid 181010 on  nid006684 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 389 Group  0 Pid 181011 on  nid006684 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 390 Group  0 Pid 181012 on  nid006684 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 391 Group  0 Pid 181013 on  nid006684 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 392 Group  0 Pid 186907 on  nid006685 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 393 Group  0 Pid 186908 on  nid006685 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 394 Group  0 Pid 186909 on  nid006685 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 395 Group  0 Pid 186910 on  nid006685 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 396 Group  0 Pid 158555 on  nid006686 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 397 Group  0 Pid 158556 on  nid006686 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 398 Group  0 Pid 158557 on  nid006686 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 399 Group  0 Pid 158558 on  nid006686 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 400 Group  0 Pid 192725 on  nid006687 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 401 Group  0 Pid 192726 on  nid006687 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 402 Group  0 Pid 192727 on  nid006687 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 403 Group  0 Pid 192728 on  nid006687 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 404 Group  0 Pid 195387 on  nid006688 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 405 Group  0 Pid 195388 on  nid006688 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 406 Group  0 Pid 195389 on  nid006688 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 407 Group  0 Pid 195390 on  nid006688 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 408 Group  0 Pid 198263 on  nid006689 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 409 Group  0 Pid 198264 on  nid006689 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 410 Group  0 Pid 198265 on  nid006689 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 411 Group  0 Pid 198266 on  nid006689 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 412 Group  0 Pid 155047 on  nid006690 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 413 Group  0 Pid 155048 on  nid006690 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 414 Group  0 Pid 155049 on  nid006690 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 415 Group  0 Pid 155050 on  nid006690 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 416 Group  0 Pid 185250 on  nid006691 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 417 Group  0 Pid 185251 on  nid006691 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 418 Group  0 Pid 185252 on  nid006691 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 419 Group  0 Pid 185253 on  nid006691 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 420 Group  0 Pid 191719 on  nid006692 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 421 Group  0 Pid 191720 on  nid006692 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 422 Group  0 Pid 191721 on  nid006692 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 423 Group  0 Pid 191722 on  nid006692 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 424 Group  0 Pid 160413 on  nid006693 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 425 Group  0 Pid 160414 on  nid006693 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 426 Group  0 Pid 160415 on  nid006693 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 427 Group  0 Pid 160416 on  nid006693 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 428 Group  0 Pid 191648 on  nid006694 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 429 Group  0 Pid 191649 on  nid006694 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 430 Group  0 Pid 191650 on  nid006694 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 431 Group  0 Pid 191651 on  nid006694 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 432 Group  0 Pid 171893 on  nid006695 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 433 Group  0 Pid 171894 on  nid006695 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 434 Group  0 Pid 171895 on  nid006695 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 435 Group  0 Pid 171896 on  nid006695 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 436 Group  0 Pid 157357 on  nid006696 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 437 Group  0 Pid 157358 on  nid006696 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 438 Group  0 Pid 157359 on  nid006696 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 439 Group  0 Pid 157360 on  nid006696 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 440 Group  0 Pid 157509 on  nid006697 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 441 Group  0 Pid 157510 on  nid006697 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 442 Group  0 Pid 157511 on  nid006697 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 443 Group  0 Pid 157512 on  nid006697 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 444 Group  0 Pid 189287 on  nid006698 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 445 Group  0 Pid 189288 on  nid006698 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 446 Group  0 Pid 189289 on  nid006698 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 447 Group  0 Pid 189290 on  nid006698 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 448 Group  0 Pid 190247 on  nid006699 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 449 Group  0 Pid 190248 on  nid006699 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 450 Group  0 Pid 190249 on  nid006699 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 451 Group  0 Pid 190250 on  nid006699 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 452 Group  0 Pid 194639 on  nid006700 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 453 Group  0 Pid 194640 on  nid006700 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 454 Group  0 Pid 194641 on  nid006700 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 455 Group  0 Pid 194642 on  nid006700 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 456 Group  0 Pid 184446 on  nid006701 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 457 Group  0 Pid 184447 on  nid006701 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 458 Group  0 Pid 184448 on  nid006701 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 459 Group  0 Pid 184449 on  nid006701 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 460 Group  0 Pid 194704 on  nid006702 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 461 Group  0 Pid 194705 on  nid006702 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 462 Group  0 Pid 194706 on  nid006702 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 463 Group  0 Pid 194707 on  nid006702 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 464 Group  0 Pid 155774 on  nid006703 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 465 Group  0 Pid 155775 on  nid006703 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 466 Group  0 Pid 155776 on  nid006703 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 467 Group  0 Pid 155777 on  nid006703 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 468 Group  0 Pid 195453 on  nid006704 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 469 Group  0 Pid 195454 on  nid006704 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 470 Group  0 Pid 195455 on  nid006704 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 471 Group  0 Pid 195456 on  nid006704 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 472 Group  0 Pid 155542 on  nid006705 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 473 Group  0 Pid 155543 on  nid006705 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 474 Group  0 Pid 155544 on  nid006705 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 475 Group  0 Pid 155545 on  nid006705 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 476 Group  0 Pid 191270 on  nid006706 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 477 Group  0 Pid 191271 on  nid006706 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 478 Group  0 Pid 191272 on  nid006706 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 479 Group  0 Pid 191273 on  nid006706 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 480 Group  0 Pid 139115 on  nid006707 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 481 Group  0 Pid 139116 on  nid006707 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 482 Group  0 Pid 139117 on  nid006707 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 483 Group  0 Pid 139118 on  nid006707 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 484 Group  0 Pid 193363 on  nid006708 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 485 Group  0 Pid 193364 on  nid006708 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 486 Group  0 Pid 193365 on  nid006708 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 487 Group  0 Pid 193366 on  nid006708 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 488 Group  0 Pid 195492 on  nid006709 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 489 Group  0 Pid 195493 on  nid006709 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 490 Group  0 Pid 195494 on  nid006709 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 491 Group  0 Pid 195495 on  nid006709 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 492 Group  0 Pid 170466 on  nid006710 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 493 Group  0 Pid 170467 on  nid006710 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 494 Group  0 Pid 170468 on  nid006710 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 495 Group  0 Pid 170469 on  nid006710 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 496 Group  0 Pid 155104 on  nid006711 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 497 Group  0 Pid 155105 on  nid006711 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 498 Group  0 Pid 155106 on  nid006711 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 499 Group  0 Pid 155107 on  nid006711 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 500 Group  0 Pid 189612 on  nid006712 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 501 Group  0 Pid 189613 on  nid006712 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 502 Group  0 Pid 189614 on  nid006712 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 503 Group  0 Pid 189615 on  nid006712 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 504 Group  0 Pid 188200 on  nid006714 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 505 Group  0 Pid 188201 on  nid006714 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 506 Group  0 Pid 188202 on  nid006714 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 507 Group  0 Pid 188203 on  nid006714 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 508 Group  0 Pid 160057 on  nid006715 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 509 Group  0 Pid 160058 on  nid006715 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 510 Group  0 Pid 160059 on  nid006715 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 511 Group  0 Pid 160060 on  nid006715 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 512 Group  0 Pid 191053 on  nid006716 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 513 Group  0 Pid 191054 on  nid006716 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 514 Group  0 Pid 191055 on  nid006716 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 515 Group  0 Pid 191056 on  nid006716 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 516 Group  0 Pid 188983 on  nid006717 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 517 Group  0 Pid 188984 on  nid006717 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 518 Group  0 Pid 188985 on  nid006717 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 519 Group  0 Pid 188986 on  nid006717 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 520 Group  0 Pid 191988 on  nid006718 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 521 Group  0 Pid 191989 on  nid006718 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 522 Group  0 Pid 191990 on  nid006718 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 523 Group  0 Pid 191991 on  nid006718 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 524 Group  0 Pid 154168 on  nid006719 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 525 Group  0 Pid 154169 on  nid006719 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 526 Group  0 Pid 154170 on  nid006719 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 527 Group  0 Pid 154171 on  nid006719 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 528 Group  0 Pid 189009 on  nid006720 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 529 Group  0 Pid 189010 on  nid006720 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 530 Group  0 Pid 189011 on  nid006720 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 531 Group  0 Pid 189012 on  nid006720 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 532 Group  0 Pid 191440 on  nid006721 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 533 Group  0 Pid 191441 on  nid006721 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 534 Group  0 Pid 191442 on  nid006721 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 535 Group  0 Pid 191443 on  nid006721 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 536 Group  0 Pid 192208 on  nid006722 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 537 Group  0 Pid 192209 on  nid006722 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 538 Group  0 Pid 192210 on  nid006722 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 539 Group  0 Pid 192211 on  nid006722 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 540 Group  0 Pid 175528 on  nid006723 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 541 Group  0 Pid 175529 on  nid006723 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 542 Group  0 Pid 175530 on  nid006723 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 543 Group  0 Pid 175531 on  nid006723 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 544 Group  0 Pid 143134 on  nid006724 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 545 Group  0 Pid 143135 on  nid006724 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 546 Group  0 Pid 143136 on  nid006724 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 547 Group  0 Pid 143137 on  nid006724 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 548 Group  0 Pid 159680 on  nid006725 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 549 Group  0 Pid 159681 on  nid006725 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 550 Group  0 Pid 159682 on  nid006725 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 551 Group  0 Pid 159683 on  nid006725 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 552 Group  0 Pid 190508 on  nid006726 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 553 Group  0 Pid 190509 on  nid006726 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 554 Group  0 Pid 190510 on  nid006726 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 555 Group  0 Pid 190511 on  nid006726 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 556 Group  0 Pid 230184 on  nid006727 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 557 Group  0 Pid 230185 on  nid006727 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 558 Group  0 Pid 230186 on  nid006727 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 559 Group  0 Pid 230187 on  nid006727 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 560 Group  0 Pid 159383 on  nid006728 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 561 Group  0 Pid 159384 on  nid006728 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 562 Group  0 Pid 159385 on  nid006728 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 563 Group  0 Pid 159386 on  nid006728 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 564 Group  0 Pid 193811 on  nid006729 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 565 Group  0 Pid 193812 on  nid006729 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 566 Group  0 Pid 193813 on  nid006729 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 567 Group  0 Pid 193814 on  nid006729 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 568 Group  0 Pid 182509 on  nid006730 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 569 Group  0 Pid 182510 on  nid006730 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 570 Group  0 Pid 182511 on  nid006730 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 571 Group  0 Pid 182512 on  nid006730 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 572 Group  0 Pid 187613 on  nid006731 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 573 Group  0 Pid 187614 on  nid006731 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 574 Group  0 Pid 187615 on  nid006731 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 575 Group  0 Pid 187616 on  nid006731 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 576 Group  0 Pid 148319 on  nid006732 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 577 Group  0 Pid 148320 on  nid006732 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 578 Group  0 Pid 148321 on  nid006732 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 579 Group  0 Pid 148322 on  nid006732 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 580 Group  0 Pid 184797 on  nid006733 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 581 Group  0 Pid 184798 on  nid006733 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 582 Group  0 Pid 184799 on  nid006733 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 583 Group  0 Pid 184800 on  nid006733 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 584 Group  0 Pid 181920 on  nid006735 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 585 Group  0 Pid 181921 on  nid006735 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 586 Group  0 Pid 181922 on  nid006735 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 587 Group  0 Pid 181923 on  nid006735 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 588 Group  0 Pid 158625 on  nid006736 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 589 Group  0 Pid 158626 on  nid006736 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 590 Group  0 Pid 158627 on  nid006736 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 591 Group  0 Pid 158628 on  nid006736 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 592 Group  0 Pid 157889 on  nid006737 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 593 Group  0 Pid 157890 on  nid006737 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 594 Group  0 Pid 157891 on  nid006737 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 595 Group  0 Pid 157892 on  nid006737 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 596 Group  0 Pid 178554 on  nid006738 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 597 Group  0 Pid 178555 on  nid006738 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 598 Group  0 Pid 178556 on  nid006738 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 599 Group  0 Pid 178557 on  nid006738 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 600 Group  0 Pid 137903 on  nid006739 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 601 Group  0 Pid 137904 on  nid006739 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 602 Group  0 Pid 137905 on  nid006739 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 603 Group  0 Pid 137906 on  nid006739 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 604 Group  0 Pid 183703 on  nid006740 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 605 Group  0 Pid 183704 on  nid006740 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 606 Group  0 Pid 183705 on  nid006740 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 607 Group  0 Pid 183707 on  nid006740 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 608 Group  0 Pid 170564 on  nid006741 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 609 Group  0 Pid 170565 on  nid006741 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 610 Group  0 Pid 170566 on  nid006741 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 611 Group  0 Pid 170567 on  nid006741 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 612 Group  0 Pid 168179 on  nid006742 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 613 Group  0 Pid 168180 on  nid006742 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 614 Group  0 Pid 168181 on  nid006742 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 615 Group  0 Pid 168182 on  nid006742 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 616 Group  0 Pid 169148 on  nid006743 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 617 Group  0 Pid 169149 on  nid006743 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 618 Group  0 Pid 169150 on  nid006743 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 619 Group  0 Pid 169151 on  nid006743 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 620 Group  0 Pid 138655 on  nid006744 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 621 Group  0 Pid 138656 on  nid006744 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 622 Group  0 Pid 138657 on  nid006744 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 623 Group  0 Pid 138658 on  nid006744 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 624 Group  0 Pid 169493 on  nid006745 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 625 Group  0 Pid 169494 on  nid006745 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 626 Group  0 Pid 169495 on  nid006745 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 627 Group  0 Pid 169496 on  nid006745 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 628 Group  0 Pid 165877 on  nid006746 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 629 Group  0 Pid 165878 on  nid006746 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 630 Group  0 Pid 165879 on  nid006746 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 631 Group  0 Pid 165880 on  nid006746 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 632 Group  0 Pid 140989 on  nid006747 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 633 Group  0 Pid 140990 on  nid006747 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 634 Group  0 Pid 140991 on  nid006747 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 635 Group  0 Pid 140992 on  nid006747 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 636 Group  0 Pid 143913 on  nid006748 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 637 Group  0 Pid 143914 on  nid006748 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 638 Group  0 Pid 143915 on  nid006748 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 639 Group  0 Pid 143916 on  nid006748 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 640 Group  0 Pid 137116 on  nid006749 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 641 Group  0 Pid 137117 on  nid006749 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 642 Group  0 Pid 137118 on  nid006749 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 643 Group  0 Pid 137120 on  nid006749 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 644 Group  0 Pid 169825 on  nid006750 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 645 Group  0 Pid 169826 on  nid006750 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 646 Group  0 Pid 169827 on  nid006750 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 647 Group  0 Pid 169828 on  nid006750 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 648 Group  0 Pid 164373 on  nid006751 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 649 Group  0 Pid 164374 on  nid006751 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 650 Group  0 Pid 164375 on  nid006751 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 651 Group  0 Pid 164376 on  nid006751 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 652 Group  0 Pid 134743 on  nid006752 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 653 Group  0 Pid 134744 on  nid006752 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 654 Group  0 Pid 134745 on  nid006752 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 655 Group  0 Pid 134746 on  nid006752 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 656 Group  0 Pid 164550 on  nid006753 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 657 Group  0 Pid 164551 on  nid006753 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 658 Group  0 Pid 164552 on  nid006753 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 659 Group  0 Pid 164553 on  nid006753 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 660 Group  0 Pid 134997 on  nid006754 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 661 Group  0 Pid 134998 on  nid006754 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 662 Group  0 Pid 134999 on  nid006754 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 663 Group  0 Pid 135000 on  nid006754 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 664 Group  0 Pid 161282 on  nid006755 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 665 Group  0 Pid 161283 on  nid006755 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 666 Group  0 Pid 161284 on  nid006755 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 667 Group  0 Pid 161285 on  nid006755 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 668 Group  0 Pid 138768 on  nid006756 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 669 Group  0 Pid 138769 on  nid006756 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 670 Group  0 Pid 138770 on  nid006756 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 671 Group  0 Pid 138771 on  nid006756 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 672 Group  0 Pid 164765 on  nid006757 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 673 Group  0 Pid 164766 on  nid006757 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 674 Group  0 Pid 164767 on  nid006757 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 675 Group  0 Pid 164768 on  nid006757 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 676 Group  0 Pid 126235 on  nid006758 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 677 Group  0 Pid 126236 on  nid006758 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 678 Group  0 Pid 126237 on  nid006758 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 679 Group  0 Pid 126238 on  nid006758 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 680 Group  0 Pid 136011 on  nid006760 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 681 Group  0 Pid 136012 on  nid006760 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 682 Group  0 Pid 136013 on  nid006760 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 683 Group  0 Pid 136014 on  nid006760 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 684 Group  0 Pid 133596 on  nid006761 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 685 Group  0 Pid 133597 on  nid006761 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 686 Group  0 Pid 133598 on  nid006761 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 687 Group  0 Pid 133599 on  nid006761 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 688 Group  0 Pid 151448 on  nid006762 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 689 Group  0 Pid 151449 on  nid006762 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 690 Group  0 Pid 151450 on  nid006762 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 691 Group  0 Pid 151451 on  nid006762 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 692 Group  0 Pid 132980 on  nid006763 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 693 Group  0 Pid 132981 on  nid006763 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 694 Group  0 Pid 132982 on  nid006763 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 695 Group  0 Pid 132983 on  nid006763 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 696 Group  0 Pid 151887 on  nid006764 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 697 Group  0 Pid 151888 on  nid006764 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 698 Group  0 Pid 151889 on  nid006764 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 699 Group  0 Pid 151890 on  nid006764 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 700 Group  0 Pid 130115 on  nid006765 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 701 Group  0 Pid 130116 on  nid006765 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 702 Group  0 Pid 130117 on  nid006765 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 703 Group  0 Pid 130118 on  nid006765 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 704 Group  0 Pid 155667 on  nid006766 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 705 Group  0 Pid 155668 on  nid006766 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 706 Group  0 Pid 155669 on  nid006766 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 707 Group  0 Pid 155670 on  nid006766 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 708 Group  0 Pid 135393 on  nid006767 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 709 Group  0 Pid 135394 on  nid006767 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 710 Group  0 Pid 135395 on  nid006767 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 711 Group  0 Pid 135396 on  nid006767 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 712 Group  0 Pid 137429 on  nid006768 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 713 Group  0 Pid 137430 on  nid006768 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 714 Group  0 Pid 137431 on  nid006768 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 715 Group  0 Pid 137432 on  nid006768 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 716 Group  0 Pid 162118 on  nid006769 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 717 Group  0 Pid 162119 on  nid006769 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 718 Group  0 Pid 162120 on  nid006769 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 719 Group  0 Pid 162121 on  nid006769 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 720 Group  0 Pid 134859 on  nid006770 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 721 Group  0 Pid 134860 on  nid006770 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 722 Group  0 Pid 134861 on  nid006770 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 723 Group  0 Pid 134862 on  nid006770 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 724 Group  0 Pid 135816 on  nid006771 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 725 Group  0 Pid 135817 on  nid006771 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 726 Group  0 Pid 135818 on  nid006771 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 727 Group  0 Pid 135819 on  nid006771 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 728 Group  0 Pid 149261 on  nid006772 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 729 Group  0 Pid 149262 on  nid006772 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 730 Group  0 Pid 149263 on  nid006772 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 731 Group  0 Pid 149264 on  nid006772 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 732 Group  0 Pid 137651 on  nid006773 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 733 Group  0 Pid 137652 on  nid006773 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 734 Group  0 Pid 137653 on  nid006773 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 735 Group  0 Pid 137654 on  nid006773 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 736 Group  0 Pid 151613 on  nid006775 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 737 Group  0 Pid 151614 on  nid006775 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 738 Group  0 Pid 151615 on  nid006775 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 739 Group  0 Pid 151616 on  nid006775 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 740 Group  0 Pid 151708 on  nid006776 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 741 Group  0 Pid 151709 on  nid006776 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 742 Group  0 Pid 151710 on  nid006776 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 743 Group  0 Pid 151711 on  nid006776 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 744 Group  0 Pid 167131 on  nid006777 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 745 Group  0 Pid 167132 on  nid006777 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 746 Group  0 Pid 167133 on  nid006777 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 747 Group  0 Pid 167134 on  nid006777 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 748 Group  0 Pid 138970 on  nid006778 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 749 Group  0 Pid 138971 on  nid006778 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 750 Group  0 Pid 138972 on  nid006778 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 751 Group  0 Pid 138973 on  nid006778 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 752 Group  0 Pid 136995 on  nid006779 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 753 Group  0 Pid 136996 on  nid006779 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 754 Group  0 Pid 136997 on  nid006779 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 755 Group  0 Pid 136998 on  nid006779 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 756 Group  0 Pid 158549 on  nid006780 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 757 Group  0 Pid 158550 on  nid006780 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 758 Group  0 Pid 158551 on  nid006780 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 759 Group  0 Pid 158552 on  nid006780 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 760 Group  0 Pid 160505 on  nid006781 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 761 Group  0 Pid 160506 on  nid006781 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 762 Group  0 Pid 160507 on  nid006781 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 763 Group  0 Pid 160508 on  nid006781 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 764 Group  0 Pid 135289 on  nid006782 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 765 Group  0 Pid 135290 on  nid006782 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 766 Group  0 Pid 135291 on  nid006782 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 767 Group  0 Pid 135292 on  nid006782 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 768 Group  0 Pid 127296 on  nid006783 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 769 Group  0 Pid 127297 on  nid006783 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 770 Group  0 Pid 127298 on  nid006783 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 771 Group  0 Pid 127299 on  nid006783 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 772 Group  0 Pid 170582 on  nid006784 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 773 Group  0 Pid 170583 on  nid006784 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 774 Group  0 Pid 170584 on  nid006784 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 775 Group  0 Pid 170585 on  nid006784 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 776 Group  0 Pid 147058 on  nid006785 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 777 Group  0 Pid 147059 on  nid006785 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 778 Group  0 Pid 147060 on  nid006785 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 779 Group  0 Pid 147061 on  nid006785 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 780 Group  0 Pid 142668 on  nid006786 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 781 Group  0 Pid 142669 on  nid006786 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 782 Group  0 Pid 142670 on  nid006786 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 783 Group  0 Pid 142671 on  nid006786 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 784 Group  0 Pid 137456 on  nid006787 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 785 Group  0 Pid 137457 on  nid006787 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 786 Group  0 Pid 137458 on  nid006787 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 787 Group  0 Pid 137459 on  nid006787 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 788 Group  0 Pid 168414 on  nid006788 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 789 Group  0 Pid 168415 on  nid006788 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 790 Group  0 Pid 168416 on  nid006788 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 791 Group  0 Pid 168417 on  nid006788 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 792 Group  0 Pid 137669 on  nid006790 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 793 Group  0 Pid 137670 on  nid006790 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 794 Group  0 Pid 137671 on  nid006790 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 795 Group  0 Pid 137672 on  nid006790 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 796 Group  0 Pid 146833 on  nid006791 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 797 Group  0 Pid 146834 on  nid006791 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 798 Group  0 Pid 146835 on  nid006791 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 799 Group  0 Pid 146836 on  nid006791 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 800 Group  0 Pid 139506 on  nid006792 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 801 Group  0 Pid 139507 on  nid006792 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 802 Group  0 Pid 139508 on  nid006792 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 803 Group  0 Pid 139509 on  nid006792 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 804 Group  0 Pid 144773 on  nid006793 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 805 Group  0 Pid 144774 on  nid006793 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 806 Group  0 Pid 144775 on  nid006793 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 807 Group  0 Pid 144776 on  nid006793 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 808 Group  0 Pid 156287 on  nid006794 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 809 Group  0 Pid 156288 on  nid006794 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 810 Group  0 Pid 156289 on  nid006794 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 811 Group  0 Pid 156290 on  nid006794 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 812 Group  0 Pid 158139 on  nid006795 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 813 Group  0 Pid 158140 on  nid006795 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 814 Group  0 Pid 158141 on  nid006795 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 815 Group  0 Pid 158142 on  nid006795 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 816 Group  0 Pid 170098 on  nid006796 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 817 Group  0 Pid 170099 on  nid006796 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 818 Group  0 Pid 170100 on  nid006796 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 819 Group  0 Pid 170101 on  nid006796 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 820 Group  0 Pid 135544 on  nid006797 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 821 Group  0 Pid 135545 on  nid006797 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 822 Group  0 Pid 135546 on  nid006797 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 823 Group  0 Pid 135547 on  nid006797 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 824 Group  0 Pid 141459 on  nid006798 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 825 Group  0 Pid 141460 on  nid006798 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 826 Group  0 Pid 141461 on  nid006798 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 827 Group  0 Pid 141462 on  nid006798 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 828 Group  0 Pid 140469 on  nid006799 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 829 Group  0 Pid 140470 on  nid006799 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 830 Group  0 Pid 140471 on  nid006799 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 831 Group  0 Pid 140472 on  nid006799 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 832 Group  0 Pid 163067 on  nid006800 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 833 Group  0 Pid 163068 on  nid006800 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 834 Group  0 Pid 163069 on  nid006800 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 835 Group  0 Pid 163070 on  nid006800 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 836 Group  0 Pid 129944 on  nid006801 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 837 Group  0 Pid 129945 on  nid006801 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 838 Group  0 Pid 129946 on  nid006801 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 839 Group  0 Pid 129947 on  nid006801 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 840 Group  0 Pid 165616 on  nid006802 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 841 Group  0 Pid 165617 on  nid006802 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 842 Group  0 Pid 165618 on  nid006802 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 843 Group  0 Pid 165619 on  nid006802 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 844 Group  0 Pid 157395 on  nid006803 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 845 Group  0 Pid 157396 on  nid006803 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 846 Group  0 Pid 157397 on  nid006803 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 847 Group  0 Pid 157398 on  nid006803 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 848 Group  0 Pid 168270 on  nid006804 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 849 Group  0 Pid 168271 on  nid006804 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 850 Group  0 Pid 168272 on  nid006804 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 851 Group  0 Pid 168273 on  nid006804 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 852 Group  0 Pid 155811 on  nid006805 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 853 Group  0 Pid 155812 on  nid006805 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 854 Group  0 Pid 155813 on  nid006805 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 855 Group  0 Pid 155814 on  nid006805 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 856 Group  0 Pid 166249 on  nid006806 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 857 Group  0 Pid 166250 on  nid006806 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 858 Group  0 Pid 166251 on  nid006806 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 859 Group  0 Pid 166252 on  nid006806 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 860 Group  0 Pid 161073 on  nid006808 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 861 Group  0 Pid 161074 on  nid006808 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 862 Group  0 Pid 161075 on  nid006808 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 863 Group  0 Pid 161076 on  nid006808 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 864 Group  0 Pid 133095 on  nid006809 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 865 Group  0 Pid 133096 on  nid006809 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 866 Group  0 Pid 133097 on  nid006809 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 867 Group  0 Pid 133098 on  nid006809 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 868 Group  0 Pid 154628 on  nid006810 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 869 Group  0 Pid 154629 on  nid006810 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 870 Group  0 Pid 154630 on  nid006810 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 871 Group  0 Pid 154631 on  nid006810 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 872 Group  0 Pid 150271 on  nid006811 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 873 Group  0 Pid 150272 on  nid006811 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 874 Group  0 Pid 150273 on  nid006811 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 875 Group  0 Pid 150274 on  nid006811 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 876 Group  0 Pid 133984 on  nid006812 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 877 Group  0 Pid 133985 on  nid006812 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 878 Group  0 Pid 133986 on  nid006812 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 879 Group  0 Pid 133987 on  nid006812 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 880 Group  0 Pid 148397 on  nid006813 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 881 Group  0 Pid 148398 on  nid006813 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 882 Group  0 Pid 148399 on  nid006813 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 883 Group  0 Pid 148400 on  nid006813 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 884 Group  0 Pid 134452 on  nid006814 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 885 Group  0 Pid 134453 on  nid006814 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 886 Group  0 Pid 134454 on  nid006814 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 887 Group  0 Pid 134455 on  nid006814 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 888 Group  0 Pid 138504 on  nid006815 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 889 Group  0 Pid 138505 on  nid006815 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 890 Group  0 Pid 138506 on  nid006815 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 891 Group  0 Pid 138507 on  nid006815 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 892 Group  0 Pid 169453 on  nid006817 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 893 Group  0 Pid 169454 on  nid006817 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 894 Group  0 Pid 169455 on  nid006817 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 895 Group  0 Pid 169456 on  nid006817 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 896 Group  0 Pid 157597 on  nid006818 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 897 Group  0 Pid 157598 on  nid006818 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 898 Group  0 Pid 157599 on  nid006818 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 899 Group  0 Pid 157600 on  nid006818 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 900 Group  0 Pid 166488 on  nid006820 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 901 Group  0 Pid 166489 on  nid006820 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 902 Group  0 Pid 166490 on  nid006820 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 903 Group  0 Pid 166491 on  nid006820 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 904 Group  0 Pid 150419 on  nid006821 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 905 Group  0 Pid 150420 on  nid006821 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 906 Group  0 Pid 150421 on  nid006821 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 907 Group  0 Pid 150422 on  nid006821 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 908 Group  0 Pid 147826 on  nid006822 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 909 Group  0 Pid 147827 on  nid006822 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 910 Group  0 Pid 147828 on  nid006822 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 911 Group  0 Pid 147829 on  nid006822 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 912 Group  0 Pid 159930 on  nid006824 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 913 Group  0 Pid 159931 on  nid006824 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 914 Group  0 Pid 159932 on  nid006824 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 915 Group  0 Pid 159933 on  nid006824 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 916 Group  0 Pid 169455 on  nid006825 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 917 Group  0 Pid 169456 on  nid006825 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 918 Group  0 Pid 169457 on  nid006825 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 919 Group  0 Pid 169458 on  nid006825 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 920 Group  0 Pid 135861 on  nid006826 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 921 Group  0 Pid 135862 on  nid006826 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 922 Group  0 Pid 135863 on  nid006826 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 923 Group  0 Pid 135864 on  nid006826 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 924 Group  0 Pid 142719 on  nid006827 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 925 Group  0 Pid 142720 on  nid006827 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 926 Group  0 Pid 142721 on  nid006827 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 927 Group  0 Pid 142722 on  nid006827 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 928 Group  0 Pid 129228 on  nid006828 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 929 Group  0 Pid 129229 on  nid006828 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 930 Group  0 Pid 129230 on  nid006828 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 931 Group  0 Pid 129231 on  nid006828 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 932 Group  0 Pid 142644 on  nid006835 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 933 Group  0 Pid 142645 on  nid006835 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 934 Group  0 Pid 142646 on  nid006835 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 935 Group  0 Pid 142647 on  nid006835 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 936 Group  0 Pid 238425 on  nid006858 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 937 Group  0 Pid 238426 on  nid006858 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 938 Group  0 Pid 238427 on  nid006858 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 939 Group  0 Pid 238428 on  nid006858 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 940 Group  0 Pid  43603 on  nid006861 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 941 Group  0 Pid  43604 on  nid006861 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 942 Group  0 Pid  43605 on  nid006861 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 943 Group  0 Pid  43606 on  nid006861 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 944 Group  0 Pid 220247 on  nid006871 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 945 Group  0 Pid 220248 on  nid006871 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 946 Group  0 Pid 220249 on  nid006871 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 947 Group  0 Pid 220250 on  nid006871 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 948 Group  0 Pid 258223 on  nid006913 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 949 Group  0 Pid 258224 on  nid006913 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 950 Group  0 Pid 258225 on  nid006913 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 951 Group  0 Pid 258226 on  nid006913 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 952 Group  0 Pid 235944 on  nid006914 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 953 Group  0 Pid 235945 on  nid006914 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 954 Group  0 Pid 235946 on  nid006914 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 955 Group  0 Pid 235947 on  nid006914 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 956 Group  0 Pid 256851 on  nid006916 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 957 Group  0 Pid 256852 on  nid006916 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 958 Group  0 Pid 256853 on  nid006916 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 959 Group  0 Pid 256854 on  nid006916 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 960 Group  0 Pid 252674 on  nid006917 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 961 Group  0 Pid 252675 on  nid006917 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 962 Group  0 Pid 252676 on  nid006917 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 963 Group  0 Pid 252677 on  nid006917 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 964 Group  0 Pid  60934 on  nid006932 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 965 Group  0 Pid  60935 on  nid006932 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 966 Group  0 Pid  60936 on  nid006932 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 967 Group  0 Pid  60937 on  nid006932 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 968 Group  0 Pid  44745 on  nid006933 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 969 Group  0 Pid  44746 on  nid006933 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 970 Group  0 Pid  44747 on  nid006933 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 971 Group  0 Pid  44748 on  nid006933 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 972 Group  0 Pid 276853 on  nid006936 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 973 Group  0 Pid 276854 on  nid006936 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 974 Group  0 Pid 276855 on  nid006936 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 975 Group  0 Pid 276856 on  nid006936 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 976 Group  0 Pid  54782 on  nid006938 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 977 Group  0 Pid  54783 on  nid006938 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 978 Group  0 Pid  54784 on  nid006938 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 979 Group  0 Pid  54785 on  nid006938 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 980 Group  0 Pid  45544 on  nid006942 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 981 Group  0 Pid  45545 on  nid006942 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 982 Group  0 Pid  45546 on  nid006942 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 983 Group  0 Pid  45547 on  nid006942 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 984 Group  0 Pid 109277 on  nid006943 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 985 Group  0 Pid 109278 on  nid006943 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 986 Group  0 Pid 109279 on  nid006943 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 987 Group  0 Pid 109280 on  nid006943 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 988 Group  0 Pid  57827 on  nid006946 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 989 Group  0 Pid  57828 on  nid006946 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 990 Group  0 Pid  57829 on  nid006946 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 991 Group  0 Pid  57830 on  nid006946 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 992 Group  0 Pid  66439 on  nid006949 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 993 Group  0 Pid  66440 on  nid006949 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 994 Group  0 Pid  66441 on  nid006949 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 995 Group  0 Pid  66442 on  nid006949 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 996 Group  0 Pid  79170 on  nid006954 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 997 Group  0 Pid  79171 on  nid006954 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 998 Group  0 Pid  79172 on  nid006954 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 999 Group  0 Pid  79173 on  nid006954 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1000 Group  0 Pid  60769 on  nid006955 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1001 Group  0 Pid  60770 on  nid006955 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1002 Group  0 Pid  60771 on  nid006955 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1003 Group  0 Pid  60772 on  nid006955 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1004 Group  0 Pid 246124 on  nid007151 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1005 Group  0 Pid 246125 on  nid007151 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1006 Group  0 Pid 246126 on  nid007151 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1007 Group  0 Pid 246127 on  nid007151 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1008 Group  0 Pid 208728 on  nid007273 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1009 Group  0 Pid 208729 on  nid007273 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1010 Group  0 Pid 208730 on  nid007273 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1011 Group  0 Pid 208731 on  nid007273 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1012 Group  0 Pid 268075 on  nid007549 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1013 Group  0 Pid 268077 on  nid007549 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1014 Group  0 Pid 268078 on  nid007549 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1015 Group  0 Pid 268079 on  nid007549 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1016 Group  0 Pid  12581 on  nid007615 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1017 Group  0 Pid  12582 on  nid007615 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1018 Group  0 Pid  12583 on  nid007615 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1019 Group  0 Pid  12584 on  nid007615 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1020 Group  0 Pid 266737 on  nid007640 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1021 Group  0 Pid 266738 on  nid007640 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1022 Group  0 Pid 266739 on  nid007640 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1023 Group  0 Pid 266740 on  nid007640 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #
+   0: #                                                              out-of-place                       in-place          
+   0: #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+   0: #        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+   0:            8             2     float     sum      -1    322.7    0.00    0.00      0    139.1    0.00    0.00      0
+   0:           16             4     float     sum      -1    260.6    0.00    0.00      0    95.78    0.00    0.00      0
+   0:           32             8     float     sum      -1    113.8    0.00    0.00      0    83.01    0.00    0.00      0
+   0:           64            16     float     sum      -1    95.36    0.00    0.00      0    91.44    0.00    0.00      0
+   0:          128            32     float     sum      -1    110.9    0.00    0.00      0    111.4    0.00    0.00      0
+   0:          256            64     float     sum      -1    107.4    0.00    0.00      0    101.5    0.00    0.01      0
+   0:          512           128     float     sum      -1    108.9    0.00    0.01      0    97.51    0.01    0.01      0
+   0:         1024           256     float     sum      -1    102.5    0.01    0.02      0    101.8    0.01    0.02      0
+   0:         2048           512     float     sum      -1    128.7    0.02    0.03      0    103.6    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    239.5    0.02    0.03      0    237.1    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    243.3    0.03    0.07      0    239.9    0.03    0.07      0
+   0:        16384          4096     float     sum      -1   1363.7    0.01    0.02      0    250.1    0.07    0.13      0
+   0:        32768          8192     float     sum      -1    256.3    0.13    0.26      0    257.4    0.13    0.25      0
+   0:        65536         16384     float     sum      -1    279.2    0.23    0.47      0    267.7    0.24    0.49      0
+   0:       131072         32768     float     sum      -1    371.9    0.35    0.70      0    296.6    0.44    0.88      0
+   0:       262144         65536     float     sum      -1    465.0    0.56    1.13      0    373.4    0.70    1.40      0
+   0:       524288        131072     float     sum      -1    538.0    0.97    1.95      0    483.6    1.08    2.17      0
+   0:      1048576        262144     float     sum      -1    687.1    1.53    3.05      0    660.8    1.59    3.17      0
+   0:      2097152        524288     float     sum      -1    968.9    2.16    4.32      0    866.4    2.42    4.84      0
+   0:      4194304       1048576     float     sum      -1   1344.9    3.12    6.23      0   1351.0    3.10    6.20      0
+   0:      8388608       2097152     float     sum      -1   2262.3    3.71    7.41      0   2292.7    3.66    7.31      0
+   0:     16777216       4194304     float     sum      -1   3374.2    4.97    9.93      0   3384.1    4.96    9.91      0
+   0:     33554432       8388608     float     sum      -1   4190.8    8.01   16.00      0   4194.6    8.00   15.98      0
+   0:     67108864      16777216     float     sum      -1   6791.1    9.88   19.74      0   6738.0    9.96   19.90      0
+   0:    134217728      33554432     float     sum      -1    12128   11.07   22.11      0    12106   11.09   22.15      0
+   0:    268435456      67108864     float     sum      -1    17539   15.31   30.58      0    17510   15.33   30.63      0
+   0:    536870912     134217728     float     sum      -1    26928   19.94   39.84      0    26985   19.90   39.75      0
+   0:   1073741824     268435456     float     sum      -1    42795   25.09   50.13      0    42710   25.14   50.23      0
+   0:   2147483648     536870912     float     sum      -1    90575   23.71   47.37      0    73697   29.14   58.22      0
+   0:   4294967296    1073741824     float     sum      -1   110118   39.00   77.93      0   109971   39.06   78.03      0
+   0:            8             2     float     sum      -1    86.21    0.00    0.00      0    83.17    0.00    0.00      0
+   0:           16             4     float     sum      -1    80.97    0.00    0.00      0    81.31    0.00    0.00      0
+   0:           32             8     float     sum      -1    82.62    0.00    0.00      0    83.31    0.00    0.00      0
+   0:           64            16     float     sum      -1    91.77    0.00    0.00      0    91.41    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.79    0.00    0.00      0    93.91    0.00    0.00      0
+   0:          256            64     float     sum      -1    103.9    0.00    0.00      0    101.5    0.00    0.01      0
+   0:          512           128     float     sum      -1    103.7    0.00    0.01      0    96.70    0.01    0.01      0
+   0:         1024           256     float     sum      -1    104.8    0.01    0.02      0    99.32    0.01    0.02      0
+   0:         2048           512     float     sum      -1    106.6    0.02    0.04      0    103.4    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.4    0.02    0.03      0    237.1    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    244.8    0.03    0.07      0    239.1    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    242.3    0.07    0.14      0    238.9    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    254.8    0.13    0.26      0    256.8    0.13    0.25      0
+   0:        65536         16384     float     sum      -1    266.8    0.25    0.49      0    271.1    0.24    0.48      0
+   0:       131072         32768     float     sum      -1    303.7    0.43    0.86      0    298.0    0.44    0.88      0
+   0:       262144         65536     float     sum      -1    382.4    0.69    1.37      0    373.2    0.70    1.40      0
+   0:       524288        131072     float     sum      -1    608.1    0.86    1.72      0    480.7    1.09    2.18      0
+   0:      1048576        262144     float     sum      -1    611.2    1.72    3.43      0    619.9    1.69    3.38      0
+   0:      2097152        524288     float     sum      -1    787.5    2.66    5.32      0    791.7    2.65    5.29      0
+   0:      4194304       1048576     float     sum      -1   1242.2    3.38    6.75      0   1244.1    3.37    6.74      0
+   0:      8388608       2097152     float     sum      -1   2125.8    3.95    7.88      0   2118.0    3.96    7.91      0
+   0:     16777216       4194304     float     sum      -1   3370.0    4.98    9.95      0   3374.3    4.97    9.93      0
+   0:     33554432       8388608     float     sum      -1   4178.0    8.03   16.05      0   4236.4    7.92   15.83      0
+   0:     67108864      16777216     float     sum      -1   6757.3    9.93   19.84      0   6850.7    9.80   19.57      0
+   0:    134217728      33554432     float     sum      -1    12133   11.06   22.10      0    12202   11.00   21.98      0
+   0:    268435456      67108864     float     sum      -1    17599   15.25   30.48      0    17633   15.22   30.42      0
+   0:    536870912     134217728     float     sum      -1    26915   19.95   39.86      0    26963   19.91   39.78      0
+   0:   1073741824     268435456     float     sum      -1    42864   25.05   50.05      0    42771   25.10   50.16      0
+   0:   2147483648     536870912     float     sum      -1    73455   29.24   58.41      0    73437   29.24   58.43      0
+   0:   4294967296    1073741824     float     sum      -1   115819   37.08   74.09      0   110550   38.85   77.63      0
+   0:            8             2     float     sum      -1    85.30    0.00    0.00      0    81.96    0.00    0.00      0
+   0:           16             4     float     sum      -1    81.72    0.00    0.00      0    82.29    0.00    0.00      0
+   0:           32             8     float     sum      -1    83.80    0.00    0.00      0    85.09    0.00    0.00      0
+   0:           64            16     float     sum      -1    92.38    0.00    0.00      0    91.60    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.25    0.00    0.00      0    93.54    0.00    0.00      0
+   0:          256            64     float     sum      -1    95.92    0.00    0.01      0    93.88    0.00    0.01      0
+   0:          512           128     float     sum      -1    99.73    0.01    0.01      0    96.24    0.01    0.01      0
+   0:         1024           256     float     sum      -1    102.0    0.01    0.02      0    101.8    0.01    0.02      0
+   0:         2048           512     float     sum      -1    105.8    0.02    0.04      0    103.0    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.8    0.02    0.03      0    250.3    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    239.8    0.03    0.07      0    236.3    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    242.4    0.07    0.14      0    239.4    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    258.8    0.13    0.25      0    271.5    0.12    0.24      0
+   0:        65536         16384     float     sum      -1    274.1    0.24    0.48      0    265.7    0.25    0.49      0
+   0:       131072         32768     float     sum      -1    306.9    0.43    0.85      0    329.0    0.40    0.80      0
+   0:       262144         65536     float     sum      -1    392.9    0.67    1.33      0    372.6    0.70    1.41      0
+   0:       524288        131072     float     sum      -1    503.7    1.04    2.08      0    504.1    1.04    2.08      0
+   0:      1048576        262144     float     sum      -1    611.6    1.71    3.43      0    616.0    1.70    3.40      0
+   0:      2097152        524288     float     sum      -1    791.6    2.65    5.29      0    784.9    2.67    5.34      0
+   0:      4194304       1048576     float     sum      -1   1244.7    3.37    6.73      0   1240.4    3.38    6.76      0
+   0:      8388608       2097152     float     sum      -1   2127.9    3.94    7.88      0   2115.0    3.97    7.92      0
+   0:     16777216       4194304     float     sum      -1   3387.0    4.95    9.90      0   3367.0    4.98    9.96      0
+   0:     33554432       8388608     float     sum      -1   4198.6    7.99   15.97      0   4189.5    8.01   16.00      0
+   0:     67108864      16777216     float     sum      -1   6830.6    9.82   19.63      0   6817.2    9.84   19.67      0
+   0:    134217728      33554432     float     sum      -1    12241   10.96   21.91      0    12279   10.93   21.84      0
+   0:    268435456      67108864     float     sum      -1    17379   15.45   30.86      0    17363   15.46   30.89      0
+   0:    536870912     134217728     float     sum      -1    26919   19.94   39.85      0    27069   19.83   39.63      0
+   0:   1073741824     268435456     float     sum      -1    42666   25.17   50.28      0    42770   25.11   50.16      0
+   0:   2147483648     536870912     float     sum      -1    73594   29.18   58.30      0    73553   29.20   58.34      0
+   0:   4294967296    1073741824     float     sum      -1   111350   38.57   77.07      0   111829   38.41   76.74      0
+   0:            8             2     float     sum      -1    85.69    0.00    0.00      0    82.71    0.00    0.00      0
+   0:           16             4     float     sum      -1    93.01    0.00    0.00      0    82.29    0.00    0.00      0
+   0:           32             8     float     sum      -1    82.11    0.00    0.00      0    83.32    0.00    0.00      0
+   0:           64            16     float     sum      -1    93.31    0.00    0.00      0    91.99    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.44    0.00    0.00      0    93.86    0.00    0.00      0
+   0:          256            64     float     sum      -1    99.63    0.00    0.01      0    93.61    0.00    0.01      0
+   0:          512           128     float     sum      -1    100.2    0.01    0.01      0    95.96    0.01    0.01      0
+   0:         1024           256     float     sum      -1    103.5    0.01    0.02      0    105.7    0.01    0.02      0
+   0:         2048           512     float     sum      -1    106.4    0.02    0.04      0    103.4    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.8    0.02    0.03      0    237.0    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    240.5    0.03    0.07      0    242.8    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    242.5    0.07    0.13      0    239.4    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    271.5    0.12    0.24      0    251.7    0.13    0.26      0
+   0:        65536         16384     float     sum      -1    274.5    0.24    0.48      0    273.7    0.24    0.48      0
+   0:       131072         32768     float     sum      -1    298.7    0.44    0.88      0    313.7    0.42    0.83      0
+   0:       262144         65536     float     sum      -1    393.0    0.67    1.33      0    371.8    0.71    1.41      0
+   0:       524288        131072     float     sum      -1    484.0    1.08    2.16      0    480.2    1.09    2.18      0
+   0:      1048576        262144     float     sum      -1    617.8    1.70    3.39      0    628.1    1.67    3.34      0
+   0:      2097152        524288     float     sum      -1    780.7    2.69    5.37      0    794.1    2.64    5.28      0
+   0:      4194304       1048576     float     sum      -1   1255.3    3.34    6.68      0   1275.6    3.29    6.57      0
+   0:      8388608       2097152     float     sum      -1   2117.1    3.96    7.92      0   2115.5    3.97    7.92      0
+   0:     16777216       4194304     float     sum      -1   3374.1    4.97    9.93      0   3379.4    4.96    9.92      0
+   0:     33554432       8388608     float     sum      -1   4214.8    7.96   15.91      0   4191.0    8.01   16.00      0
+   0:     67108864      16777216     float     sum      -1   6785.0    9.89   19.76      0   6778.9    9.90   19.78      0
+   0:    134217728      33554432     float     sum      -1    12124   11.07   22.12      0    12124   11.07   22.12      0
+   0:    268435456      67108864     float     sum      -1    17331   15.49   30.95      0    17286   15.53   31.03      0
+   0:    536870912     134217728     float     sum      -1    26841   20.00   39.96      0    27216   19.73   39.41      0
+   0:   1073741824     268435456     float     sum      -1    42898   25.03   50.01      0    42857   25.05   50.06      0
+   0:   2147483648     536870912     float     sum      -1    73674   29.15   58.24      0    73457   29.23   58.41      0
+   0:   4294967296    1073741824     float     sum      -1   111885   38.39   76.70      0   111511   38.52   76.96      0
+   0:            8             2     float     sum      -1    84.77    0.00    0.00      0    82.52    0.00    0.00      0
+   0:           16             4     float     sum      -1    82.12    0.00    0.00      0    81.41    0.00    0.00      0
+   0:           32             8     float     sum      -1    82.77    0.00    0.00      0    82.52    0.00    0.00      0
+   0:           64            16     float     sum      -1    93.24    0.00    0.00      0    91.99    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.92    0.00    0.00      0    93.49    0.00    0.00      0
+   0:          256            64     float     sum      -1    96.26    0.00    0.01      0    94.33    0.00    0.01      0
+   0:          512           128     float     sum      -1    99.86    0.01    0.01      0    99.59    0.01    0.01      0
+   0:         1024           256     float     sum      -1    102.6    0.01    0.02      0    99.73    0.01    0.02      0
+   0:         2048           512     float     sum      -1    105.8    0.02    0.04      0    103.7    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    246.8    0.02    0.03      0    236.6    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    245.1    0.03    0.07      0    237.5    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    241.8    0.07    0.14      0    251.4    0.07    0.13      0
+   0:        32768          8192     float     sum      -1    267.4    0.12    0.24      0    261.5    0.13    0.25      0
+   0:        65536         16384     float     sum      -1    268.1    0.24    0.49      0    263.7    0.25    0.50      0
+   0:       131072         32768     float     sum      -1    296.7    0.44    0.88      0    305.7    0.43    0.86      0
+   0:       262144         65536     float     sum      -1    377.3    0.69    1.39      0    378.3    0.69    1.38      0
+   0:       524288        131072     float     sum      -1    484.9    1.08    2.16      0    489.8    1.07    2.14      0
+   0:      1048576        262144     float     sum      -1    633.2    1.66    3.31      0    612.5    1.71    3.42      0
+   0:      2097152        524288     float     sum      -1    781.6    2.68    5.36      0    787.4    2.66    5.32      0
+   0:      4194304       1048576     float     sum      -1   1248.6    3.36    6.71      0   1246.7    3.36    6.72      0
+   0:      8388608       2097152     float     sum      -1   2118.6    3.96    7.91      0   2114.1    3.97    7.93      0
+   0:     16777216       4194304     float     sum      -1   3390.2    4.95    9.89      0   3373.5    4.97    9.94      0
+   0:     33554432       8388608     float     sum      -1   4195.8    8.00   15.98      0   4185.0    8.02   16.02      0
+   0:     67108864      16777216     float     sum      -1   6726.6    9.98   19.93      0   6730.4    9.97   19.92      0
+   0:    134217728      33554432     float     sum      -1    12078   11.11   22.20      0    12303   10.91   21.80      0
+   0:    268435456      67108864     float     sum      -1    17406   15.42   30.81      0    17273   15.54   31.05      0
+   0:    536870912     134217728     float     sum      -1    27019   19.87   39.70      0    26950   19.92   39.80      0
+   0:   1073741824     268435456     float     sum      -1    42761   25.11   50.17      0    42657   25.17   50.29      0
+   0:   2147483648     536870912     float     sum      -1    73680   29.15   58.24      0    73636   29.16   58.27      0
+   0:   4294967296    1073741824     float     sum      -1   114872   37.39   74.71      0   109813   39.11   78.15      0
+   0:            8             2     float     sum      -1    86.53    0.00    0.00      0    82.38    0.00    0.00      0
+   0:           16             4     float     sum      -1    81.50    0.00    0.00      0    82.01    0.00    0.00      0
+   0:           32             8     float     sum      -1    83.55    0.00    0.00      0    83.01    0.00    0.00      0
+   0:           64            16     float     sum      -1    91.69    0.00    0.00      0    91.32    0.00    0.00      0
+   0:          128            32     float     sum      -1    96.81    0.00    0.00      0    94.51    0.00    0.00      0
+   0:          256            64     float     sum      -1    100.7    0.00    0.01      0    94.24    0.00    0.01      0
+   0:          512           128     float     sum      -1    100.2    0.01    0.01      0    96.79    0.01    0.01      0
+   0:         1024           256     float     sum      -1    107.0    0.01    0.02      0    100.4    0.01    0.02      0
+   0:         2048           512     float     sum      -1    106.6    0.02    0.04      0    104.9    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.9    0.02    0.03      0    234.5    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    241.7    0.03    0.07      0    237.3    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    242.0    0.07    0.14      0    240.0    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    256.8    0.13    0.25      0    269.0    0.12    0.24      0
+   0:        65536         16384     float     sum      -1    281.6    0.23    0.47      0    263.2    0.25    0.50      0
+   0:       131072         32768     float     sum      -1    298.3    0.44    0.88      0    296.0    0.44    0.88      0
+   0:       262144         65536     float     sum      -1    377.9    0.69    1.39      0    371.5    0.71    1.41      0
+   0:       524288        131072     float     sum      -1    507.8    1.03    2.06      0    510.6    1.03    2.05      0
+   0:      1048576        262144     float     sum      -1    612.5    1.71    3.42      0    622.2    1.69    3.37      0
+   0:      2097152        524288     float     sum      -1    782.4    2.68    5.36      0    781.1    2.68    5.36      0
+   0:      4194304       1048576     float     sum      -1   1241.2    3.38    6.75      0   1244.5    3.37    6.73      0
+   0:      8388608       2097152     float     sum      -1   2118.6    3.96    7.91      0   2119.8    3.96    7.91      0
+   0:     16777216       4194304     float     sum      -1   3389.1    4.95    9.89      0   3369.5    4.98    9.95      0
+   0:     33554432       8388608     float     sum      -1   4180.9    8.03   16.04      0   4175.9    8.04   16.05      0
+   0:     67108864      16777216     float     sum      -1   6783.8    9.89   19.77      0   6797.6    9.87   19.73      0
+   0:    134217728      33554432     float     sum      -1    12438   10.79   21.56      0    12110   11.08   22.15      0
+   0:    268435456      67108864     float     sum      -1    17275   15.54   31.05      0    17532   15.31   30.59      0
+   0:    536870912     134217728     float     sum      -1    26853   19.99   39.95      0    26810   20.03   40.01      0
+   0:   1073741824     268435456     float     sum      -1    42742   25.12   50.19      0    42813   25.08   50.11      0
+   0:   2147483648     536870912     float     sum      -1    74317   28.90   57.74      0    73553   29.20   58.34      0
+   0:   4294967296    1073741824     float     sum      -1   109497   39.22   78.37      0   109764   39.13   78.18      0
+   0:            8             2     float     sum      -1    84.97    0.00    0.00      0    81.97    0.00    0.00      0
+   0:           16             4     float     sum      -1    81.48    0.00    0.00      0    81.26    0.00    0.00      0
+   0:           32             8     float     sum      -1    83.52    0.00    0.00      0    82.44    0.00    0.00      0
+   0:           64            16     float     sum      -1    92.12    0.00    0.00      0    91.99    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.50    0.00    0.00      0    93.51    0.00    0.00      0
+   0:          256            64     float     sum      -1    97.21    0.00    0.01      0    99.33    0.00    0.01      0
+   0:          512           128     float     sum      -1    100.5    0.01    0.01      0    95.97    0.01    0.01      0
+   0:         1024           256     float     sum      -1    102.1    0.01    0.02      0    99.72    0.01    0.02      0
+   0:         2048           512     float     sum      -1    113.5    0.02    0.04      0    103.0    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    240.1    0.02    0.03      0    237.0    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    257.5    0.03    0.06      0    236.6    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    242.9    0.07    0.13      0    239.0    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    291.4    0.11    0.22      0    252.4    0.13    0.26      0
+   0:        65536         16384     float     sum      -1    266.9    0.25    0.49      0    264.8    0.25    0.49      0
+   0:       131072         32768     float     sum      -1    298.1    0.44    0.88      0    305.3    0.43    0.86      0
+   0:       262144         65536     float     sum      -1    384.0    0.68    1.36      0    370.9    0.71    1.41      0
+   0:       524288        131072     float     sum      -1    484.6    1.08    2.16      0    487.2    1.08    2.15      0
+   0:      1048576        262144     float     sum      -1    611.6    1.71    3.43      0    622.7    1.68    3.36      0
+   0:      2097152        524288     float     sum      -1    781.4    2.68    5.36      0    793.4    2.64    5.28      0
+   0:      4194304       1048576     float     sum      -1   1243.5    3.37    6.74      0   1244.8    3.37    6.73      0
+   0:      8388608       2097152     float     sum      -1   2121.8    3.95    7.90      0   2114.3    3.97    7.93      0
+   0:     16777216       4194304     float     sum      -1   3375.3    4.97    9.93      0   3383.1    4.96    9.91      0
+   0:     33554432       8388608     float     sum      -1   4192.7    8.00   15.99      0   4183.2    8.02   16.03      0
+   0:     67108864      16777216     float     sum      -1   6784.9    9.89   19.76      0    40279    1.67    3.33      0
+   0:    134217728      33554432     float     sum      -1    23592    5.69   11.37      0    12118   11.08   22.13      0
+   0:    268435456      67108864     float     sum      -1    17549   15.30   30.56      0    17099   15.70   31.37      0
+   0:    536870912     134217728     float     sum      -1    26981   19.90   39.76      0    26947   19.92   39.81      0
+   0:   1073741824     268435456     float     sum      -1    42889   25.04   50.02      0    42800   25.09   50.13      0
+   0:   2147483648     536870912     float     sum      -1    73753   29.12   58.18      0    73636   29.16   58.27      0
+   0:   4294967296    1073741824     float     sum      -1   111868   38.39   76.71      0   111459   38.53   76.99      0
+   0:            8             2     float     sum      -1    85.35    0.00    0.00      0    82.57    0.00    0.00      0
+   0:           16             4     float     sum      -1    81.94    0.00    0.00      0    96.07    0.00    0.00      0
+   0:           32             8     float     sum      -1    86.75    0.00    0.00      0    86.32    0.00    0.00      0
+   0:           64            16     float     sum      -1    91.82    0.00    0.00      0    91.07    0.00    0.00      0
+   0:          128            32     float     sum      -1    95.30    0.00    0.00      0    94.08    0.00    0.00      0
+   0:          256            64     float     sum      -1    96.28    0.00    0.01      0    94.41    0.00    0.01      0
+   0:          512           128     float     sum      -1    99.95    0.01    0.01      0    95.35    0.01    0.01      0
+   0:         1024           256     float     sum      -1    101.7    0.01    0.02      0    99.77    0.01    0.02      0
+   0:         2048           512     float     sum      -1    106.4    0.02    0.04      0    103.0    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.9    0.02    0.03      0    235.5    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    240.1    0.03    0.07      0    236.6    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    241.4    0.07    0.14      0    238.6    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    254.2    0.13    0.26      0    251.8    0.13    0.26      0
+   0:        65536         16384     float     sum      -1    276.0    0.24    0.47      0    283.2    0.23    0.46      0
+   0:       131072         32768     float     sum      -1    308.9    0.42    0.85      0    300.2    0.44    0.87      0
+   0:       262144         65536     float     sum      -1    382.6    0.69    1.37      0    374.4    0.70    1.40      0
+   0:       524288        131072     float     sum      -1    491.1    1.07    2.13      0    533.5    0.98    1.96      0
+   0:      1048576        262144     float     sum      -1    618.8    1.69    3.39      0    611.6    1.71    3.43      0
+   0:      2097152        524288     float     sum      -1    782.6    2.68    5.35      0    788.1    2.66    5.32      0
+   0:      4194304       1048576     float     sum      -1   1274.2    3.29    6.58      0   1243.3    3.37    6.74      0
+   0:      8388608       2097152     float     sum      -1   2120.9    3.96    7.90      0   2117.4    3.96    7.92      0
+   0:     16777216       4194304     float     sum      -1   3381.5    4.96    9.91      0   3390.3    4.95    9.89      0
+   0:     33554432       8388608     float     sum      -1   4193.3    8.00   15.99      0   4242.6    7.91   15.80      0
+   0:     67108864      16777216     float     sum      -1   6816.5    9.85   19.67      0   6758.9    9.93   19.84      0
+   0:    134217728      33554432     float     sum      -1    12153   11.04   22.07      0    12307   10.91   21.79      0
+   0:    268435456      67108864     float     sum      -1    17472   15.36   30.70      0    17295   15.52   31.01      0
+   0:    536870912     134217728     float     sum      -1    26949   19.92   39.80      0    26936   19.93   39.82      0
+   0:   1073741824     268435456     float     sum      -1    42905   25.03   50.00      0    42892   25.03   50.02      0
+   0:   2147483648     536870912     float     sum      -1    73469   29.23   58.40      0    73789   29.10   58.15      0
+   0:   4294967296    1073741824     float     sum      -1   109633   39.18   78.28      0   111197   38.62   77.17      0
+   0:            8             2     float     sum      -1    85.45    0.00    0.00      0    82.20    0.00    0.00      0
+   0:           16             4     float     sum      -1    87.25    0.00    0.00      0    81.94    0.00    0.00      0
+   0:           32             8     float     sum      -1    82.55    0.00    0.00      0    82.50    0.00    0.00      0
+   0:           64            16     float     sum      -1    92.04    0.00    0.00      0    92.05    0.00    0.00      0
+   0:          128            32     float     sum      -1    96.95    0.00    0.00      0    92.97    0.00    0.00      0
+   0:          256            64     float     sum      -1    105.1    0.00    0.00      0    94.47    0.00    0.01      0
+   0:          512           128     float     sum      -1    104.5    0.00    0.01      0    96.36    0.01    0.01      0
+   0:         1024           256     float     sum      -1    101.1    0.01    0.02      0    99.20    0.01    0.02      0
+   0:         2048           512     float     sum      -1    105.5    0.02    0.04      0    107.6    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    238.0    0.02    0.03      0    236.5    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    240.1    0.03    0.07      0    237.9    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    241.6    0.07    0.14      0    238.8    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    255.2    0.13    0.26      0    252.5    0.13    0.26      0
+   0:        65536         16384     float     sum      -1    272.9    0.24    0.48      0    263.3    0.25    0.50      0
+   0:       131072         32768     float     sum      -1    296.1    0.44    0.88      0    293.7    0.45    0.89      0
+   0:       262144         65536     float     sum      -1    390.3    0.67    1.34      0    372.4    0.70    1.41      0
+   0:       524288        131072     float     sum      -1    491.2    1.07    2.13      0    481.8    1.09    2.17      0
+   0:      1048576        262144     float     sum      -1    611.8    1.71    3.42      0    613.5    1.71    3.41      0
+   0:      2097152        524288     float     sum      -1    780.6    2.69    5.37      0    780.3    2.69    5.37      0
+   0:      4194304       1048576     float     sum      -1   1243.1    3.37    6.74      0   1242.9    3.37    6.74      0
+   0:      8388608       2097152     float     sum      -1   2116.3    3.96    7.92      0   2116.5    3.96    7.92      0
+   0:     16777216       4194304     float     sum      -1   3364.3    4.99    9.96      0   3381.9    4.96    9.91      0
+   0:     33554432       8388608     float     sum      -1   4201.5    7.99   15.96      0   4157.5    8.07   16.13      0
+   0:     67108864      16777216     float     sum      -1   6754.4    9.94   19.85      0   6740.2    9.96   19.89      0
+   0:    134217728      33554432     float     sum      -1    12133   11.06   22.10      0    12424   10.80   21.58      0
+   0:    268435456      67108864     float     sum      -1    17417   15.41   30.79      0    17321   15.50   30.97      0
+   0:    536870912     134217728     float     sum      -1    27019   19.87   39.70      0    27046   19.85   39.66      0
+   0:   1073741824     268435456     float     sum      -1    42905   25.03   50.00      0    42831   25.07   50.09      0
+   0:   2147483648     536870912     float     sum      -1    73557   29.19   58.33      0    73678   29.15   58.24      0
+   0:   4294967296    1073741824     float     sum      -1   109730   39.14   78.21      0   110467   38.88   77.68      0
+   0:            8             2     float     sum      -1    85.20    0.00    0.00      0    82.31    0.00    0.00      0
+   0:           16             4     float     sum      -1    81.83    0.00    0.00      0    81.06    0.00    0.00      0
+   0:           32             8     float     sum      -1    83.45    0.00    0.00      0    82.71    0.00    0.00      0
+   0:           64            16     float     sum      -1    91.06    0.00    0.00      0    91.45    0.00    0.00      0
+   0:          128            32     float     sum      -1    94.59    0.00    0.00      0    93.05    0.00    0.00      0
+   0:          256            64     float     sum      -1    95.95    0.00    0.01      0    94.14    0.00    0.01      0
+   0:          512           128     float     sum      -1    99.73    0.01    0.01      0    96.32    0.01    0.01      0
+   0:         1024           256     float     sum      -1    103.6    0.01    0.02      0    100.2    0.01    0.02      0
+   0:         2048           512     float     sum      -1    106.4    0.02    0.04      0    104.2    0.02    0.04      0
+   0:         4096          1024     float     sum      -1    246.3    0.02    0.03      0    236.7    0.02    0.03      0
+   0:         8192          2048     float     sum      -1    240.5    0.03    0.07      0    238.7    0.03    0.07      0
+   0:        16384          4096     float     sum      -1    241.7    0.07    0.14      0    239.6    0.07    0.14      0
+   0:        32768          8192     float     sum      -1    254.2    0.13    0.26      0    251.4    0.13    0.26      0
+   0:        65536         16384     float     sum      -1    267.1    0.25    0.49      0    263.1    0.25    0.50      0
+   0:       131072         32768     float     sum      -1    301.6    0.43    0.87      0    293.4    0.45    0.89      0
+   0:       262144         65536     float     sum      -1    373.6    0.70    1.40      0    371.1    0.71    1.41      0
+   0:       524288        131072     float     sum      -1    485.2    1.08    2.16      0    490.2    1.07    2.14      0
+   0:      1048576        262144     float     sum      -1    613.0    1.71    3.42      0    611.7    1.71    3.43      0
+   0:      2097152        524288     float     sum      -1    781.8    2.68    5.36      0    781.5    2.68    5.36      0
+   0:      4194304       1048576     float     sum      -1   1243.6    3.37    6.74      0   1243.4    3.37    6.74      0
+   0:      8388608       2097152     float     sum      -1   2118.9    3.96    7.91      0   2118.5    3.96    7.91      0
+   0:     16777216       4194304     float     sum      -1   3378.4    4.97    9.92      0   3382.4    4.96    9.91      0
+   0:     33554432       8388608     float     sum      -1   4146.9    8.09   16.17      0   4177.3    8.03   16.05      0
+   0:     67108864      16777216     float     sum      -1   6750.3    9.94   19.86      0   6738.9    9.96   19.90      0
+   0:    134217728      33554432     float     sum      -1    12129   11.07   22.11      0    12119   11.08   22.13      0
+   0:    268435456      67108864     float     sum      -1    17255   15.56   31.08      0    17741   15.13   30.23      0
+   0:    536870912     134217728     float     sum      -1    26816   20.02   40.00      0    27008   19.88   39.72      0
+   0:   1073741824     268435456     float     sum      -1    42859   25.05   50.06      0    42802   25.09   50.12      0
+   0:   2147483648     536870912     float     sum      -1    73570   29.19   58.32      0    73753   29.12   58.18      0
+   0:   4294967296    1073741824     float     sum      -1   110598   38.83   77.59      0   109935   39.07   78.06      0
+   0: # Out of bounds values : 0 OK
+   0: # Avg bus bandwidth    : 11.6857 
+   0: #
+   0: 
