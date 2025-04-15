@@ -1,0 +1,1563 @@
+   0: # nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 8 iters: 24 agg iters: 1 validation: 1 graph: 0
+   0: #
+   0: # Using devices
+   0: #  Rank  0 Group  0 Pid  81014 on  nid005450 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  1 Group  0 Pid  81015 on  nid005450 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank  2 Group  0 Pid  81016 on  nid005450 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank  3 Group  0 Pid  81017 on  nid005450 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank  4 Group  0 Pid 192970 on  nid005458 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  5 Group  0 Pid 192971 on  nid005458 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank  6 Group  0 Pid 192972 on  nid005458 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank  7 Group  0 Pid 192973 on  nid005458 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank  8 Group  0 Pid 193614 on  nid005460 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank  9 Group  0 Pid 193615 on  nid005460 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 10 Group  0 Pid 193616 on  nid005460 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 11 Group  0 Pid 193617 on  nid005460 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 12 Group  0 Pid 177741 on  nid005464 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 13 Group  0 Pid 177742 on  nid005464 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 14 Group  0 Pid 177743 on  nid005464 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 15 Group  0 Pid 177744 on  nid005464 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 16 Group  0 Pid 189806 on  nid005465 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 17 Group  0 Pid 189807 on  nid005465 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 18 Group  0 Pid 189808 on  nid005465 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 19 Group  0 Pid 189809 on  nid005465 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 20 Group  0 Pid 169348 on  nid005466 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 21 Group  0 Pid 169349 on  nid005466 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 22 Group  0 Pid 169350 on  nid005466 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 23 Group  0 Pid 169351 on  nid005466 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 24 Group  0 Pid 241035 on  nid005468 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 25 Group  0 Pid 241036 on  nid005468 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 26 Group  0 Pid 241037 on  nid005468 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 27 Group  0 Pid 241038 on  nid005468 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 28 Group  0 Pid 151076 on  nid005470 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 29 Group  0 Pid 151077 on  nid005470 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 30 Group  0 Pid 151078 on  nid005470 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 31 Group  0 Pid 151079 on  nid005470 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 32 Group  0 Pid 234412 on  nid005471 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 33 Group  0 Pid 234413 on  nid005471 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 34 Group  0 Pid 234414 on  nid005471 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 35 Group  0 Pid 234415 on  nid005471 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 36 Group  0 Pid 162290 on  nid005475 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 37 Group  0 Pid 162291 on  nid005475 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 38 Group  0 Pid 162292 on  nid005475 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 39 Group  0 Pid 162293 on  nid005475 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 40 Group  0 Pid 184157 on  nid005479 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 41 Group  0 Pid 184158 on  nid005479 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 42 Group  0 Pid 184159 on  nid005479 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 43 Group  0 Pid 184160 on  nid005479 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 44 Group  0 Pid 168447 on  nid005486 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 45 Group  0 Pid 168448 on  nid005486 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 46 Group  0 Pid 168449 on  nid005486 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 47 Group  0 Pid 168450 on  nid005486 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 48 Group  0 Pid 186417 on  nid005489 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 49 Group  0 Pid 186418 on  nid005489 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 50 Group  0 Pid 186419 on  nid005489 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 51 Group  0 Pid 186420 on  nid005489 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 52 Group  0 Pid 217297 on  nid005501 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 53 Group  0 Pid 217298 on  nid005501 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 54 Group  0 Pid 217299 on  nid005501 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 55 Group  0 Pid 217300 on  nid005501 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 56 Group  0 Pid 183766 on  nid005503 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 57 Group  0 Pid 183767 on  nid005503 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 58 Group  0 Pid 183768 on  nid005503 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 59 Group  0 Pid 183769 on  nid005503 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 60 Group  0 Pid 207219 on  nid005504 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 61 Group  0 Pid 207220 on  nid005504 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 62 Group  0 Pid 207221 on  nid005504 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 63 Group  0 Pid 207222 on  nid005504 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 64 Group  0 Pid 157223 on  nid005508 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 65 Group  0 Pid 157224 on  nid005508 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 66 Group  0 Pid 157225 on  nid005508 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 67 Group  0 Pid 157226 on  nid005508 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 68 Group  0 Pid 159649 on  nid005509 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 69 Group  0 Pid 159650 on  nid005509 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 70 Group  0 Pid 159651 on  nid005509 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 71 Group  0 Pid 159652 on  nid005509 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 72 Group  0 Pid 156677 on  nid005517 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 73 Group  0 Pid 156678 on  nid005517 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 74 Group  0 Pid 156679 on  nid005517 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 75 Group  0 Pid 156680 on  nid005517 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 76 Group  0 Pid 186036 on  nid005519 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 77 Group  0 Pid 186037 on  nid005519 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 78 Group  0 Pid 186038 on  nid005519 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 79 Group  0 Pid 186039 on  nid005519 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 80 Group  0 Pid  90222 on  nid005523 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 81 Group  0 Pid  90223 on  nid005523 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 82 Group  0 Pid  90224 on  nid005523 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 83 Group  0 Pid  90225 on  nid005523 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 84 Group  0 Pid 165816 on  nid005525 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 85 Group  0 Pid 165817 on  nid005525 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 86 Group  0 Pid 165818 on  nid005525 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 87 Group  0 Pid 165819 on  nid005525 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 88 Group  0 Pid 142061 on  nid005526 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 89 Group  0 Pid 142062 on  nid005526 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 90 Group  0 Pid 142063 on  nid005526 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 91 Group  0 Pid 142064 on  nid005526 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 92 Group  0 Pid 144869 on  nid005529 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 93 Group  0 Pid 144870 on  nid005529 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 94 Group  0 Pid 144871 on  nid005529 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 95 Group  0 Pid 144872 on  nid005529 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 96 Group  0 Pid 168305 on  nid005530 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 97 Group  0 Pid 168306 on  nid005530 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 98 Group  0 Pid 168307 on  nid005530 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 99 Group  0 Pid 168308 on  nid005530 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 100 Group  0 Pid 207977 on  nid005532 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 101 Group  0 Pid 207978 on  nid005532 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 102 Group  0 Pid 207979 on  nid005532 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 103 Group  0 Pid 207980 on  nid005532 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 104 Group  0 Pid 171441 on  nid005561 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 105 Group  0 Pid 171442 on  nid005561 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 106 Group  0 Pid 171443 on  nid005561 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 107 Group  0 Pid 171444 on  nid005561 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 108 Group  0 Pid 181716 on  nid005562 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 109 Group  0 Pid 181717 on  nid005562 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 110 Group  0 Pid 181718 on  nid005562 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 111 Group  0 Pid 181719 on  nid005562 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 112 Group  0 Pid 172098 on  nid005564 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 113 Group  0 Pid 172099 on  nid005564 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 114 Group  0 Pid 172100 on  nid005564 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 115 Group  0 Pid 172101 on  nid005564 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 116 Group  0 Pid 195779 on  nid005565 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 117 Group  0 Pid 195780 on  nid005565 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 118 Group  0 Pid 195781 on  nid005565 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 119 Group  0 Pid 195782 on  nid005565 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 120 Group  0 Pid 166337 on  nid005566 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 121 Group  0 Pid 166338 on  nid005566 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 122 Group  0 Pid 166339 on  nid005566 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 123 Group  0 Pid 166340 on  nid005566 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 124 Group  0 Pid 173352 on  nid005567 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 125 Group  0 Pid 173353 on  nid005567 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 126 Group  0 Pid 173354 on  nid005567 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 127 Group  0 Pid 173355 on  nid005567 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 128 Group  0 Pid 218847 on  nid005573 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 129 Group  0 Pid 218848 on  nid005573 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 130 Group  0 Pid 218849 on  nid005573 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 131 Group  0 Pid 218850 on  nid005573 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 132 Group  0 Pid 163732 on  nid005574 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 133 Group  0 Pid 163733 on  nid005574 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 134 Group  0 Pid 163734 on  nid005574 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 135 Group  0 Pid 163735 on  nid005574 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 136 Group  0 Pid 160298 on  nid005577 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 137 Group  0 Pid 160299 on  nid005577 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 138 Group  0 Pid 160300 on  nid005577 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 139 Group  0 Pid 160301 on  nid005577 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 140 Group  0 Pid 173666 on  nid005578 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 141 Group  0 Pid 173667 on  nid005578 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 142 Group  0 Pid 173668 on  nid005578 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 143 Group  0 Pid 173669 on  nid005578 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 144 Group  0 Pid 160231 on  nid005582 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 145 Group  0 Pid 160232 on  nid005582 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 146 Group  0 Pid 160233 on  nid005582 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 147 Group  0 Pid 160234 on  nid005582 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 148 Group  0 Pid 163763 on  nid005583 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 149 Group  0 Pid 163764 on  nid005583 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 150 Group  0 Pid 163765 on  nid005583 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 151 Group  0 Pid 163766 on  nid005583 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 152 Group  0 Pid 167829 on  nid005585 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 153 Group  0 Pid 167830 on  nid005585 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 154 Group  0 Pid 167831 on  nid005585 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 155 Group  0 Pid 167832 on  nid005585 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 156 Group  0 Pid 163801 on  nid005588 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 157 Group  0 Pid 163802 on  nid005588 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 158 Group  0 Pid 163803 on  nid005588 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 159 Group  0 Pid 163804 on  nid005588 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 160 Group  0 Pid 218240 on  nid005589 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 161 Group  0 Pid 218241 on  nid005589 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 162 Group  0 Pid 218242 on  nid005589 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 163 Group  0 Pid 218243 on  nid005589 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 164 Group  0 Pid 185207 on  nid005590 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 165 Group  0 Pid 185208 on  nid005590 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 166 Group  0 Pid 185209 on  nid005590 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 167 Group  0 Pid 185210 on  nid005590 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 168 Group  0 Pid 246051 on  nid005591 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 169 Group  0 Pid 246052 on  nid005591 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 170 Group  0 Pid 246053 on  nid005591 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 171 Group  0 Pid 246054 on  nid005591 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 172 Group  0 Pid 188758 on  nid005592 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 173 Group  0 Pid 188759 on  nid005592 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 174 Group  0 Pid 188760 on  nid005592 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 175 Group  0 Pid 188761 on  nid005592 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 176 Group  0 Pid 177521 on  nid005594 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 177 Group  0 Pid 177522 on  nid005594 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 178 Group  0 Pid 177523 on  nid005594 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 179 Group  0 Pid 177524 on  nid005594 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 180 Group  0 Pid 171799 on  nid005595 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 181 Group  0 Pid 171800 on  nid005595 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 182 Group  0 Pid 171801 on  nid005595 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 183 Group  0 Pid 171802 on  nid005595 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 184 Group  0 Pid 171380 on  nid005596 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 185 Group  0 Pid 171381 on  nid005596 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 186 Group  0 Pid 171382 on  nid005596 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 187 Group  0 Pid 171383 on  nid005596 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 188 Group  0 Pid 192673 on  nid005597 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 189 Group  0 Pid 192674 on  nid005597 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 190 Group  0 Pid 192675 on  nid005597 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 191 Group  0 Pid 192676 on  nid005597 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 192 Group  0 Pid 176430 on  nid005598 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 193 Group  0 Pid 176431 on  nid005598 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 194 Group  0 Pid 176432 on  nid005598 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 195 Group  0 Pid 176433 on  nid005598 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 196 Group  0 Pid 181300 on  nid005599 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 197 Group  0 Pid 181301 on  nid005599 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 198 Group  0 Pid 181302 on  nid005599 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 199 Group  0 Pid 181303 on  nid005599 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 200 Group  0 Pid 182943 on  nid005601 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 201 Group  0 Pid 182944 on  nid005601 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 202 Group  0 Pid 182945 on  nid005601 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 203 Group  0 Pid 182946 on  nid005601 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 204 Group  0 Pid 177614 on  nid005603 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 205 Group  0 Pid 177615 on  nid005603 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 206 Group  0 Pid 177616 on  nid005603 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 207 Group  0 Pid 177617 on  nid005603 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 208 Group  0 Pid 162048 on  nid005604 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 209 Group  0 Pid 162049 on  nid005604 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 210 Group  0 Pid 162050 on  nid005604 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 211 Group  0 Pid 162051 on  nid005604 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 212 Group  0 Pid 153419 on  nid005606 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 213 Group  0 Pid 153420 on  nid005606 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 214 Group  0 Pid 153421 on  nid005606 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 215 Group  0 Pid 153422 on  nid005606 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 216 Group  0 Pid 179603 on  nid005607 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 217 Group  0 Pid 179604 on  nid005607 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 218 Group  0 Pid 179605 on  nid005607 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 219 Group  0 Pid 179606 on  nid005607 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 220 Group  0 Pid 109863 on  nid005608 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 221 Group  0 Pid 109864 on  nid005608 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 222 Group  0 Pid 109865 on  nid005608 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 223 Group  0 Pid 109866 on  nid005608 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 224 Group  0 Pid 160574 on  nid005612 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 225 Group  0 Pid 160575 on  nid005612 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 226 Group  0 Pid 160576 on  nid005612 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 227 Group  0 Pid 160577 on  nid005612 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 228 Group  0 Pid 209917 on  nid005614 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 229 Group  0 Pid 209918 on  nid005614 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 230 Group  0 Pid 209919 on  nid005614 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 231 Group  0 Pid 209920 on  nid005614 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 232 Group  0 Pid 227384 on  nid005615 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 233 Group  0 Pid 227385 on  nid005615 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 234 Group  0 Pid 227386 on  nid005615 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 235 Group  0 Pid 227387 on  nid005615 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 236 Group  0 Pid 156819 on  nid005617 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 237 Group  0 Pid 156820 on  nid005617 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 238 Group  0 Pid 156821 on  nid005617 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 239 Group  0 Pid 156822 on  nid005617 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 240 Group  0 Pid 234312 on  nid005620 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 241 Group  0 Pid 234313 on  nid005620 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 242 Group  0 Pid 234314 on  nid005620 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 243 Group  0 Pid 234315 on  nid005620 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 244 Group  0 Pid 148650 on  nid005621 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 245 Group  0 Pid 148651 on  nid005621 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 246 Group  0 Pid 148652 on  nid005621 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 247 Group  0 Pid 148653 on  nid005621 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 248 Group  0 Pid 150732 on  nid005623 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 249 Group  0 Pid 150733 on  nid005623 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 250 Group  0 Pid 150734 on  nid005623 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 251 Group  0 Pid 150735 on  nid005623 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 252 Group  0 Pid 144054 on  nid005625 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 253 Group  0 Pid 144055 on  nid005625 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 254 Group  0 Pid 144056 on  nid005625 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 255 Group  0 Pid 144057 on  nid005625 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 256 Group  0 Pid 151533 on  nid005626 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 257 Group  0 Pid 151534 on  nid005626 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 258 Group  0 Pid 151535 on  nid005626 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 259 Group  0 Pid 151536 on  nid005626 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 260 Group  0 Pid 174334 on  nid005630 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 261 Group  0 Pid 174335 on  nid005630 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 262 Group  0 Pid 174336 on  nid005630 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 263 Group  0 Pid 174337 on  nid005630 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 264 Group  0 Pid 159119 on  nid005632 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 265 Group  0 Pid 159120 on  nid005632 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 266 Group  0 Pid 159121 on  nid005632 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 267 Group  0 Pid 159122 on  nid005632 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 268 Group  0 Pid 154744 on  nid005633 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 269 Group  0 Pid 154745 on  nid005633 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 270 Group  0 Pid 154746 on  nid005633 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 271 Group  0 Pid 154747 on  nid005633 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 272 Group  0 Pid 191616 on  nid005634 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 273 Group  0 Pid 191617 on  nid005634 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 274 Group  0 Pid 191618 on  nid005634 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 275 Group  0 Pid 191619 on  nid005634 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 276 Group  0 Pid 154376 on  nid005635 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 277 Group  0 Pid 154377 on  nid005635 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 278 Group  0 Pid 154378 on  nid005635 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 279 Group  0 Pid 154379 on  nid005635 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 280 Group  0 Pid 177013 on  nid005636 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 281 Group  0 Pid 177014 on  nid005636 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 282 Group  0 Pid 177015 on  nid005636 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 283 Group  0 Pid 177016 on  nid005636 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 284 Group  0 Pid 158582 on  nid005639 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 285 Group  0 Pid 158583 on  nid005639 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 286 Group  0 Pid 158584 on  nid005639 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 287 Group  0 Pid 158585 on  nid005639 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 288 Group  0 Pid 159111 on  nid005640 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 289 Group  0 Pid 159112 on  nid005640 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 290 Group  0 Pid 159113 on  nid005640 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 291 Group  0 Pid 159114 on  nid005640 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 292 Group  0 Pid 271917 on  nid005643 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 293 Group  0 Pid 271918 on  nid005643 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 294 Group  0 Pid 271919 on  nid005643 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 295 Group  0 Pid 271920 on  nid005643 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 296 Group  0 Pid 203962 on  nid005644 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 297 Group  0 Pid 203963 on  nid005644 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 298 Group  0 Pid 203964 on  nid005644 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 299 Group  0 Pid 203965 on  nid005644 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 300 Group  0 Pid 169582 on  nid005645 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 301 Group  0 Pid 169583 on  nid005645 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 302 Group  0 Pid 169584 on  nid005645 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 303 Group  0 Pid 169585 on  nid005645 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 304 Group  0 Pid 112194 on  nid005647 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 305 Group  0 Pid 112195 on  nid005647 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 306 Group  0 Pid 112196 on  nid005647 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 307 Group  0 Pid 112197 on  nid005647 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 308 Group  0 Pid 220112 on  nid005648 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 309 Group  0 Pid 220113 on  nid005648 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 310 Group  0 Pid 220114 on  nid005648 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 311 Group  0 Pid 220115 on  nid005648 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 312 Group  0 Pid 169014 on  nid005649 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 313 Group  0 Pid 169015 on  nid005649 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 314 Group  0 Pid 169016 on  nid005649 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 315 Group  0 Pid 169017 on  nid005649 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 316 Group  0 Pid 223355 on  nid005650 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 317 Group  0 Pid 223356 on  nid005650 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 318 Group  0 Pid 223357 on  nid005650 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 319 Group  0 Pid 223358 on  nid005650 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 320 Group  0 Pid 176348 on  nid005651 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 321 Group  0 Pid 176349 on  nid005651 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 322 Group  0 Pid 176350 on  nid005651 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 323 Group  0 Pid 176351 on  nid005651 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 324 Group  0 Pid 163562 on  nid005652 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 325 Group  0 Pid 163563 on  nid005652 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 326 Group  0 Pid 163564 on  nid005652 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 327 Group  0 Pid 163565 on  nid005652 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 328 Group  0 Pid 182963 on  nid005655 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 329 Group  0 Pid 182964 on  nid005655 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 330 Group  0 Pid 182965 on  nid005655 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 331 Group  0 Pid 182966 on  nid005655 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 332 Group  0 Pid 217430 on  nid005657 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 333 Group  0 Pid 217431 on  nid005657 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 334 Group  0 Pid 217432 on  nid005657 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 335 Group  0 Pid 217433 on  nid005657 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 336 Group  0 Pid 168428 on  nid005659 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 337 Group  0 Pid 168429 on  nid005659 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 338 Group  0 Pid 168430 on  nid005659 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 339 Group  0 Pid 168431 on  nid005659 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 340 Group  0 Pid 182731 on  nid005660 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 341 Group  0 Pid 182732 on  nid005660 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 342 Group  0 Pid 182733 on  nid005660 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 343 Group  0 Pid 182734 on  nid005660 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 344 Group  0 Pid 188072 on  nid005661 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 345 Group  0 Pid 188073 on  nid005661 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 346 Group  0 Pid 188074 on  nid005661 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 347 Group  0 Pid 188075 on  nid005661 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 348 Group  0 Pid 159557 on  nid005662 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 349 Group  0 Pid 159558 on  nid005662 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 350 Group  0 Pid 159559 on  nid005662 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 351 Group  0 Pid 159560 on  nid005662 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 352 Group  0 Pid 164906 on  nid005664 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 353 Group  0 Pid 164907 on  nid005664 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 354 Group  0 Pid 164908 on  nid005664 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 355 Group  0 Pid 164909 on  nid005664 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 356 Group  0 Pid 164114 on  nid005665 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 357 Group  0 Pid 164115 on  nid005665 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 358 Group  0 Pid 164116 on  nid005665 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 359 Group  0 Pid 164117 on  nid005665 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 360 Group  0 Pid 146864 on  nid005666 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 361 Group  0 Pid 146865 on  nid005666 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 362 Group  0 Pid 146866 on  nid005666 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 363 Group  0 Pid 146867 on  nid005666 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 364 Group  0 Pid 170568 on  nid005667 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 365 Group  0 Pid 170569 on  nid005667 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 366 Group  0 Pid 170570 on  nid005667 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 367 Group  0 Pid 170571 on  nid005667 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 368 Group  0 Pid 168947 on  nid005668 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 369 Group  0 Pid 168948 on  nid005668 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 370 Group  0 Pid 168949 on  nid005668 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 371 Group  0 Pid 168950 on  nid005668 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 372 Group  0 Pid 132377 on  nid005670 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 373 Group  0 Pid 132378 on  nid005670 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 374 Group  0 Pid 132379 on  nid005670 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 375 Group  0 Pid 132380 on  nid005670 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 376 Group  0 Pid 158259 on  nid005671 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 377 Group  0 Pid 158260 on  nid005671 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 378 Group  0 Pid 158261 on  nid005671 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 379 Group  0 Pid 158262 on  nid005671 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 380 Group  0 Pid 182081 on  nid005673 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 381 Group  0 Pid 182082 on  nid005673 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 382 Group  0 Pid 182083 on  nid005673 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 383 Group  0 Pid 182084 on  nid005673 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 384 Group  0 Pid 233550 on  nid005675 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 385 Group  0 Pid 233551 on  nid005675 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 386 Group  0 Pid 233552 on  nid005675 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 387 Group  0 Pid 233553 on  nid005675 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 388 Group  0 Pid 192962 on  nid005676 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 389 Group  0 Pid 192963 on  nid005676 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 390 Group  0 Pid 192964 on  nid005676 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 391 Group  0 Pid 192965 on  nid005676 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 392 Group  0 Pid 194456 on  nid005678 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 393 Group  0 Pid 194457 on  nid005678 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 394 Group  0 Pid 194458 on  nid005678 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 395 Group  0 Pid 194459 on  nid005678 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 396 Group  0 Pid 175171 on  nid005679 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 397 Group  0 Pid 175172 on  nid005679 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 398 Group  0 Pid 175173 on  nid005679 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 399 Group  0 Pid 175174 on  nid005679 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 400 Group  0 Pid 194886 on  nid005681 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 401 Group  0 Pid 194887 on  nid005681 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 402 Group  0 Pid 194888 on  nid005681 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 403 Group  0 Pid 194889 on  nid005681 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 404 Group  0 Pid 166705 on  nid005682 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 405 Group  0 Pid 166706 on  nid005682 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 406 Group  0 Pid 166707 on  nid005682 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 407 Group  0 Pid 166708 on  nid005682 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 408 Group  0 Pid 117973 on  nid005683 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 409 Group  0 Pid 117974 on  nid005683 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 410 Group  0 Pid 117975 on  nid005683 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 411 Group  0 Pid 117976 on  nid005683 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 412 Group  0 Pid   5980 on  nid005684 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 413 Group  0 Pid   5981 on  nid005684 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 414 Group  0 Pid   5982 on  nid005684 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 415 Group  0 Pid   5983 on  nid005684 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 416 Group  0 Pid 161837 on  nid005685 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 417 Group  0 Pid 161838 on  nid005685 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 418 Group  0 Pid 161839 on  nid005685 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 419 Group  0 Pid 161840 on  nid005685 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 420 Group  0 Pid 181116 on  nid005686 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 421 Group  0 Pid 181117 on  nid005686 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 422 Group  0 Pid 181118 on  nid005686 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 423 Group  0 Pid 181119 on  nid005686 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 424 Group  0 Pid 243480 on  nid005688 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 425 Group  0 Pid 243481 on  nid005688 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 426 Group  0 Pid 243482 on  nid005688 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 427 Group  0 Pid 243483 on  nid005688 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 428 Group  0 Pid 183450 on  nid005689 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 429 Group  0 Pid 183451 on  nid005689 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 430 Group  0 Pid 183452 on  nid005689 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 431 Group  0 Pid 183453 on  nid005689 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 432 Group  0 Pid 164958 on  nid005690 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 433 Group  0 Pid 164959 on  nid005690 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 434 Group  0 Pid 164960 on  nid005690 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 435 Group  0 Pid 164961 on  nid005690 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 436 Group  0 Pid 170853 on  nid005691 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 437 Group  0 Pid 170854 on  nid005691 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 438 Group  0 Pid 170855 on  nid005691 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 439 Group  0 Pid 170856 on  nid005691 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 440 Group  0 Pid 174801 on  nid005692 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 441 Group  0 Pid 174802 on  nid005692 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 442 Group  0 Pid 174803 on  nid005692 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 443 Group  0 Pid 174804 on  nid005692 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 444 Group  0 Pid 185637 on  nid005695 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 445 Group  0 Pid 185638 on  nid005695 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 446 Group  0 Pid 185639 on  nid005695 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 447 Group  0 Pid 185640 on  nid005695 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 448 Group  0 Pid 179535 on  nid005696 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 449 Group  0 Pid 179536 on  nid005696 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 450 Group  0 Pid 179537 on  nid005696 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 451 Group  0 Pid 179538 on  nid005696 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 452 Group  0 Pid  55986 on  nid005699 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 453 Group  0 Pid  55987 on  nid005699 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 454 Group  0 Pid  55988 on  nid005699 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 455 Group  0 Pid  55989 on  nid005699 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 456 Group  0 Pid 168772 on  nid005700 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 457 Group  0 Pid 168773 on  nid005700 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 458 Group  0 Pid 168774 on  nid005700 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 459 Group  0 Pid 168775 on  nid005700 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 460 Group  0 Pid 169384 on  nid005701 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 461 Group  0 Pid 169385 on  nid005701 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 462 Group  0 Pid 169386 on  nid005701 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 463 Group  0 Pid 169387 on  nid005701 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 464 Group  0 Pid 173559 on  nid005704 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 465 Group  0 Pid 173560 on  nid005704 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 466 Group  0 Pid 173561 on  nid005704 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 467 Group  0 Pid 173562 on  nid005704 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 468 Group  0 Pid 204983 on  nid005705 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 469 Group  0 Pid 204984 on  nid005705 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 470 Group  0 Pid 204985 on  nid005705 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 471 Group  0 Pid 204986 on  nid005705 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 472 Group  0 Pid 215732 on  nid005707 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 473 Group  0 Pid 215733 on  nid005707 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 474 Group  0 Pid 215734 on  nid005707 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 475 Group  0 Pid 215735 on  nid005707 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 476 Group  0 Pid  49748 on  nid005709 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 477 Group  0 Pid  49749 on  nid005709 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 478 Group  0 Pid  49750 on  nid005709 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 479 Group  0 Pid  49751 on  nid005709 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 480 Group  0 Pid 195596 on  nid005710 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 481 Group  0 Pid 195597 on  nid005710 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 482 Group  0 Pid 195598 on  nid005710 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 483 Group  0 Pid 195599 on  nid005710 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 484 Group  0 Pid 212236 on  nid005711 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 485 Group  0 Pid 212237 on  nid005711 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 486 Group  0 Pid 212238 on  nid005711 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 487 Group  0 Pid 212239 on  nid005711 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 488 Group  0 Pid 192129 on  nid005712 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 489 Group  0 Pid 192130 on  nid005712 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 490 Group  0 Pid 192131 on  nid005712 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 491 Group  0 Pid 192132 on  nid005712 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 492 Group  0 Pid 172580 on  nid005713 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 493 Group  0 Pid 172581 on  nid005713 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 494 Group  0 Pid 172582 on  nid005713 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 495 Group  0 Pid 172583 on  nid005713 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 496 Group  0 Pid 170079 on  nid005714 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 497 Group  0 Pid 170080 on  nid005714 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 498 Group  0 Pid 170081 on  nid005714 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 499 Group  0 Pid 170082 on  nid005714 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 500 Group  0 Pid 175849 on  nid005715 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 501 Group  0 Pid 175850 on  nid005715 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 502 Group  0 Pid 175851 on  nid005715 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 503 Group  0 Pid 175852 on  nid005715 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 504 Group  0 Pid   6376 on  nid005717 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 505 Group  0 Pid   6377 on  nid005717 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 506 Group  0 Pid   6378 on  nid005717 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 507 Group  0 Pid   6379 on  nid005717 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 508 Group  0 Pid 218061 on  nid005718 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 509 Group  0 Pid 218062 on  nid005718 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 510 Group  0 Pid 218063 on  nid005718 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 511 Group  0 Pid 218064 on  nid005718 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 512 Group  0 Pid 176728 on  nid005719 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 513 Group  0 Pid 176729 on  nid005719 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 514 Group  0 Pid 176730 on  nid005719 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 515 Group  0 Pid 176731 on  nid005719 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 516 Group  0 Pid 203998 on  nid005720 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 517 Group  0 Pid 203999 on  nid005720 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 518 Group  0 Pid 204000 on  nid005720 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 519 Group  0 Pid 204001 on  nid005720 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 520 Group  0 Pid 174274 on  nid005722 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 521 Group  0 Pid 174275 on  nid005722 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 522 Group  0 Pid 174276 on  nid005722 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 523 Group  0 Pid 174277 on  nid005722 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 524 Group  0 Pid 242185 on  nid005723 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 525 Group  0 Pid 242186 on  nid005723 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 526 Group  0 Pid 242187 on  nid005723 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 527 Group  0 Pid 242188 on  nid005723 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 528 Group  0 Pid 123070 on  nid005724 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 529 Group  0 Pid 123071 on  nid005724 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 530 Group  0 Pid 123072 on  nid005724 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 531 Group  0 Pid 123073 on  nid005724 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 532 Group  0 Pid 180771 on  nid005725 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 533 Group  0 Pid 180772 on  nid005725 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 534 Group  0 Pid 180773 on  nid005725 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 535 Group  0 Pid 180774 on  nid005725 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 536 Group  0 Pid 270981 on  nid005726 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 537 Group  0 Pid 270982 on  nid005726 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 538 Group  0 Pid 270983 on  nid005726 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 539 Group  0 Pid 270984 on  nid005726 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 540 Group  0 Pid  30397 on  nid005727 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 541 Group  0 Pid  30398 on  nid005727 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 542 Group  0 Pid  30399 on  nid005727 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 543 Group  0 Pid  30400 on  nid005727 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 544 Group  0 Pid 273079 on  nid005728 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 545 Group  0 Pid 273080 on  nid005728 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 546 Group  0 Pid 273081 on  nid005728 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 547 Group  0 Pid 273082 on  nid005728 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 548 Group  0 Pid 190614 on  nid005731 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 549 Group  0 Pid 190615 on  nid005731 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 550 Group  0 Pid 190616 on  nid005731 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 551 Group  0 Pid 190617 on  nid005731 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 552 Group  0 Pid  14248 on  nid005733 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 553 Group  0 Pid  14249 on  nid005733 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 554 Group  0 Pid  14250 on  nid005733 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 555 Group  0 Pid  14251 on  nid005733 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 556 Group  0 Pid 158286 on  nid005734 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 557 Group  0 Pid 158287 on  nid005734 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 558 Group  0 Pid 158288 on  nid005734 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 559 Group  0 Pid 158289 on  nid005734 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 560 Group  0 Pid 224788 on  nid005736 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 561 Group  0 Pid 224789 on  nid005736 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 562 Group  0 Pid 224790 on  nid005736 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 563 Group  0 Pid 224791 on  nid005736 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 564 Group  0 Pid 229303 on  nid005737 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 565 Group  0 Pid 229304 on  nid005737 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 566 Group  0 Pid 229305 on  nid005737 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 567 Group  0 Pid 229306 on  nid005737 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 568 Group  0 Pid 244074 on  nid005738 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 569 Group  0 Pid 244075 on  nid005738 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 570 Group  0 Pid 244076 on  nid005738 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 571 Group  0 Pid 244077 on  nid005738 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 572 Group  0 Pid 152424 on  nid005739 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 573 Group  0 Pid 152425 on  nid005739 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 574 Group  0 Pid 152426 on  nid005739 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 575 Group  0 Pid 152427 on  nid005739 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 576 Group  0 Pid 108950 on  nid005740 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 577 Group  0 Pid 108951 on  nid005740 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 578 Group  0 Pid 108952 on  nid005740 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 579 Group  0 Pid 108953 on  nid005740 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 580 Group  0 Pid 150581 on  nid005741 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 581 Group  0 Pid 150582 on  nid005741 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 582 Group  0 Pid 150583 on  nid005741 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 583 Group  0 Pid 150584 on  nid005741 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 584 Group  0 Pid 180363 on  nid005742 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 585 Group  0 Pid 180364 on  nid005742 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 586 Group  0 Pid 180365 on  nid005742 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 587 Group  0 Pid 180366 on  nid005742 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 588 Group  0 Pid 139789 on  nid005748 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 589 Group  0 Pid 139790 on  nid005748 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 590 Group  0 Pid 139791 on  nid005748 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 591 Group  0 Pid 139792 on  nid005748 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 592 Group  0 Pid 149399 on  nid005749 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 593 Group  0 Pid 149400 on  nid005749 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 594 Group  0 Pid 149401 on  nid005749 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 595 Group  0 Pid 149402 on  nid005749 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 596 Group  0 Pid 166185 on  nid005750 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 597 Group  0 Pid 166186 on  nid005750 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 598 Group  0 Pid 166187 on  nid005750 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 599 Group  0 Pid 166188 on  nid005750 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 600 Group  0 Pid 146397 on  nid005751 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 601 Group  0 Pid 146398 on  nid005751 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 602 Group  0 Pid 146399 on  nid005751 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 603 Group  0 Pid 146400 on  nid005751 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 604 Group  0 Pid 192398 on  nid005752 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 605 Group  0 Pid 192399 on  nid005752 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 606 Group  0 Pid 192400 on  nid005752 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 607 Group  0 Pid 192401 on  nid005752 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 608 Group  0 Pid 159275 on  nid005753 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 609 Group  0 Pid 159276 on  nid005753 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 610 Group  0 Pid 159277 on  nid005753 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 611 Group  0 Pid 159278 on  nid005753 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 612 Group  0 Pid 180970 on  nid005754 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 613 Group  0 Pid 180971 on  nid005754 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 614 Group  0 Pid 180972 on  nid005754 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 615 Group  0 Pid 180973 on  nid005754 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 616 Group  0 Pid 171632 on  nid005755 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 617 Group  0 Pid 171633 on  nid005755 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 618 Group  0 Pid 171634 on  nid005755 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 619 Group  0 Pid 171635 on  nid005755 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 620 Group  0 Pid 217484 on  nid005756 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 621 Group  0 Pid 217485 on  nid005756 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 622 Group  0 Pid 217486 on  nid005756 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 623 Group  0 Pid 217487 on  nid005756 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 624 Group  0 Pid 255820 on  nid005757 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 625 Group  0 Pid 255821 on  nid005757 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 626 Group  0 Pid 255822 on  nid005757 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 627 Group  0 Pid 255823 on  nid005757 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 628 Group  0 Pid  95958 on  nid005758 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 629 Group  0 Pid  95959 on  nid005758 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 630 Group  0 Pid  95960 on  nid005758 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 631 Group  0 Pid  95961 on  nid005758 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 632 Group  0 Pid 162860 on  nid005759 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 633 Group  0 Pid 162861 on  nid005759 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 634 Group  0 Pid 162862 on  nid005759 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 635 Group  0 Pid 162863 on  nid005759 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 636 Group  0 Pid 150935 on  nid005763 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 637 Group  0 Pid 150936 on  nid005763 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 638 Group  0 Pid 150937 on  nid005763 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 639 Group  0 Pid 150938 on  nid005763 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 640 Group  0 Pid 196168 on  nid005774 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 641 Group  0 Pid 196169 on  nid005774 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 642 Group  0 Pid 196170 on  nid005774 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 643 Group  0 Pid 196171 on  nid005774 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 644 Group  0 Pid 198983 on  nid005781 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 645 Group  0 Pid 198984 on  nid005781 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 646 Group  0 Pid 198985 on  nid005781 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 647 Group  0 Pid 198986 on  nid005781 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 648 Group  0 Pid 139818 on  nid006008 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 649 Group  0 Pid 139819 on  nid006008 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 650 Group  0 Pid 139820 on  nid006008 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 651 Group  0 Pid 139821 on  nid006008 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 652 Group  0 Pid 166376 on  nid006009 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 653 Group  0 Pid 166377 on  nid006009 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 654 Group  0 Pid 166378 on  nid006009 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 655 Group  0 Pid 166379 on  nid006009 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 656 Group  0 Pid 145562 on  nid006011 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 657 Group  0 Pid 145563 on  nid006011 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 658 Group  0 Pid 145564 on  nid006011 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 659 Group  0 Pid 145565 on  nid006011 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 660 Group  0 Pid 158374 on  nid006015 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 661 Group  0 Pid 158375 on  nid006015 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 662 Group  0 Pid 158376 on  nid006015 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 663 Group  0 Pid 158377 on  nid006015 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 664 Group  0 Pid 152964 on  nid006022 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 665 Group  0 Pid 152965 on  nid006022 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 666 Group  0 Pid 152966 on  nid006022 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 667 Group  0 Pid 152967 on  nid006022 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 668 Group  0 Pid 164904 on  nid006023 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 669 Group  0 Pid 164905 on  nid006023 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 670 Group  0 Pid 164906 on  nid006023 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 671 Group  0 Pid 164907 on  nid006023 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 672 Group  0 Pid 164131 on  nid006024 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 673 Group  0 Pid 164132 on  nid006024 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 674 Group  0 Pid 164133 on  nid006024 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 675 Group  0 Pid 164134 on  nid006024 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 676 Group  0 Pid 152542 on  nid006027 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 677 Group  0 Pid 152543 on  nid006027 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 678 Group  0 Pid 152544 on  nid006027 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 679 Group  0 Pid 152545 on  nid006027 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 680 Group  0 Pid 160795 on  nid006028 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 681 Group  0 Pid 160796 on  nid006028 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 682 Group  0 Pid 160797 on  nid006028 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 683 Group  0 Pid 160798 on  nid006028 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 684 Group  0 Pid 165999 on  nid006029 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 685 Group  0 Pid 166000 on  nid006029 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 686 Group  0 Pid 166001 on  nid006029 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 687 Group  0 Pid 166002 on  nid006029 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 688 Group  0 Pid 160834 on  nid006030 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 689 Group  0 Pid 160835 on  nid006030 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 690 Group  0 Pid 160836 on  nid006030 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 691 Group  0 Pid 160837 on  nid006030 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 692 Group  0 Pid 175753 on  nid006031 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 693 Group  0 Pid 175754 on  nid006031 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 694 Group  0 Pid 175755 on  nid006031 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 695 Group  0 Pid 175756 on  nid006031 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 696 Group  0 Pid 174699 on  nid006033 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 697 Group  0 Pid 174700 on  nid006033 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 698 Group  0 Pid 174701 on  nid006033 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 699 Group  0 Pid 174702 on  nid006033 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 700 Group  0 Pid 203225 on  nid006034 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 701 Group  0 Pid 203226 on  nid006034 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 702 Group  0 Pid 203227 on  nid006034 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 703 Group  0 Pid 203228 on  nid006034 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 704 Group  0 Pid 158575 on  nid006035 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 705 Group  0 Pid 158576 on  nid006035 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 706 Group  0 Pid 158577 on  nid006035 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 707 Group  0 Pid 158578 on  nid006035 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 708 Group  0 Pid 176617 on  nid006039 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 709 Group  0 Pid 176618 on  nid006039 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 710 Group  0 Pid 176619 on  nid006039 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 711 Group  0 Pid 176620 on  nid006039 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 712 Group  0 Pid 117768 on  nid006040 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 713 Group  0 Pid 117769 on  nid006040 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 714 Group  0 Pid 117770 on  nid006040 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 715 Group  0 Pid 117771 on  nid006040 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 716 Group  0 Pid 124470 on  nid006043 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 717 Group  0 Pid 124471 on  nid006043 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 718 Group  0 Pid 124472 on  nid006043 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 719 Group  0 Pid 124473 on  nid006043 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 720 Group  0 Pid 167746 on  nid006044 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 721 Group  0 Pid 167747 on  nid006044 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 722 Group  0 Pid 167748 on  nid006044 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 723 Group  0 Pid 167749 on  nid006044 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 724 Group  0 Pid 173320 on  nid006045 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 725 Group  0 Pid 173321 on  nid006045 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 726 Group  0 Pid 173322 on  nid006045 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 727 Group  0 Pid 173323 on  nid006045 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 728 Group  0 Pid 180001 on  nid006047 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 729 Group  0 Pid 180002 on  nid006047 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 730 Group  0 Pid 180003 on  nid006047 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 731 Group  0 Pid 180004 on  nid006047 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 732 Group  0 Pid 163413 on  nid006049 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 733 Group  0 Pid 163414 on  nid006049 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 734 Group  0 Pid 163415 on  nid006049 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 735 Group  0 Pid 163416 on  nid006049 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 736 Group  0 Pid 167850 on  nid006050 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 737 Group  0 Pid 167851 on  nid006050 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 738 Group  0 Pid 167852 on  nid006050 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 739 Group  0 Pid 167853 on  nid006050 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 740 Group  0 Pid 161135 on  nid006051 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 741 Group  0 Pid 161136 on  nid006051 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 742 Group  0 Pid 161137 on  nid006051 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 743 Group  0 Pid 161138 on  nid006051 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 744 Group  0 Pid 162472 on  nid006052 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 745 Group  0 Pid 162473 on  nid006052 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 746 Group  0 Pid 162474 on  nid006052 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 747 Group  0 Pid 162475 on  nid006052 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 748 Group  0 Pid 166760 on  nid006053 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 749 Group  0 Pid 166761 on  nid006053 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 750 Group  0 Pid 166762 on  nid006053 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 751 Group  0 Pid 166763 on  nid006053 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 752 Group  0 Pid 148346 on  nid006055 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 753 Group  0 Pid 148347 on  nid006055 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 754 Group  0 Pid 148348 on  nid006055 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 755 Group  0 Pid 148349 on  nid006055 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 756 Group  0 Pid 154074 on  nid006056 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 757 Group  0 Pid 154075 on  nid006056 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 758 Group  0 Pid 154076 on  nid006056 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 759 Group  0 Pid 154077 on  nid006056 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 760 Group  0 Pid 146363 on  nid006058 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 761 Group  0 Pid 146364 on  nid006058 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 762 Group  0 Pid 146365 on  nid006058 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 763 Group  0 Pid 146366 on  nid006058 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 764 Group  0 Pid 172472 on  nid006061 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 765 Group  0 Pid 172473 on  nid006061 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 766 Group  0 Pid 172474 on  nid006061 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 767 Group  0 Pid 172475 on  nid006061 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 768 Group  0 Pid 167240 on  nid006065 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 769 Group  0 Pid 167241 on  nid006065 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 770 Group  0 Pid 167242 on  nid006065 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 771 Group  0 Pid 167243 on  nid006065 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 772 Group  0 Pid 237450 on  nid006067 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 773 Group  0 Pid 237451 on  nid006067 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 774 Group  0 Pid 237452 on  nid006067 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 775 Group  0 Pid 237453 on  nid006067 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 776 Group  0 Pid 171022 on  nid006070 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 777 Group  0 Pid 171023 on  nid006070 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 778 Group  0 Pid 171024 on  nid006070 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 779 Group  0 Pid 171025 on  nid006070 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 780 Group  0 Pid 167682 on  nid006075 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 781 Group  0 Pid 167683 on  nid006075 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 782 Group  0 Pid 167684 on  nid006075 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 783 Group  0 Pid 167685 on  nid006075 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 784 Group  0 Pid 176568 on  nid006076 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 785 Group  0 Pid 176569 on  nid006076 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 786 Group  0 Pid 176570 on  nid006076 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 787 Group  0 Pid 176571 on  nid006076 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 788 Group  0 Pid 123695 on  nid006077 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 789 Group  0 Pid 123696 on  nid006077 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 790 Group  0 Pid 123697 on  nid006077 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 791 Group  0 Pid 123698 on  nid006077 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 792 Group  0 Pid 175715 on  nid006078 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 793 Group  0 Pid 175716 on  nid006078 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 794 Group  0 Pid 175717 on  nid006078 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 795 Group  0 Pid 175718 on  nid006078 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 796 Group  0 Pid 170348 on  nid006079 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 797 Group  0 Pid 170349 on  nid006079 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 798 Group  0 Pid 170350 on  nid006079 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 799 Group  0 Pid 170351 on  nid006079 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 800 Group  0 Pid   9548 on  nid006080 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 801 Group  0 Pid   9549 on  nid006080 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 802 Group  0 Pid   9550 on  nid006080 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 803 Group  0 Pid   9551 on  nid006080 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 804 Group  0 Pid 175932 on  nid006081 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 805 Group  0 Pid 175933 on  nid006081 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 806 Group  0 Pid 175934 on  nid006081 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 807 Group  0 Pid 175935 on  nid006081 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 808 Group  0 Pid 155918 on  nid006084 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 809 Group  0 Pid 155919 on  nid006084 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 810 Group  0 Pid 155920 on  nid006084 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 811 Group  0 Pid 155922 on  nid006084 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 812 Group  0 Pid 130391 on  nid006086 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 813 Group  0 Pid 130392 on  nid006086 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 814 Group  0 Pid 130393 on  nid006086 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 815 Group  0 Pid 130394 on  nid006086 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 816 Group  0 Pid 178495 on  nid006089 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 817 Group  0 Pid 178496 on  nid006089 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 818 Group  0 Pid 178497 on  nid006089 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 819 Group  0 Pid 178498 on  nid006089 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 820 Group  0 Pid 117583 on  nid006092 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 821 Group  0 Pid 117584 on  nid006092 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 822 Group  0 Pid 117585 on  nid006092 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 823 Group  0 Pid 117586 on  nid006092 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 824 Group  0 Pid 220503 on  nid006094 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 825 Group  0 Pid 220504 on  nid006094 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 826 Group  0 Pid 220505 on  nid006094 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 827 Group  0 Pid 220506 on  nid006094 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 828 Group  0 Pid 164049 on  nid006096 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 829 Group  0 Pid 164050 on  nid006096 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 830 Group  0 Pid 164051 on  nid006096 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 831 Group  0 Pid 164052 on  nid006096 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 832 Group  0 Pid 152064 on  nid006098 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 833 Group  0 Pid 152065 on  nid006098 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 834 Group  0 Pid 152066 on  nid006098 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 835 Group  0 Pid 152067 on  nid006098 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 836 Group  0 Pid 159508 on  nid006099 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 837 Group  0 Pid 159509 on  nid006099 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 838 Group  0 Pid 159510 on  nid006099 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 839 Group  0 Pid 159511 on  nid006099 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 840 Group  0 Pid 156454 on  nid006104 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 841 Group  0 Pid 156455 on  nid006104 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 842 Group  0 Pid 156456 on  nid006104 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 843 Group  0 Pid 156457 on  nid006104 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 844 Group  0 Pid 176458 on  nid006110 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 845 Group  0 Pid 176459 on  nid006110 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 846 Group  0 Pid 176460 on  nid006110 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 847 Group  0 Pid 176461 on  nid006110 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 848 Group  0 Pid 218291 on  nid006111 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 849 Group  0 Pid 218292 on  nid006111 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 850 Group  0 Pid 218293 on  nid006111 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 851 Group  0 Pid 218294 on  nid006111 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 852 Group  0 Pid 168825 on  nid006113 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 853 Group  0 Pid 168826 on  nid006113 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 854 Group  0 Pid 168827 on  nid006113 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 855 Group  0 Pid 168828 on  nid006113 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 856 Group  0 Pid 164241 on  nid006119 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 857 Group  0 Pid 164242 on  nid006119 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 858 Group  0 Pid 164243 on  nid006119 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 859 Group  0 Pid 164244 on  nid006119 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 860 Group  0 Pid  96246 on  nid006232 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 861 Group  0 Pid  96247 on  nid006232 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 862 Group  0 Pid  96248 on  nid006232 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 863 Group  0 Pid  96249 on  nid006232 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 864 Group  0 Pid  65429 on  nid006233 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 865 Group  0 Pid  65430 on  nid006233 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 866 Group  0 Pid  65431 on  nid006233 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 867 Group  0 Pid  65432 on  nid006233 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 868 Group  0 Pid  91872 on  nid006235 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 869 Group  0 Pid  91873 on  nid006235 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 870 Group  0 Pid  91874 on  nid006235 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 871 Group  0 Pid  91875 on  nid006235 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 872 Group  0 Pid  81008 on  nid006236 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 873 Group  0 Pid  81009 on  nid006236 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 874 Group  0 Pid  81010 on  nid006236 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 875 Group  0 Pid  81011 on  nid006236 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 876 Group  0 Pid  95801 on  nid006237 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 877 Group  0 Pid  95802 on  nid006237 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 878 Group  0 Pid  95803 on  nid006237 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 879 Group  0 Pid  95804 on  nid006237 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 880 Group  0 Pid  84800 on  nid006238 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 881 Group  0 Pid  84801 on  nid006238 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 882 Group  0 Pid  84802 on  nid006238 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 883 Group  0 Pid  84803 on  nid006238 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 884 Group  0 Pid  96062 on  nid006239 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 885 Group  0 Pid  96063 on  nid006239 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 886 Group  0 Pid  96064 on  nid006239 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 887 Group  0 Pid  96065 on  nid006239 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 888 Group  0 Pid  79318 on  nid006241 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 889 Group  0 Pid  79319 on  nid006241 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 890 Group  0 Pid  79320 on  nid006241 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 891 Group  0 Pid  79321 on  nid006241 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 892 Group  0 Pid  98793 on  nid006243 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 893 Group  0 Pid  98794 on  nid006243 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 894 Group  0 Pid  98795 on  nid006243 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 895 Group  0 Pid  98796 on  nid006243 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 896 Group  0 Pid 143738 on  nid006245 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 897 Group  0 Pid 143739 on  nid006245 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 898 Group  0 Pid 143740 on  nid006245 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 899 Group  0 Pid 143741 on  nid006245 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 900 Group  0 Pid 110270 on  nid006246 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 901 Group  0 Pid 110271 on  nid006246 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 902 Group  0 Pid 110272 on  nid006246 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 903 Group  0 Pid 110273 on  nid006246 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 904 Group  0 Pid 116917 on  nid006247 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 905 Group  0 Pid 116918 on  nid006247 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 906 Group  0 Pid 116919 on  nid006247 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 907 Group  0 Pid 116920 on  nid006247 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 908 Group  0 Pid  93971 on  nid006249 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 909 Group  0 Pid  93972 on  nid006249 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 910 Group  0 Pid  93973 on  nid006249 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 911 Group  0 Pid  93974 on  nid006249 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 912 Group  0 Pid 101122 on  nid006250 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 913 Group  0 Pid 101123 on  nid006250 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 914 Group  0 Pid 101124 on  nid006250 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 915 Group  0 Pid 101125 on  nid006250 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 916 Group  0 Pid 104143 on  nid006251 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 917 Group  0 Pid 104144 on  nid006251 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 918 Group  0 Pid 104145 on  nid006251 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 919 Group  0 Pid 104146 on  nid006251 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 920 Group  0 Pid  98722 on  nid006253 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 921 Group  0 Pid  98723 on  nid006253 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 922 Group  0 Pid  98724 on  nid006253 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 923 Group  0 Pid  98725 on  nid006253 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 924 Group  0 Pid 106823 on  nid006254 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 925 Group  0 Pid 106824 on  nid006254 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 926 Group  0 Pid 106825 on  nid006254 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 927 Group  0 Pid 106826 on  nid006254 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 928 Group  0 Pid 136082 on  nid006255 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 929 Group  0 Pid 136083 on  nid006255 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 930 Group  0 Pid 136084 on  nid006255 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 931 Group  0 Pid 136085 on  nid006255 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 932 Group  0 Pid 127935 on  nid006257 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 933 Group  0 Pid 127936 on  nid006257 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 934 Group  0 Pid 127937 on  nid006257 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 935 Group  0 Pid 127938 on  nid006257 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 936 Group  0 Pid 129862 on  nid006258 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 937 Group  0 Pid 129863 on  nid006258 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 938 Group  0 Pid 129864 on  nid006258 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 939 Group  0 Pid 129865 on  nid006258 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 940 Group  0 Pid 145476 on  nid006260 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 941 Group  0 Pid 145477 on  nid006260 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 942 Group  0 Pid 145478 on  nid006260 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 943 Group  0 Pid 145479 on  nid006260 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 944 Group  0 Pid 123400 on  nid006261 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 945 Group  0 Pid 123401 on  nid006261 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 946 Group  0 Pid 123402 on  nid006261 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 947 Group  0 Pid 123403 on  nid006261 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 948 Group  0 Pid 120629 on  nid006262 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 949 Group  0 Pid 120630 on  nid006262 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 950 Group  0 Pid 120631 on  nid006262 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 951 Group  0 Pid 120632 on  nid006262 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 952 Group  0 Pid 128329 on  nid006264 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 953 Group  0 Pid 128330 on  nid006264 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 954 Group  0 Pid 128331 on  nid006264 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 955 Group  0 Pid 128332 on  nid006264 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 956 Group  0 Pid 141822 on  nid006265 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 957 Group  0 Pid 141823 on  nid006265 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 958 Group  0 Pid 141824 on  nid006265 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 959 Group  0 Pid 141825 on  nid006265 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 960 Group  0 Pid 133714 on  nid006266 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 961 Group  0 Pid 133715 on  nid006266 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 962 Group  0 Pid 133716 on  nid006266 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 963 Group  0 Pid 133717 on  nid006266 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 964 Group  0 Pid 230160 on  nid006269 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 965 Group  0 Pid 230161 on  nid006269 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 966 Group  0 Pid 230162 on  nid006269 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 967 Group  0 Pid 230163 on  nid006269 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 968 Group  0 Pid 129403 on  nid006270 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 969 Group  0 Pid 129404 on  nid006270 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 970 Group  0 Pid 129405 on  nid006270 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 971 Group  0 Pid 129406 on  nid006270 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 972 Group  0 Pid 132547 on  nid006271 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 973 Group  0 Pid 132548 on  nid006271 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 974 Group  0 Pid 132549 on  nid006271 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 975 Group  0 Pid 132550 on  nid006271 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 976 Group  0 Pid 133563 on  nid006272 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 977 Group  0 Pid 133564 on  nid006272 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 978 Group  0 Pid 133565 on  nid006272 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 979 Group  0 Pid 133566 on  nid006272 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 980 Group  0 Pid 134539 on  nid006273 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 981 Group  0 Pid 134540 on  nid006273 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 982 Group  0 Pid 134541 on  nid006273 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 983 Group  0 Pid 134542 on  nid006273 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 984 Group  0 Pid 103635 on  nid006275 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 985 Group  0 Pid 103636 on  nid006275 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 986 Group  0 Pid 103637 on  nid006275 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 987 Group  0 Pid 103638 on  nid006275 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 988 Group  0 Pid 271910 on  nid006276 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 989 Group  0 Pid 271911 on  nid006276 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 990 Group  0 Pid 271912 on  nid006276 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 991 Group  0 Pid 271913 on  nid006276 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 992 Group  0 Pid 124932 on  nid006288 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 993 Group  0 Pid 124933 on  nid006288 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 994 Group  0 Pid 124934 on  nid006288 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 995 Group  0 Pid 124935 on  nid006288 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 996 Group  0 Pid 187990 on  nid006312 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 997 Group  0 Pid 187991 on  nid006312 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 998 Group  0 Pid 187992 on  nid006312 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 999 Group  0 Pid 187993 on  nid006312 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1000 Group  0 Pid 120796 on  nid006323 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1001 Group  0 Pid 120797 on  nid006323 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1002 Group  0 Pid 120798 on  nid006323 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1003 Group  0 Pid 120799 on  nid006323 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1004 Group  0 Pid 149317 on  nid006325 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1005 Group  0 Pid 149318 on  nid006325 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1006 Group  0 Pid 149319 on  nid006325 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1007 Group  0 Pid 149320 on  nid006325 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1008 Group  0 Pid 131172 on  nid006326 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1009 Group  0 Pid 131173 on  nid006326 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1010 Group  0 Pid 131174 on  nid006326 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1011 Group  0 Pid 131175 on  nid006326 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1012 Group  0 Pid 141366 on  nid006327 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1013 Group  0 Pid 141367 on  nid006327 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1014 Group  0 Pid 141368 on  nid006327 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1015 Group  0 Pid 141369 on  nid006327 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1016 Group  0 Pid 158632 on  nid006340 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1017 Group  0 Pid 158633 on  nid006340 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1018 Group  0 Pid 158634 on  nid006340 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1019 Group  0 Pid 158635 on  nid006340 device  0 [0039:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1020 Group  0 Pid 181417 on  nid006342 device  0 [0009:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1021 Group  0 Pid 181418 on  nid006342 device  0 [0019:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1022 Group  0 Pid 181419 on  nid006342 device  0 [0029:01:00] NVIDIA GH200 120GB
+   0: #  Rank 1023 Group  0 Pid 181420 on  nid006342 device  0 [0039:01:00] NVIDIA GH200 120GB
+ 455: nid005699: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 455:  .. nid005699 pid 55989: Test failure common.cu:893
+ 454: nid005699: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 452: nid005699: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 452:  .. nid005699 pid 55986: Test failure common.cu:893
+ 454:  .. nid005699 pid 55988: Test failure common.cu:893
+ 453: nid005699: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 453:  .. nid005699 pid 55987: Test failure common.cu:893
+ 624: nid005757: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 624:  .. nid005757 pid 255820: Test failure common.cu:893
+ 626: nid005757: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 626:  .. nid005757 pid 255822: Test failure common.cu:893
+ 627: nid005757: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 627:  .. nid005757 pid 255823: Test failure common.cu:893
+ 625: nid005757: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 625:  .. nid005757 pid 255821: Test failure common.cu:893
+ 485: nid005711: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 485:  .. nid005711 pid 212237: Test failure common.cu:893
+ 484: nid005711: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 484:  .. nid005711 pid 212236: Test failure common.cu:893
+ 486: nid005711: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 486:  .. nid005711 pid 212238: Test failure common.cu:893
+ 487: nid005711: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 487:  .. nid005711 pid 212239: Test failure common.cu:893
+ 566: nid005737: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 566:  .. nid005737 pid 229305: Test failure common.cu:893
+ 564: nid005737: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 564:  .. nid005737 pid 229303: Test failure common.cu:893
+ 565: nid005737: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 565:  .. nid005737 pid 229304: Test failure common.cu:893
+ 567: nid005737: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 567:  .. nid005737 pid 229306: Test failure common.cu:893
+  74: nid005517: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  74:  .. nid005517 pid 156679: Test failure common.cu:893
+  72: nid005517: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  72:  .. nid005517 pid 156677: Test failure common.cu:893
+  73: nid005517: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  73:  .. nid005517 pid 156678: Test failure common.cu:893
+  75: nid005517: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  75:  .. nid005517 pid 156680: Test failure common.cu:893
+  20: nid005466: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  20:  .. nid005466 pid 169348: Test failure common.cu:893
+  21: nid005466: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  21:  .. nid005466 pid 169349: Test failure common.cu:893
+  23: nid005466: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  23:  .. nid005466 pid 169351: Test failure common.cu:893
+  22: nid005466: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  22:  .. nid005466 pid 169350: Test failure common.cu:893
+ 217: nid005607: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 217:  .. nid005607 pid 179604: Test failure common.cu:893
+ 216: nid005607: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 216:  .. nid005607 pid 179603: Test failure common.cu:893
+ 218: nid005607: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 218:  .. nid005607 pid 179605: Test failure common.cu:893
+ 219: nid005607: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 219:  .. nid005607 pid 179606: Test failure common.cu:893
+ 140: nid005578: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 140:  .. nid005578 pid 173666: Test failure common.cu:893
+ 142: nid005578: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 142:  .. nid005578 pid 173668: Test failure common.cu:893
+ 143: nid005578: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 143:  .. nid005578 pid 173669: Test failure common.cu:893
+ 141: nid005578: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 141:  .. nid005578 pid 173667: Test failure common.cu:893
+ 333: nid005657: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 333:  .. nid005657 pid 217431: Test failure common.cu:893
+ 334: nid005657: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 334:  .. nid005657 pid 217432: Test failure common.cu:893
+ 335: nid005657: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 335:  .. nid005657 pid 217433: Test failure common.cu:893
+ 332: nid005657: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 332:  .. nid005657 pid 217430: Test failure common.cu:893
+ 189: nid005597: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 189:  .. nid005597 pid 192674: Test failure common.cu:893
+ 188: nid005597: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 188:  .. nid005597 pid 192673: Test failure common.cu:893
+ 190: nid005597: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 190:  .. nid005597 pid 192675: Test failure common.cu:893
+ 191: nid005597: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 191:  .. nid005597 pid 192676: Test failure common.cu:893
+ 213: nid005606: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 213:  .. nid005606 pid 153420: Test failure common.cu:893
+ 214: nid005606: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 214:  .. nid005606 pid 153421: Test failure common.cu:893
+ 215: nid005606: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 215:  .. nid005606 pid 153422: Test failure common.cu:893
+ 212: nid005606: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 212:  .. nid005606 pid 153419: Test failure common.cu:893
+  49: nid005489: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  49:  .. nid005489 pid 186418: Test failure common.cu:893
+  51: nid005489: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  51:  .. nid005489 pid 186420: Test failure common.cu:893
+  50: nid005489: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  50:  .. nid005489 pid 186419: Test failure common.cu:893
+  48: nid005489: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  48:  .. nid005489 pid 186417: Test failure common.cu:893
+ 428: nid005689: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 428:  .. nid005689 pid 183450: Test failure common.cu:893
+ 430: nid005689: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 430:  .. nid005689 pid 183452: Test failure common.cu:893
+ 431: nid005689: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 431:  .. nid005689 pid 183453: Test failure common.cu:893
+ 429: nid005689: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 429:  .. nid005689 pid 183451: Test failure common.cu:893
+ 600: nid005751: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 600:  .. nid005751 pid 146397: Test failure common.cu:893
+ 601: nid005751: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 601:  .. nid005751 pid 146398: Test failure common.cu:893
+ 336: nid005659: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 336:  .. nid005659 pid 168428: Test failure common.cu:893
+ 602: nid005751: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 602:  .. nid005751 pid 146399: Test failure common.cu:893
+ 337: nid005659: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 337:  .. nid005659 pid 168429: Test failure common.cu:893
+ 744: nid006052: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 744:  .. nid006052 pid 162472: Test failure common.cu:893
+ 603: nid005751: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 603:  .. nid005751 pid 146400: Test failure common.cu:893
+ 338: nid005659: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 338:  .. nid005659 pid 168430: Test failure common.cu:893
+ 745: nid006052: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 745:  .. nid006052 pid 162473: Test failure common.cu:893
+ 339: nid005659: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 339:  .. nid005659 pid 168431: Test failure common.cu:893
+ 746: nid006052: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 746:  .. nid006052 pid 162474: Test failure common.cu:893
+ 747: nid006052: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 747:  .. nid006052 pid 162475: Test failure common.cu:893
+  45: nid005486: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  45:  .. nid005486 pid 168448: Test failure common.cu:893
+  46: nid005486: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  46:  .. nid005486 pid 168449: Test failure common.cu:893
+  47: nid005486: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  47:  .. nid005486 pid 168450: Test failure common.cu:893
+  44: nid005486: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  44:  .. nid005486 pid 168447: Test failure common.cu:893
+ 149: nid005583: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 149:  .. nid005583 pid 163764: Test failure common.cu:893
+ 148: nid005583: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 148:  .. nid005583 pid 163763: Test failure common.cu:893
+ 150: nid005583: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 150:  .. nid005583 pid 163765: Test failure common.cu:893
+ 151: nid005583: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  28: nid005470: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  28:  .. nid005470 pid 151076: Test failure common.cu:893
+ 151:  .. nid005583 pid 163766: Test failure common.cu:893
+  29: nid005470: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  29:  .. nid005470 pid 151077: Test failure common.cu:893
+  30: nid005470: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  30:  .. nid005470 pid 151078: Test failure common.cu:893
+  31: nid005470: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  31:  .. nid005470 pid 151079: Test failure common.cu:893
+ 554: nid005733: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 554:  .. nid005733 pid 14250: Test failure common.cu:893
+ 555: nid005733: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 555:  .. nid005733 pid 14251: Test failure common.cu:893
+ 553: nid005733: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 553:  .. nid005733 pid 14249: Test failure common.cu:893
+ 552: nid005733: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 552:  .. nid005733 pid 14248: Test failure common.cu:893
+  92: nid005529: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  92:  .. nid005529 pid 144869: Test failure common.cu:893
+  95: nid005529: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  95:  .. nid005529 pid 144872: Test failure common.cu:893
+  93: nid005529: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  93:  .. nid005529 pid 144870: Test failure common.cu:893
+  94: nid005529: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  94:  .. nid005529 pid 144871: Test failure common.cu:893
+  52: nid005501: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  52:  .. nid005501 pid 217297: Test failure common.cu:893
+  54: nid005501: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  54:  .. nid005501 pid 217299: Test failure common.cu:893
+  53: nid005501: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  53:  .. nid005501 pid 217298: Test failure common.cu:893
+  55: nid005501: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  55:  .. nid005501 pid 217300: Test failure common.cu:893
+ 192: nid005598: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 192:  .. nid005598 pid 176430: Test failure common.cu:893
+ 193: nid005598: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 193:  .. nid005598 pid 176431: Test failure common.cu:893
+ 194: nid005598: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 194:  .. nid005598 pid 176432: Test failure common.cu:893
+ 195: nid005598: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 195:  .. nid005598 pid 176433: Test failure common.cu:893
+ 435: nid005690: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 435:  .. nid005690 pid 164961: Test failure common.cu:893
+ 433: nid005690: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 433:  .. nid005690 pid 164959: Test failure common.cu:893
+ 434: nid005690: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 434:  .. nid005690 pid 164960: Test failure common.cu:893
+ 432: nid005690: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 432:  .. nid005690 pid 164958: Test failure common.cu:893
+ 316: nid005650: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 316:  .. nid005650 pid 223355: Test failure common.cu:893
+ 318: nid005650: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 318:  .. nid005650 pid 223357: Test failure common.cu:893
+ 317: nid005650: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 317:  .. nid005650 pid 223356: Test failure common.cu:893
+ 319: nid005650: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 319:  .. nid005650 pid 223358: Test failure common.cu:893
+ 236: nid005617: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 236:  .. nid005617 pid 156819: Test failure common.cu:893
+ 237: nid005617: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 238: nid005617: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 238:  .. nid005617 pid 156821: Test failure common.cu:893
+ 237:  .. nid005617 pid 156820: Test failure common.cu:893
+ 239: nid005617: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 239:  .. nid005617 pid 156822: Test failure common.cu:893
+ 312: nid005649: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 312:  .. nid005649 pid 169014: Test failure common.cu:893
+ 314: nid005649: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 314:  .. nid005649 pid 169016: Test failure common.cu:893
+ 313: nid005649: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 313:  .. nid005649 pid 169015: Test failure common.cu:893
+ 315: nid005649: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 315:  .. nid005649 pid 169017: Test failure common.cu:893
+ 125: nid005567: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 125:  .. nid005567 pid 173353: Test failure common.cu:893
+ 126: nid005567: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 126:  .. nid005567 pid 173354: Test failure common.cu:893
+ 127: nid005567: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 127:  .. nid005567 pid 173355: Test failure common.cu:893
+ 124: nid005567: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 124:  .. nid005567 pid 173352: Test failure common.cu:893
+ 391: nid005676: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 391:  .. nid005676 pid 192965: Test failure common.cu:893
+ 390: nid005676: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 390:  .. nid005676 pid 192964: Test failure common.cu:893
+ 388: nid005676: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 388:  .. nid005676 pid 192962: Test failure common.cu:893
+ 389: nid005676: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 389:  .. nid005676 pid 192963: Test failure common.cu:893
+ 461: nid005701: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 461:  .. nid005701 pid 169385: Test failure common.cu:893
+ 460: nid005701: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 460:  .. nid005701 pid 169384: Test failure common.cu:893
+ 462: nid005701: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 462:  .. nid005701 pid 169386: Test failure common.cu:893
+ 463: nid005701: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 463:  .. nid005701 pid 169387: Test failure common.cu:893
+ 412: nid005684: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 412:  .. nid005684 pid 5980: Test failure common.cu:893
+ 413: nid005684: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 413:  .. nid005684 pid 5981: Test failure common.cu:893
+ 414: nid005684: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 414:  .. nid005684 pid 5982: Test failure common.cu:893
+ 415: nid005684: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 415:  .. nid005684 pid 5983: Test failure common.cu:893
+ 437: nid005691: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 437:  .. nid005691 pid 170854: Test failure common.cu:893
+ 439: nid005691: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 439:  .. nid005691 pid 170856: Test failure common.cu:893
+ 176: nid005594: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 176:  .. nid005594 pid 177521: Test failure common.cu:893
+ 436: nid005691: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 436:  .. nid005691 pid 170853: Test failure common.cu:893
+ 177: nid005594: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 177:  .. nid005594 pid 177522: Test failure common.cu:893
+ 129: nid005573: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 129:  .. nid005573 pid 218848: Test failure common.cu:893
+ 438: nid005691: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 438:  .. nid005691 pid 170855: Test failure common.cu:893
+ 178: nid005594: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 178:  .. nid005594 pid 177523: Test failure common.cu:893
+ 128: nid005573: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 128:  .. nid005573 pid 218847: Test failure common.cu:893
+ 179: nid005594: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 179:  .. nid005594 pid 177524: Test failure common.cu:893
+ 130: nid005573: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 130:  .. nid005573 pid 218849: Test failure common.cu:893
+ 131: nid005573: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 131:  .. nid005573 pid 218850: Test failure common.cu:893
+ 268: nid005633: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 268:  .. nid005633 pid 154744: Test failure common.cu:893
+ 269: nid005633: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 269:  .. nid005633 pid 154745: Test failure common.cu:893
+ 270: nid005633: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 270:  .. nid005633 pid 154746: Test failure common.cu:893
+ 271: nid005633: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 271:  .. nid005633 pid 154747: Test failure common.cu:893
+ 560: nid005736: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 560:  .. nid005736 pid 224788: Test failure common.cu:893
+ 562: nid005736: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 562:  .. nid005736 pid 224790: Test failure common.cu:893
+ 561: nid005736: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 561:  .. nid005736 pid 224789: Test failure common.cu:893
+ 563: nid005736: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 563:  .. nid005736 pid 224791: Test failure common.cu:893
+ 322: nid005651: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 322:  .. nid005651 pid 176350: Test failure common.cu:893
+ 320: nid005651: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 320:  .. nid005651 pid 176348: Test failure common.cu:893
+ 323: nid005651: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 323:  .. nid005651 pid 176351: Test failure common.cu:893
+ 321: nid005651: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 321:  .. nid005651 pid 176349: Test failure common.cu:893
+ 512: nid005719: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 512:  .. nid005719 pid 176728: Test failure common.cu:893
+ 513: nid005719: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 513:  .. nid005719 pid 176729: Test failure common.cu:893
+ 515: nid005719: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 515:  .. nid005719 pid 176731: Test failure common.cu:893
+ 514: nid005719: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 514:  .. nid005719 pid 176730: Test failure common.cu:893
+ 632: nid005759: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 632:  .. nid005759 pid 162860: Test failure common.cu:893
+ 635: nid005759: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 635:  .. nid005759 pid 162863: Test failure common.cu:893
+ 633: nid005759: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 633:  .. nid005759 pid 162861: Test failure common.cu:893
+ 634: nid005759: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 634:  .. nid005759 pid 162862: Test failure common.cu:893
+  37: nid005475: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  37:  .. nid005475 pid 162291: Test failure common.cu:893
+  36: nid005475: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  36:  .. nid005475 pid 162290: Test failure common.cu:893
+  38: nid005475: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  38:  .. nid005475 pid 162292: Test failure common.cu:893
+  39: nid005475: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  39:  .. nid005475 pid 162293: Test failure common.cu:893
+ 370: nid005668: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 370:  .. nid005668 pid 168949: Test failure common.cu:893
+ 369: nid005668: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 369:  .. nid005668 pid 168948: Test failure common.cu:893
+ 371: nid005668: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 371:  .. nid005668 pid 168950: Test failure common.cu:893
+ 368: nid005668: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 368:  .. nid005668 pid 168947: Test failure common.cu:893
+ 132: nid005574: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 132:  .. nid005574 pid 163732: Test failure common.cu:893
+ 133: nid005574: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 133:  .. nid005574 pid 163733: Test failure common.cu:893
+ 135: nid005574: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 135:  .. nid005574 pid 163735: Test failure common.cu:893
+ 134: nid005574: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 134:  .. nid005574 pid 163734: Test failure common.cu:893
+  62: nid005504: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  62:  .. nid005504 pid 207221: Test failure common.cu:893
+  61: nid005504: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 588: nid005748: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 588:  .. nid005748 pid 139789: Test failure common.cu:893
+  61:  .. nid005504 pid 207220: Test failure common.cu:893
+ 590: nid005748: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 590:  .. nid005748 pid 139791: Test failure common.cu:893
+  63: nid005504: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  63:  .. nid005504 pid 207222: Test failure common.cu:893
+ 591: nid005748: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 591:  .. nid005748 pid 139792: Test failure common.cu:893
+  60: nid005504: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 589: nid005748: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 589:  .. nid005748 pid 139790: Test failure common.cu:893
+  60:  .. nid005504 pid 207219: Test failure common.cu:893
+ 444: nid005695: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 444:  .. nid005695 pid 185637: Test failure common.cu:893
+ 445: nid005695: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 445:  .. nid005695 pid 185638: Test failure common.cu:893
+ 446: nid005695: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 446:  .. nid005695 pid 185639: Test failure common.cu:893
+ 447: nid005695: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 447:  .. nid005695 pid 185640: Test failure common.cu:893
+ 396: nid005679: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 396:  .. nid005679 pid 175171: Test failure common.cu:893
+ 399: nid005679: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 399:  .. nid005679 pid 175174: Test failure common.cu:893
+ 204: nid005603: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 204:  .. nid005603 pid 177614: Test failure common.cu:893
+ 397: nid005679: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 205: nid005603: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 205:  .. nid005603 pid 177615: Test failure common.cu:893
+ 397:  .. nid005679 pid 175172: Test failure common.cu:893
+ 206: nid005603: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 398: nid005679: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 398:  .. nid005679 pid 175173: Test failure common.cu:893
+ 206:  .. nid005603 pid 177616: Test failure common.cu:893
+ 207: nid005603: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 207:  .. nid005603 pid 177617: Test failure common.cu:893
+ 516: nid005720: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 516:  .. nid005720 pid 203998: Test failure common.cu:893
+ 519: nid005720: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 519:  .. nid005720 pid 204001: Test failure common.cu:893
+ 517: nid005720: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 517:  .. nid005720 pid 203999: Test failure common.cu:893
+ 518: nid005720: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 518:  .. nid005720 pid 204000: Test failure common.cu:893
+ 233: nid005615: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 233:  .. nid005615 pid 227385: Test failure common.cu:893
+ 234: nid005615: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 234:  .. nid005615 pid 227386: Test failure common.cu:893
+ 235: nid005615: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 235:  .. nid005615 pid 227387: Test failure common.cu:893
+ 232: nid005615: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 232:  .. nid005615 pid 227384: Test failure common.cu:893
+ 304: nid005647: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 304:  .. nid005647 pid 112194: Test failure common.cu:893
+ 305: nid005647: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 305:  .. nid005647 pid 112195: Test failure common.cu:893
+ 306: nid005647: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 306:  .. nid005647 pid 112196: Test failure common.cu:893
+ 307: nid005647: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 307:  .. nid005647 pid 112197: Test failure common.cu:893
+  40: nid005479: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  40:  .. nid005479 pid 184157: Test failure common.cu:893
+  41: nid005479: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  41:  .. nid005479 pid 184158: Test failure common.cu:893
+  42: nid005479: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  42:  .. nid005479 pid 184159: Test failure common.cu:893
+  90: nid005526: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  90:  .. nid005526 pid 142063: Test failure common.cu:893
+  43: nid005479: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  43:  .. nid005479 pid 184160: Test failure common.cu:893
+  89: nid005526: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  91: nid005526: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  91:  .. nid005526 pid 142064: Test failure common.cu:893
+  88: nid005526: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+  88:  .. nid005526 pid 142061: Test failure common.cu:893
+  89:  .. nid005526 pid 142062: Test failure common.cu:893
+ 665: nid006022: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 665:  .. nid006022 pid 152965: Test failure common.cu:893
+ 667: nid006022: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 666: nid006022: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 666:  .. nid006022 pid 152966: Test failure common.cu:893
+ 667:  .. nid006022 pid 152967: Test failure common.cu:893
+ 664: nid006022: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 664:  .. nid006022 pid 152964: Test failure common.cu:893
+ 794: nid006078: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 794:  .. nid006078 pid 175717: Test failure common.cu:893
+ 792: nid006078: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 793: nid006078: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 793:  .. nid006078 pid 175716: Test failure common.cu:893
+ 792:  .. nid006078 pid 175715: Test failure common.cu:893
+ 795: nid006078: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 795:  .. nid006078 pid 175718: Test failure common.cu:893
+ 483: nid005710: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 483:  .. nid005710 pid 195599: Test failure common.cu:893
+ 482: nid005710: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 482:  .. nid005710 pid 195598: Test failure common.cu:893
+ 481: nid005710: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 481:  .. nid005710 pid 195597: Test failure common.cu:893
+ 480: nid005710: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 480:  .. nid005710 pid 195596: Test failure common.cu:893
+ 408: nid005683: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 408:  .. nid005683 pid 117973: Test failure common.cu:893
+ 411: nid005683: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 750: nid006053: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 750:  .. nid006053 pid 166762: Test failure common.cu:893
+ 411:  .. nid005683 pid 117976: Test failure common.cu:893
+ 748: nid006053: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 748:  .. nid006053 pid 166760: Test failure common.cu:893
+ 410: nid005683: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 410:  .. nid005683 pid 117975: Test failure common.cu:893
+ 751: nid006053: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 751:  .. nid006053 pid 166763: Test failure common.cu:893
+ 409: nid005683: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 409:  .. nid005683 pid 117974: Test failure common.cu:893
+ 749: nid006053: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 749:  .. nid006053 pid 166761: Test failure common.cu:893
+ 385: nid005675: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 385:  .. nid005675 pid 233551: Test failure common.cu:893
+ 384: nid005675: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 384:  .. nid005675 pid 233550: Test failure common.cu:893
+ 387: nid005675: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 387:  .. nid005675 pid 233553: Test failure common.cu:893
+ 386: nid005675: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 386:  .. nid005675 pid 233552: Test failure common.cu:893
+ 197: nid005599: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 197:  .. nid005599 pid 181301: Test failure common.cu:893
+ 196: nid005599: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 196:  .. nid005599 pid 181300: Test failure common.cu:893
+ 198: nid005599: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 198:  .. nid005599 pid 181302: Test failure common.cu:893
+ 199: nid005599: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 199:  .. nid005599 pid 181303: Test failure common.cu:893
+ 298: nid005644: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 298:  .. nid005644 pid 203964: Test failure common.cu:893
+ 299: nid005644: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 299:  .. nid005644 pid 203965: Test failure common.cu:893
+ 296: nid005644: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 296:  .. nid005644 pid 203962: Test failure common.cu:893
+ 297: nid005644: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 297:  .. nid005644 pid 203963: Test failure common.cu:893
+ 106: nid005561: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 106:  .. nid005561 pid 171443: Test failure common.cu:893
+ 104: nid005561: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 104:  .. nid005561 pid 171441: Test failure common.cu:893
+ 105: nid005561: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 105:  .. nid005561 pid 171442: Test failure common.cu:893
+ 107: nid005561: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 107:  .. nid005561 pid 171444: Test failure common.cu:893
+ 248: nid005623: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 248:  .. nid005623 pid 150732: Test failure common.cu:893
+ 249: nid005623: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 249:  .. nid005623 pid 150733: Test failure common.cu:893
+ 250: nid005623: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 250:  .. nid005623 pid 150734: Test failure common.cu:893
+ 251: nid005623: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 251:  .. nid005623 pid 150735: Test failure common.cu:893
+ 800: nid006080: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 800:  .. nid006080 pid 9548: Test failure common.cu:893
+ 801: nid006080: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 801:  .. nid006080 pid 9549: Test failure common.cu:893
+ 803: nid006080: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 803:  .. nid006080 pid 9551: Test failure common.cu:893
+ 802: nid006080: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 802:  .. nid006080 pid 9550: Test failure common.cu:893
+ 328: nid005655: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 328:  .. nid005655 pid 182963: Test failure common.cu:893
+ 329: nid005655: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 329:  .. nid005655 pid 182964: Test failure common.cu:893
+ 330: nid005655: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 330:  .. nid005655 pid 182965: Test failure common.cu:893
+ 331: nid005655: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 331:  .. nid005655 pid 182966: Test failure common.cu:893
+ 136: nid005577: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 136:  .. nid005577 pid 160298: Test failure common.cu:893
+ 137: nid005577: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 137:  .. nid005577 pid 160299: Test failure common.cu:893
+ 138: nid005577: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 138:  .. nid005577 pid 160300: Test failure common.cu:893
+ 139: nid005577: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 139:  .. nid005577 pid 160301: Test failure common.cu:893
+ 568: nid005738: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 568:  .. nid005738 pid 244074: Test failure common.cu:893
+ 569: nid005738: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 569:  .. nid005738 pid 244075: Test failure common.cu:893
+ 571: nid005738: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 571:  .. nid005738 pid 244077: Test failure common.cu:893
+ 570: nid005738: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 570:  .. nid005738 pid 244076: Test failure common.cu:893
+ 376: nid005671: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 376:  .. nid005671 pid 158259: Test failure common.cu:893
+ 378: nid005671: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 378:  .. nid005671 pid 158261: Test failure common.cu:893
+ 379: nid005671: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 379:  .. nid005671 pid 158262: Test failure common.cu:893
+ 377: nid005671: Test NCCL failure common.cu:1057 'invalid usage (run with NCCL_DEBUG=WARN for details) / '
+ 377:  .. nid005671 pid 158260: Test failure common.cu:893
