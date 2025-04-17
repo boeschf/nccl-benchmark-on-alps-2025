@@ -13,7 +13,6 @@
 #SBATCH --uenv=network-stack/25.04:v1@santis:/user-environment
 #SBATCH --view=default
 #SBATCH --network=disable_rdzv_get
-#SBATCH --reservation=maintenance_weekly
 #SBATCH --constraint=thp_never
 
 set -x
